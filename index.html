@@ -5,11 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Marlène Ménoire · Des applis du quotidien</title>
 <meta name="description" content="Des applis du quotidien, faites avec soin : Collection pour suivre ses livres, films, séries et jeux, et bientôt d'autres.">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#0f0e13">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <script>
   // Thème choisi auparavant, appliqué avant l'affichage pour éviter un flash de couleur
-  try { const th = localStorage.getItem('site-theme'); if (th === 'dark' || th === 'light') document.documentElement.dataset.theme = th; } catch (e) {}
+  // Sombre par défaut ; clair seulement si le visiteur l'a choisi avec le bouton
+  let th = 'dark';
+  try { if (localStorage.getItem('site-theme') === 'light') th = 'light'; } catch (e) {}
+  document.documentElement.dataset.theme = th;
 </script>
 <meta property="og:type" content="website">
 <meta property="og:title" content="Marlène Ménoire · Des applis du quotidien">
