@@ -204,6 +204,57 @@ h1 em { font-style: italic; }
   color: var(--muted);
 }
 
+/* Lien vers la page de détail, sur la carte Collection */
+.title-link { text-decoration: none; }
+.title-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+.collection .more { align-self: flex-start; font-size: 14px; font-weight: 700; color: #fff; text-underline-offset: 4px; }
+.collection .more:hover { text-decoration: none; }
+
+/* Page de détail d'une appli */
+.detail { gap: 64px; max-width: 980px; }
+.back { font-weight: 600; text-decoration: none; color: var(--muted); padding: 8px 0; }
+.back:hover { color: var(--ink); }
+.detail-hero {
+  background: var(--green);
+  color: #fff;
+  border-radius: 18px;
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+  box-shadow: inset -18px 0 0 rgba(255, 255, 255, 0.18);
+}
+.detail-hero h1 { font-size: clamp(48px, 8vw, 84px); }
+.detail-tagline { font-size: 20px; line-height: 1.5; max-width: 620px; color: #f0faf6; }
+.detail-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
+.btn.green { background: #fff; color: #0b6b4b; }
+.btn.outline { border: 2px solid currentColor; }
+.btn.plain { padding: 0 10px; font-weight: 600; }
+.btn.plain:hover { text-decoration: underline; }
+
+.story { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
+.story-block { display: flex; flex-direction: column; gap: 14px; padding-left: 20px; border-left: 4px solid var(--green); }
+.story-block + .story-block { border-left-color: var(--blue); }
+.story-text { font-family: 'DM Serif Display', Georgia, serif; font-size: 23px; line-height: 1.45; color: var(--ink); }
+
+.shots { display: flex; gap: 20px; align-items: flex-end; }
+.shots img { display: block; min-width: 0; height: auto; border-radius: 12px; border: 1px solid var(--line); }
+.shots img:first-child { flex: 3 1 0; width: 100%; }
+.shots img.phone { flex: 1 1 0; width: 100%; max-width: 230px; border-radius: 22px; }
+
+.features h2, .detail-cta h2 { font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; font-size: clamp(32px, 5vw, 44px); line-height: 1.1; }
+.feature-grid { margin-top: 28px; display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+.feature-grid article { padding: 22px; border: 1px solid var(--line); border-radius: 12px; display: flex; flex-direction: column; gap: 8px; }
+.feature-grid .dot { width: 26px; height: 8px; border-radius: 3px; }
+.feature-grid h3 { font-size: 17px; }
+.feature-grid p { font-size: 15px; line-height: 1.55; color: var(--text); }
+
+.detail-cta { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+.detail-cta p { font-size: 17px; color: var(--text); }
+.detail-cta .btn.green { background: var(--green); color: #fff; }
+.detail-cta .btn.outline { color: var(--ink); }
+
 a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
 
 @media (max-width: 600px) {
@@ -213,4 +264,10 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-
   .book { padding: 12px 18px; }
   .collection { padding: 20px 18px; }
   .book-title { font-size: 22px; }
+  .detail { gap: 48px; }
+  .detail-hero { padding: 32px 22px; border-radius: 14px; }
+  .detail-tagline { font-size: 18px; }
+  .story-text { font-size: 20px; }
+  .shots { gap: 10px; }
+  .shots img.phone { border-radius: 14px; }
 }

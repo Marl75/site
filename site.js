@@ -27,6 +27,28 @@ const TEXTS = {
     foot: 'Applis web installables, en français et en anglais',
     toDark: 'Passer en mode sombre',
     toLight: 'Passer en mode clair',
+    colMore: "L'histoire de Collection →",
+    colPageTitle: 'Collection · Marlène Ménoire',
+    back: '← Toutes mes applis',
+    colTagline: "Les livres, films, séries et jeux qu'on te conseille, enfin rangés au même endroit.",
+    storyKicker1: "Pourquoi je l'ai créée",
+    story1: "Dès qu'on me conseillait un livre ou un film, je le notais dans un bloc-notes. Mais la liste s'allongeait et il devenait difficile de s'y retrouver. J'ai donc eu l'idée de me créer une appli facile à utiliser, une appli que j'aurais vraiment envie d'ouvrir.",
+    storyKicker2: 'Pourquoi je la partage',
+    story2: "En en parlant à des amis, je me suis rendu compte que l'intérêt était partagé. J'ai commencé à la leur faire essayer, et aujourd'hui ils l'utilisent au quotidien. Alors j'ai eu envie de l'ouvrir à tout le monde.",
+    altDesktop: 'Collection sur ordinateur',
+    altMobile: 'Collection sur téléphone',
+    featuresTitle: "Ce qu'elle sait faire",
+    f1t: "Qui te l'a conseillé", f1d: "Note le nom de la personne qui t'a recommandé un titre, pour ne plus jamais l'oublier.",
+    f2t: 'Quatre types au même endroit', f2d: 'Livres, films, séries et jeux vidéo, rangés en terminés, en cours, à découvrir, abandonnés ou en wishlist.',
+    f3t: 'Des fiches qui se remplissent seules', f3d: "Tape un titre ou scanne le code-barres d'un livre : couverture, auteur et année arrivent tout seuls.",
+    f4t: 'Des idées par Claude', f4d: "Des recommandations personnalisées à partir de ce que tu as aimé, avec l'explication de chaque suggestion.",
+    f5t: 'Où regarder', f5d: 'Pour chaque film ou série à voir, les plateformes de streaming où le trouver.',
+    f6t: 'Ton année en chiffres', f6d: 'Statistiques par type, objectifs annuels et une rétrospective de tes coups de cœur.',
+    f7t: 'À partager', f7d: "Un lien pour montrer ta wishlist ou tes coups de cœur à tes proches, sans qu'ils aient besoin d'un compte.",
+    f8t: 'Partout, même hors ligne', f8d: "S'installe sur ton téléphone, fonctionne sans connexion, en français et en anglais.",
+    ctaTitle: "Envie d'essayer ?",
+    ctaText: "C'est gratuit. Tu peux aussi faire un tour dans la démo, sans créer de compte.",
+    demoShort: 'Voir la démo',
   },
   en: {
     pageTitle: 'Marlène Ménoire · Everyday apps',
@@ -50,6 +72,28 @@ const TEXTS = {
     foot: 'Installable web apps, in English and French',
     toDark: 'Switch to dark mode',
     toLight: 'Switch to light mode',
+    colMore: 'The story behind Collection →',
+    colPageTitle: 'Collection · Marlène Ménoire',
+    back: '← All my apps',
+    colTagline: 'The books, films, shows and games people recommend to you, finally in one place.',
+    storyKicker1: 'Why I made it',
+    story1: 'Whenever someone recommended a book or a film, I wrote it down in a notes app. But the list kept growing and it became hard to find anything. So I decided to build myself an easy app, one I would actually enjoy opening.',
+    storyKicker2: "Why I'm sharing it",
+    story2: 'Talking about it with friends, I realised they had the same need. I started letting them try it, and today they use it every day. So I wanted to open it to everyone.',
+    altDesktop: 'Collection on a computer',
+    altMobile: 'Collection on a phone',
+    featuresTitle: 'What it does',
+    f1t: 'Who recommended it', f1d: 'Write down who recommended a title, so you never forget.',
+    f2t: 'Four types in one place', f2d: 'Books, films, shows and video games, sorted into finished, in progress, up next, dropped or wishlist.',
+    f3t: 'Entries that fill themselves', f3d: "Type a title or scan a book's barcode: cover, author and year come in on their own.",
+    f4t: 'Ideas by Claude', f4d: 'Personalised recommendations based on what you loved, with the reason behind each suggestion.',
+    f5t: 'Where to watch', f5d: 'For every film or show on your list, the streaming services where you can find it.',
+    f6t: 'Your year in numbers', f6d: 'Stats per type, yearly goals and a look back at your favourites.',
+    f7t: 'Made to share', f7d: 'A link to show your wishlist or favourites to friends and family, no account needed.',
+    f8t: 'Everywhere, even offline', f8d: 'Installs on your phone, works without a connection, in English and French.',
+    ctaTitle: 'Want to try it?',
+    ctaText: "It's free. You can also take a look at the demo, no account needed.",
+    demoShort: 'See the demo',
   },
 };
 
@@ -75,8 +119,9 @@ function appLink(kind, lang) {
 function applyLanguage(lang) {
   const t = TEXTS[lang];
   document.documentElement.lang = lang;
-  document.title = t.pageTitle;
+  document.title = t[document.documentElement.dataset.titleKey || 'pageTitle'];
   document.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = t[el.dataset.i18n]; });
+  document.querySelectorAll('[data-i18n-alt]').forEach(el => { el.alt = t[el.dataset.i18nAlt]; });
   document.querySelectorAll('[data-i18n-label]').forEach(el => el.setAttribute('aria-label', t[el.dataset.i18nLabel]));
   document.querySelectorAll('[data-app]').forEach(a => { a.href = appLink(a.dataset.app, lang); });
   document.querySelectorAll('[data-lang]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
