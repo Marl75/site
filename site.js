@@ -25,6 +25,8 @@ const TEXTS = {
     aboutName: 'Qui suis-je ?',
     aboutDesc: 'Mon parcours et mes projets',
     foot: 'Applis web installables, en français et en anglais',
+    toDark: 'Passer en mode sombre',
+    toLight: 'Passer en mode clair',
   },
   en: {
     pageTitle: 'Marlène Ménoire · Everyday apps',
@@ -46,6 +48,8 @@ const TEXTS = {
     aboutName: 'About me',
     aboutDesc: 'My background and projects',
     foot: 'Installable web apps, in English and French',
+    toDark: 'Switch to dark mode',
+    toLight: 'Switch to light mode',
   },
 };
 
@@ -77,9 +81,36 @@ function applyLanguage(lang) {
   document.querySelectorAll('[data-app]').forEach(a => { a.href = appLink(a.dataset.app, lang); });
   document.querySelectorAll('[data-lang]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
   try { localStorage.setItem('site-lang', lang); } catch (e) {}
+  currentLang = lang;
+  if (document.getElementById('theme-btn')) updateThemeButton();
 }
 
 document.querySelectorAll('[data-lang]').forEach(b => b.addEventListener('click', () => applyLanguage(b.dataset.lang)));
+
+// Mode sombre : le choix fait avec le bouton prime sur le réglage du système
+const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+let currentLang = 'fr';
+
+function isDark() {
+  const forced = document.documentElement.dataset.theme;
+  return forced ? forced === 'dark' : darkQuery.matches;
+}
+
+function updateThemeButton() {
+  const btn = document.getElementById('theme-btn');
+  const label = TEXTS[currentLang][isDark() ? 'toLight' : 'toDark'];
+  btn.setAttribute('aria-label', label);
+  btn.title = label;
+  document.querySelector('meta[name="theme-color"]').content = isDark() ? '#0f0e13' : '#ffffff';
+}
+
+document.getElementById('theme-btn').addEventListener('click', () => {
+  const next = isDark() ? 'light' : 'dark';
+  document.documentElement.dataset.theme = next;
+  try { localStorage.setItem('site-theme', next); } catch (e) {}
+  updateThemeButton();
+});
+darkQuery.addEventListener('change', updateThemeButton);
 
 if (LINKEDIN_URL) {
   document.querySelectorAll('[data-linkedin]').forEach(a => {

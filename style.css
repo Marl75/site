@@ -5,10 +5,44 @@
   --text: #444;
   --muted: #555;
   --bg: #ffffff;
+  --hover: #f3f1ec;
+  --line: #eee;
+  --kicker: #0b7a56;
+  --shelf: #111;
+  --on-ink: #fff;
+  color-scheme: light;
   --green: #0f9b6e;
   --blue: #1f5fd1;
   --orange: #f07a1a;
   --red: #d91e36;
+}
+
+/* Mode sombre : choisi avec le bouton, ou celui du système si rien n'a été choisi */
+:root[data-theme="dark"] {
+  --ink: #f4f2ed;
+  --text: #c6c2d0;
+  --muted: #a09bb0;
+  --bg: #0f0e13;
+  --hover: #1d1b24;
+  --line: #24222c;
+  --kicker: #5fd3a8;
+  --shelf: #e3cf9f;
+  --on-ink: #0f0e13;
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ink: #f4f2ed;
+    --text: #c6c2d0;
+    --muted: #a09bb0;
+    --bg: #0f0e13;
+    --hover: #1d1b24;
+    --line: #24222c;
+    --kicker: #5fd3a8;
+    --shelf: #e3cf9f;
+    --on-ink: #0f0e13;
+    color-scheme: dark;
+  }
 }
 
 body {
@@ -33,6 +67,7 @@ a { color: inherit; }
 /* En-tête */
 .top { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
 .name { font-family: 'DM Serif Display', Georgia, serif; font-size: 24px; }
+.prefs { display: flex; align-items: center; gap: 10px; }
 .lang { font-size: 14px; color: var(--muted); }
 .lang button {
   min-width: 36px;
@@ -45,12 +80,32 @@ a { color: inherit; }
   border-radius: 8px;
 }
 .lang button[aria-pressed="true"] { color: var(--ink); font-weight: 700; }
-.lang button:hover { background: #f3f1ec; }
+.lang button:hover { background: var(--hover); }
+.theme-btn {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: none;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.theme-btn:hover { background: var(--hover); }
+.theme-btn .moon { display: none; }
+:root[data-theme="dark"] .theme-btn .sun { display: none; }
+:root[data-theme="dark"] .theme-btn .moon { display: block; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-btn .sun { display: none; }
+  :root:not([data-theme="light"]) .theme-btn .moon { display: block; }
+}
 
 /* Présentation */
 .hero { display: flex; flex-wrap: wrap; gap: 56px; align-items: center; flex: 1; }
 .intro { flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 20px; }
-.kicker { font-size: 13px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #0b7a56; }
+.kicker { font-size: 13px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--kicker); }
 h1 {
   font-family: 'DM Serif Display', Georgia, serif;
   font-size: clamp(44px, 7vw, 82px);
@@ -73,7 +128,7 @@ h1 em { font-style: italic; }
   text-decoration: none;
   transition: background 0.15s, color 0.15s;
 }
-.linkedin:hover { background: var(--ink); color: #fff; }
+.linkedin:hover { background: var(--ink); color: var(--on-ink); }
 [hidden] { display: none !important; }
 
 /* La pile d'applis */
@@ -129,13 +184,13 @@ h1 em { font-style: italic; }
 .voyages { margin-right: 34px; background: var(--blue); color: #fff; }
 .voyages .book-sub { color: #dbe6fb; }
 .voyages .badge { background: rgba(255, 255, 255, 0.2); }
-.routine { margin-left: 22px; background: var(--orange); color: var(--ink); box-shadow: inset -14px 0 0 rgba(255, 255, 255, 0.25); }
+.routine { margin-left: 22px; background: var(--orange); color: #111; box-shadow: inset -14px 0 0 rgba(255, 255, 255, 0.25); }
 .routine .book-sub { color: #3a1d05; }
 .routine .badge { background: rgba(255, 255, 255, 0.35); }
 .about { margin: 0 14px 0 4px; border-radius: 4px 4px 10px 10px; background: var(--red); color: #fff; }
 .about .book-sub { color: #fde3e6; }
 .about:hover { filter: brightness(1.05); }
-.shelf { height: 14px; margin-top: 4px; border-radius: 4px; background: var(--ink); }
+.shelf { height: 14px; margin-top: 4px; border-radius: 4px; background: var(--shelf); }
 
 /* Pied de page */
 .foot {
@@ -144,7 +199,7 @@ h1 em { font-style: italic; }
   flex-wrap: wrap;
   gap: 12px;
   padding-top: 22px;
-  border-top: 1px solid #eee;
+  border-top: 1px solid var(--line);
   font-size: 13px;
   color: var(--muted);
 }
