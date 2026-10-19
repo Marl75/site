@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marlène Ménoire · Des applis du quotidien</title>
+<meta name="description" content="Des applis du quotidien, faites avec soin : Collection pour suivre ses livres, films, séries et jeux, et bientôt d'autres.">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Marlène Ménoire · Des applis du quotidien">
+<meta property="og:description" content="Des applis web simples, bilingues et installables sur téléphone. À découvrir : Collection, pour suivre ses livres, films, séries et jeux.">
+<meta property="og:image" content="https://marl75.github.io/mes-livres/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=2">
+</head>
+<body>
+<div class="page">
+
+  <nav class="top">
+    <span class="name">Marlène Ménoire</span>
+    <span class="lang">
+      <button type="button" data-lang="fr" aria-pressed="true">FR</button> ·
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </span>
+  </nav>
+
+  <main class="hero">
+    <div class="intro">
+      <span class="kicker" data-i18n="kicker">Bonjour, je suis Marlène</span>
+      <h1><span data-i18n="title1">Des applis du quotidien,</span> <em data-i18n="title2">faites avec soin.</em></h1>
+      <p class="bio" data-i18n="bio">Je conçois de petites applis web pour garder une trace de ce qui compte : ce qu'on lit, ce qu'on regarde, où l'on voyage. Simples, bilingues, installables sur téléphone.</p>
+      <a class="linkedin" data-linkedin href="#" hidden>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.06c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.1V21h-4v-5.1c0-1.22-.02-2.79-1.7-2.79-1.7 0-1.96 1.33-1.96 2.7V21h-4z"/></svg>
+        <span data-i18n="linkedin">Me retrouver sur LinkedIn</span>
+      </a>
+    </div>
+
+    <section class="pile" aria-label="Mes applis" data-i18n-label="appsLabel">
+      <article class="book collection">
+        <div class="book-head">
+          <svg width="44" height="44" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="22" fill="#fff"/><rect x="14" y="26" width="16" height="52" rx="2" fill="#0f9b6e"/><rect x="32" y="16" width="16" height="62" rx="2" fill="#1f5fd1"/><rect x="50" y="30" width="16" height="48" rx="2" fill="#f07a1a"/><rect x="68" y="20" width="16" height="58" rx="2" fill="#d91e36"/><rect x="10" y="78" width="80" height="8" rx="3" fill="#111"/></svg>
+          <div>
+            <h2>Collection</h2>
+            <span class="book-sub" data-i18n="colSub">Livres, films, séries et jeux</span>
+          </div>
+        </div>
+        <p data-i18n="colDesc">Tout ce que tu lis, regardes et joues au même endroit : remplissage automatique, scan du code-barres, où regarder un film, statistiques de l'année et recommandations personnalisées par Claude.</p>
+        <div class="actions">
+          <a class="btn white" data-app="signup" href="https://marl75.github.io/mes-livres/?signup" data-i18n="signup">Créer un compte</a>
+          <a class="btn dark" data-app="login" href="https://marl75.github.io/mes-livres/" data-i18n="login">Se connecter</a>
+          <a class="btn link" data-app="demo" href="https://marl75.github.io/mes-livres/?demo" data-i18n="demo">Essayer sans compte →</a>
+        </div>
+      </article>
+
+      <div class="book voyages">
+        <div><span class="book-title" data-i18n="tripsName">Mes Voyages</span><span class="book-sub" data-i18n="tripsDesc">Carte, planning et statistiques de voyage</span></div>
+        <span class="badge" data-i18n="soon">Bientôt</span>
+      </div>
+
+      <div class="book routine">
+        <div><span class="book-title">Routine</span><span class="book-sub" data-i18n="routineDesc">Séances de sport et régularité</span></div>
+        <span class="badge" data-i18n="soon">Bientôt</span>
+      </div>
+
+      <a class="book about" data-linkedin href="#" hidden>
+        <div><span class="book-title" data-i18n="aboutName">Qui suis-je ?</span><span class="book-sub" data-i18n="aboutDesc">Mon parcours et mes projets</span></div>
+        <span class="badge-text">LinkedIn ↗</span>
+      </a>
+
+      <div class="shelf" aria-hidden="true"></div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span>© 2026 Marlène Ménoire</span>
+    <span data-i18n="foot">Applis web installables, en français et en anglais</span>
+  </footer>
+</div>
+<script src="site.js?v=1"></script>
+</body>
+</html>
