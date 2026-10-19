@@ -1,7 +1,7 @@
 // Site perso de Marlène Ménoire : textes en français et en anglais, liens vers les applis.
 
 // Adresse du profil LinkedIn : tant qu'elle est vide, les liens LinkedIn restent masqués
-const LINKEDIN_URL = '';
+const LINKEDIN_URL = 'https://www.linkedin.com/in/marlene-menoire/';
 const COLLECTION_URL = 'https://marl75.github.io/mes-livres/';
 
 const TEXTS = {
