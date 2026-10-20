@@ -3,6 +3,8 @@
 // Adresse du profil LinkedIn : tant qu'elle est vide, les liens LinkedIn restent masqués
 const LINKEDIN_URL = 'https://www.linkedin.com/in/marlene-menoire/';
 const COLLECTION_URL = 'https://marl75.github.io/mes-livres/';
+// Captures de l'appli, dans la langue de la page
+const SHOTS = COLLECTION_URL + 'screenshots/';
 
 const TEXTS = {
   fr: {
@@ -14,7 +16,7 @@ const TEXTS = {
     linkedin: 'Me retrouver sur LinkedIn',
     appsLabel: 'Mes applis',
     colSub: 'Livres, films, séries et jeux',
-    colDesc: "Tout ce que tu lis, regardes et joues au même endroit : remplissage automatique, scan du code-barres, où regarder un film, statistiques de l'année et recommandations personnalisées par Claude.",
+    colDesc: "Garde au même endroit tous les livres, films, séries et jeux qu'on te conseille. Simple et agréable à utiliser au quotidien, avec en prime des recommandations de Claude choisies selon tes goûts.",
     signup: 'Créer un compte',
     login: 'Se connecter',
     demo: 'Essayer sans compte →',
@@ -37,6 +39,8 @@ const TEXTS = {
     story2: "En en parlant à des amis, je me suis rendu compte que l'intérêt était partagé. J'ai commencé à la leur faire essayer, et aujourd'hui ils l'utilisent au quotidien. Alors j'ai eu envie de l'ouvrir à tout le monde.",
     altDesktop: 'Collection sur ordinateur',
     altMobile: 'Collection sur téléphone',
+    shotDesktop: SHOTS + 'collection-desktop-fr.png',
+    shotMobile: SHOTS + 'collection-mobile-fr.png',
     featuresTitle: "Ce qu'elle sait faire",
     f1t: "Qui te l'a conseillé", f1d: "Note le nom de la personne qui t'a recommandé un titre, pour ne plus jamais l'oublier.",
     f2t: 'Quatre types au même endroit', f2d: 'Livres, films, séries et jeux vidéo, rangés en terminés, en cours, à découvrir, abandonnés ou en wishlist.',
@@ -59,7 +63,7 @@ const TEXTS = {
     linkedin: 'Find me on LinkedIn',
     appsLabel: 'My apps',
     colSub: 'Books, films, shows and games',
-    colDesc: 'Everything you read, watch and play in one place: autofill, barcode scanning, where to watch a film, yearly stats and personalised recommendations by Claude.',
+    colDesc: 'Keep every book, film, show and game people recommend to you in one place. Simple and pleasant to use every day, with recommendations from Claude picked for your taste.',
     signup: 'Create an account',
     login: 'Log in',
     demo: 'Try without an account →',
@@ -82,6 +86,8 @@ const TEXTS = {
     story2: 'Talking about it with friends, I realised they had the same need. I started letting them try it, and today they use it every day. So I wanted to open it to everyone.',
     altDesktop: 'Collection on a computer',
     altMobile: 'Collection on a phone',
+    shotDesktop: SHOTS + 'collection-desktop.png',
+    shotMobile: SHOTS + 'collection-mobile.png',
     featuresTitle: 'What it does',
     f1t: 'Who recommended it', f1d: 'Write down who recommended a title, so you never forget.',
     f2t: 'Four types in one place', f2d: 'Books, films, shows and video games, sorted into finished, in progress, up next, dropped or wishlist.',
@@ -121,6 +127,7 @@ function applyLanguage(lang) {
   document.documentElement.lang = lang;
   document.title = t[document.documentElement.dataset.titleKey || 'pageTitle'];
   document.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = t[el.dataset.i18n]; });
+  document.querySelectorAll('[data-i18n-src]').forEach(el => { el.src = t[el.dataset.i18nSrc]; });
   document.querySelectorAll('[data-i18n-alt]').forEach(el => { el.alt = t[el.dataset.i18nAlt]; });
   document.querySelectorAll('[data-i18n-label]').forEach(el => el.setAttribute('aria-label', t[el.dataset.i18nLabel]));
   document.querySelectorAll('[data-app]').forEach(a => { a.href = appLink(a.dataset.app, lang); });
