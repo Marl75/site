@@ -122,7 +122,7 @@ const TEXTS = {
     aboutKicker1: 'What I do',
     about1: 'I lead product, and I like staying close to the ground: listening to users to truly understand their needs, making the calls, and getting my hands into the product rather than watching it from afar.',
     aboutKicker2: 'My playground',
-    about2: 'In my own time, I wanted to dig into using AI for real. From idea to launch, I ended up building my own apps from scratch.',
+    about2: 'In my own time, I wanted to dig into using AI. From idea to launch, I ended up building my own apps from scratch.',
     aboutResultsTitle: 'What came out of it',
     a1t: 'Built from scratch', a1d: 'Idea, design, code and launch: every app is thought through and built end to end, with AI as my sidekick.',
     a2t: 'Free', a2d: 'My Collection is free and open to everyone. My Trips and Routine are coming soon.',
