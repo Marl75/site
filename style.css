@@ -233,6 +233,14 @@ h1 em { font-style: italic; }
 .btn.green { background: #fff; color: #0b6b4b; }
 .btn.outline { border: 2px solid currentColor; }
 .btn.plain { padding: 0 10px; font-weight: 600; }
+.btn svg { margin-right: 8px; flex-shrink: 0; }
+
+/* Page Qui suis-je ? : même gabarit, en rouge comme sa carte sur l'accueil */
+.about-hero { background: var(--red); }
+.about-hero .kicker { color: #fde3e6; }
+.about-hero .detail-tagline { color: #fdf0f2; }
+.about-hero .btn.green { color: #a3152a; }
+.detail-cta.about-cta .btn.green { background: var(--red); color: #fff; }
 .btn.plain:hover { text-decoration: underline; }
 
 .story { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
