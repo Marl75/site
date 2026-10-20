@@ -4,7 +4,7 @@
 
 A one-page personal site presenting my apps:
 
-- **[Collection](https://marl75.github.io/mes-livres/)**: books, films, shows and games in one place, with personalised recommendations by Claude
+- **[My Collection](https://marl75.github.io/mes-livres/)**: books, films, shows and games in one place, with personalised recommendations by Claude
 - **My Trips** and **Routine**: coming soon
 
 ## Stack
