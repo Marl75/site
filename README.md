@@ -1,6 +1,6 @@
 # Marlène Ménoire · personal site
 
-**Live: [marl75.github.io/site](https://marl75.github.io/site/)** · French and English
+**Live: [marlenemenoire.com](https://marlenemenoire.com/)** · French and English
 
 A one-page personal site presenting my apps:
 
