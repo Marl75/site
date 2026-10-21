@@ -3,6 +3,8 @@
 // Adresse du profil LinkedIn : tant qu'elle est vide, les liens LinkedIn restent masqués
 const LINKEDIN_URL = 'https://www.linkedin.com/in/marlene-menoire/';
 const COLLECTION_URL = 'https://marl75.github.io/mes-livres/';
+// Adresse de chaque appli (data-app-id sur les liens ; Ma Collection par défaut)
+const APP_URLS = { collection: COLLECTION_URL, routine: 'https://marl75.github.io/fitness-coach/' };
 // Captures de l'appli, dans la langue de la page
 const SHOTS = COLLECTION_URL + 'screenshots/';
 // Mesure d'audience GoatCounter (sans cookie) : https://marlenemenoire.goatcounter.com
@@ -58,6 +60,36 @@ const TEXTS = {
     ctaTitle: "Envie d'essayer ?",
     ctaText: "C'est gratuit. Tu peux aussi faire un tour dans la démo, sans créer de compte.",
     demoShort: 'Voir la démo',
+    routinePageTitle: "Routine · Marlène Ménoire",
+    routineCardDesc: "Note tes séances en un geste : tout est repris de la dernière fois. Chaque semaine, vois les muscles travaillés, tes minutes de cardio et ta progression.",
+    routineTagline: "Tes séances de sport notées en un geste, et la réponse à une question simple : est-ce que je tiens le rythme ?",
+    routineKicker1: "Pourquoi je l'ai créée",
+    routineStory1: "Pour suivre mes séances, je passais par une appli payante qui ne faisait jamais tout à fait ce que je voulais. Je voulais une appli qui retienne tout de la dernière fois, poids, répétitions et réglages de la machine, pour noter une série en un geste entre deux efforts, et qui me dise si je travaille vraiment les muscles que je vise.",
+    routineKicker2: "Comment elle a grandi",
+    routineStory2: "Je l'ai fait tester autour de moi, et chaque retour a changé quelque chose : une prise en main plus guidée, des séries plus simples à régler, un suivi plus lisible. Elle est maintenant prête pour tout le monde.",
+    routineAlt1: "Une séance en cours dans Routine",
+    routineAlt2: "L'onglet Suivi : séances, cardio, régularité et muscles de la semaine",
+    routineAlt3: "La progression d'un exercice, avec sa courbe",
+    routineShot1: "img/routine-seance-fr.jpg",
+    routineShot2: "img/routine-suivi-fr.jpg",
+    routineShot3: "img/routine-progression-fr.jpg",
+    routineCtaText: "C'est gratuit. La démo s'ouvre sur un compte d'exemple, avec douze semaines de séances : rien à créer.",
+    r1t: "Tout est déjà rempli",
+    r1d: "Poids, répétitions, réglages de la machine, vitesse et pente : la séance reprend ce que tu as fait la dernière fois.",
+    r2t: "Tes séances types en un geste",
+    r2d: "Enregistre une séance comme routine, puis relance-la d'un geste la fois suivante.",
+    r3t: "Une série, un geste",
+    r3d: "Un tableau des séries avec une coche par série ; poids et répétitions se règlent avec deux compteurs identiques.",
+    r4t: "Tes muscles cibles",
+    r4d: "Choisis les muscles à développer ou à ménager : les bons exercices passent en premier, les autres sont signalés.",
+    r5t: "Ta semaine en un coup d'œil",
+    r5d: "Les jours travaillés pour chaque muscle et tes minutes de cardio, face aux repères de l'ACSM et de l'OMS.",
+    r6t: "Ta progression",
+    r6d: "Une courbe par exercice, et une suggestion de charge quand tu atteins ton objectif de répétitions.",
+    r7t: "Bien faire chaque exercice",
+    r7d: "Une figure qui montre le mouvement et les muscles travaillés, et des conseils tirés de sources fiables.",
+    r8t: "Partout, même hors ligne",
+    r8d: "S'installe sur ton téléphone, fonctionne sans connexion à la salle, en français et en anglais.",
     aboutPageTitle: 'Qui suis-je ? · Marlène Ménoire',
     aboutTagline: "Leader produit hands-on, curieuse de ce que l'IA change dans notre façon de créer des produits.",
     seeApps: 'Voir mes applis',
@@ -67,7 +99,7 @@ const TEXTS = {
     about2: "Sur mon temps personnel, j'ai eu envie de creuser l'usage de l'IA en pratique. De l'idée à la mise en ligne, j'ai fini par créer de toutes pièces mes propres applis.",
     aboutResultsTitle: 'Ce que ça a donné',
     a1t: 'Créées de toutes pièces', a1d: "Idée, design, code et mise en ligne : chaque appli est pensée et construite de bout en bout, avec l'IA comme binôme.",
-    a2t: 'Gratuites', a2d: 'Ma Collection est gratuite et ouverte à tous. Mes Voyages et Routine arrivent bientôt.',
+    a2t: 'Gratuites', a2d: 'Ma Collection et Routine sont gratuites et ouvertes à tous. Mes Voyages arrive bientôt.',
     a3t: 'Fini les petits abonnements', a3d: "Elles remplacent aujourd'hui de petites applis que je payais, et font exactement ce dont j'ai besoin.",
     a4t: 'Apprendre en faisant', a4d: "Une façon concrète de comprendre ce que l'IA change pour les équipes produit : en la pratiquant moi-même.",
     aboutCtaTitle: "Envie d'en parler ?",
@@ -121,6 +153,36 @@ const TEXTS = {
     ctaTitle: 'Want to try it?',
     ctaText: "It's free. You can also take a look at the demo, no account needed.",
     demoShort: 'See the demo',
+    routinePageTitle: "Routine · Marlène Ménoire",
+    routineCardDesc: "Log your workouts in one tap: everything is picked up from last time. Each week, see the muscles you worked, your cardio minutes and your progress.",
+    routineTagline: "Your workouts logged in one tap, and the answer to a simple question: am I keeping it up?",
+    routineKicker1: "Why I made it",
+    routineStory1: "To track my workouts, I used a paid app that never quite did what I wanted. I wanted an app that remembers everything from last time, weights, reps and machine setup, so I can log a set in one tap between efforts, and that tells me whether I'm really working the muscles I'm aiming for.",
+    routineKicker2: "How it grew",
+    routineStory2: "I had people around me test it, and every piece of feedback changed something: an easier start, simpler sets, a clearer progress view. It is now ready for everyone.",
+    routineAlt1: "A workout in progress in Routine",
+    routineAlt2: "The Progress tab: workouts, cardio, streak and muscles this week",
+    routineAlt3: "An exercise's progress, with its curve",
+    routineShot1: "img/routine-seance-en.jpg",
+    routineShot2: "img/routine-suivi-en.jpg",
+    routineShot3: "img/routine-progression-en.jpg",
+    routineCtaText: "It is free. The demo opens on a sample account with twelve weeks of workouts: nothing to create.",
+    r1t: "Everything is already filled in",
+    r1d: "Weights, reps, machine setup, speed and incline: each workout picks up what you did last time.",
+    r2t: "Your usual workouts in one tap",
+    r2d: "Save a workout as a routine, then start it again in one tap next time.",
+    r3t: "One set, one tap",
+    r3d: "A table of sets with a check for each; weight and reps are set with two matching counters.",
+    r4t: "Your target muscles",
+    r4d: "Pick the muscles to develop or go easy on: the right exercises come first, the others are flagged.",
+    r5t: "Your week at a glance",
+    r5d: "Days each muscle was worked and your cardio minutes, against the ACSM and WHO benchmarks.",
+    r6t: "Your progress",
+    r6d: "A curve for every exercise, and a weight suggestion when you reach your rep target.",
+    r7t: "Do every exercise right",
+    r7d: "A figure showing the movement and the muscles worked, with tips from reliable sources.",
+    r8t: "Everywhere, even offline",
+    r8d: "Installs on your phone, works without a connection at the gym, in English and French.",
     aboutPageTitle: 'About me · Marlène Ménoire',
     aboutTagline: 'A hands-on product leader, curious about how AI is changing the way we build products.',
     seeApps: 'See my apps',
@@ -130,7 +192,7 @@ const TEXTS = {
     about2: 'In my own time, I wanted to dig into using AI. From idea to launch, I ended up building my own apps from scratch.',
     aboutResultsTitle: 'What came out of it',
     a1t: 'Built from scratch', a1d: 'Idea, design, code and launch: every app is thought through and built end to end, with AI as my sidekick.',
-    a2t: 'Free', a2d: 'My Collection is free and open to everyone. My Trips and Routine are coming soon.',
+    a2t: 'Free', a2d: 'My Collection and Routine are free and open to everyone. My Trips is coming soon.',
     a3t: 'No more small subscriptions', a3d: 'They now replace small apps I used to pay for, and do exactly what I need.',
     a4t: 'Learning by doing', a4d: 'A hands-on way to understand what AI changes for product teams: by using it myself.',
     aboutCtaTitle: 'Want to talk?',
@@ -148,13 +210,13 @@ function pickLanguage() {
   return (navigator.language || 'fr').toLowerCase().startsWith('fr') ? 'fr' : 'en';
 }
 
-// Liens vers Ma Collection, dans la langue de la page
-function appLink(kind, lang) {
+// Liens vers une appli, dans la langue de la page
+function appLink(kind, lang, app = 'collection') {
   const params = new URLSearchParams();
   if (kind === 'signup') params.set('signup', '');
   if (kind === 'demo') params.set('demo', '');
   params.set('lang', lang);
-  return `${COLLECTION_URL}?${params.toString().replace(/=(&|$)/g, '$1')}`;
+  return `${APP_URLS[app]}?${params.toString().replace(/=(&|$)/g, '$1')}`;
 }
 
 function applyLanguage(lang) {
@@ -165,7 +227,7 @@ function applyLanguage(lang) {
   document.querySelectorAll('[data-i18n-src]').forEach(el => { el.src = t[el.dataset.i18nSrc]; });
   document.querySelectorAll('[data-i18n-alt]').forEach(el => { el.alt = t[el.dataset.i18nAlt]; });
   document.querySelectorAll('[data-i18n-label]').forEach(el => el.setAttribute('aria-label', t[el.dataset.i18nLabel]));
-  document.querySelectorAll('[data-app]').forEach(a => { a.href = appLink(a.dataset.app, lang); });
+  document.querySelectorAll('[data-app]').forEach(a => { a.href = appLink(a.dataset.app, lang, a.dataset.appId); });
   document.querySelectorAll('[data-lang]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
   try { localStorage.setItem('site-lang', lang); } catch (e) {}
   currentLang = lang;
@@ -223,10 +285,11 @@ if (GOATCOUNTER_CODE) {
   gc.dataset.goatcounter = `https://${GOATCOUNTER_CODE}.goatcounter.com/count`;
   document.head.appendChild(gc);
 }
-// Clics vers Ma Collection, comptés comme événements (affichés dans l'onglet Site de la page admin)
+// Clics vers les applis, comptés comme événements (affichés dans l'onglet Site de la page admin) :
+// clic-demo… pour Ma Collection, routine-clic-demo… pour Routine
 const CLICK_EVENTS = { signup: 'clic-creer-compte', login: 'clic-connexion', demo: 'clic-demo' };
 document.querySelectorAll('[data-app]').forEach(a => a.addEventListener('click', () => {
-  const name = CLICK_EVENTS[a.dataset.app];
+  const name = CLICK_EVENTS[a.dataset.app] && (a.dataset.appId === 'routine' ? 'routine-' : '') + CLICK_EVENTS[a.dataset.app];
   if (name && window.goatcounter.count) window.goatcounter.count({ path: name, title: a.textContent.trim(), event: true });
 }));
 // Clics vers le profil LinkedIn (accueil et « Qui suis-je ? »)

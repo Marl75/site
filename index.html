@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Marlène Ménoire · Des applis du quotidien</title>
-<meta name="description" content="Des applis du quotidien, faites avec soin : Ma Collection pour suivre ses livres, films, séries et jeux, et bientôt d'autres.">
+<meta name="description" content="Des applis du quotidien, faites avec soin : Ma Collection pour suivre ses livres, films, séries et jeux, Routine pour ses séances de sport, et bientôt Mes Voyages.">
 <meta name="theme-color" content="#0f0e13">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <script>
@@ -16,13 +16,13 @@
 </script>
 <meta property="og:type" content="website">
 <meta property="og:title" content="Marlène Ménoire · Des applis du quotidien">
-<meta property="og:description" content="Des applis web simples, bilingues et installables sur téléphone. À découvrir : Ma Collection, pour suivre ses livres, films, séries et jeux.">
+<meta property="og:description" content="Des applis web simples, bilingues et installables sur téléphone. À découvrir : Ma Collection, pour ses livres, films, séries et jeux, et Routine, pour ses séances de sport.">
 <meta property="og:image" content="https://marl75.github.io/mes-livres/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=8">
+<link rel="stylesheet" href="style.css?v=9">
 </head>
 <body>
 <div class="page">
@@ -72,13 +72,28 @@
         </div>
       </article>
 
+
+      <article class="book routine app-card">
+        <div class="book-head">
+          <svg width="44" height="44" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="5.3" fill="#111"/><g fill="#f07a1a" transform="translate(2.4 2.4) scale(0.8)"><rect x="1.5" y="9" width="3" height="6" rx="1"/><rect x="4.5" y="6" width="3.5" height="12" rx="1.2"/><rect x="8" y="10.75" width="8" height="2.5"/><rect x="16" y="6" width="3.5" height="12" rx="1.2"/><rect x="19.5" y="9" width="3" height="6" rx="1"/></g></svg>
+          <div>
+            <h2><a class="title-link" href="routine.html">Routine</a></h2>
+            <span class="book-sub" data-i18n="routineDesc">Séances de sport et régularité</span>
+          </div>
+        </div>
+        <p data-i18n="routineCardDesc">Note tes séances en un geste : tout est repris de la dernière fois. Chaque semaine, vois les muscles travaillés, tes minutes de cardio et ta progression.</p>
+        <div class="actions">
+          <a class="btn white" data-app="signup" data-app-id="routine" href="https://marl75.github.io/fitness-coach/?signup" data-i18n="signup">Créer un compte</a>
+          <a class="btn dark" data-app="login" data-app-id="routine" href="https://marl75.github.io/fitness-coach/" data-i18n="login">Se connecter</a>
+        </div>
+        <div class="links">
+          <a data-app="demo" data-app-id="routine" href="https://marl75.github.io/fitness-coach/?demo" data-i18n="demo">Essayer sans compte →</a>
+          <a href="routine.html" data-i18n="colMore">Son histoire →</a>
+        </div>
+      </article>
+
       <div class="book voyages">
         <div><span class="book-title" data-i18n="tripsName">Mes Voyages</span><span class="book-sub" data-i18n="tripsDesc">Carte, planning et statistiques de voyage</span></div>
-        <span class="badge" data-i18n="soon">Bientôt</span>
-      </div>
-
-      <div class="book routine">
-        <div><span class="book-title">Routine</span><span class="book-sub" data-i18n="routineDesc">Séances de sport et régularité</span></div>
         <span class="badge" data-i18n="soon">Bientôt</span>
       </div>
 
@@ -97,6 +112,6 @@
     <span class="privacy" data-i18n="privacy">Mesure d'audience anonyme, sans cookie</span>
   </footer>
 </div>
-<script src="site.js?v=9"></script>
+<script src="site.js?v=10"></script>
 </body>
 </html>
