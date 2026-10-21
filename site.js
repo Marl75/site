@@ -5,6 +5,9 @@ const LINKEDIN_URL = 'https://www.linkedin.com/in/marlene-menoire/';
 const COLLECTION_URL = 'https://marl75.github.io/mes-livres/';
 // Captures de l'appli, dans la langue de la page
 const SHOTS = COLLECTION_URL + 'screenshots/';
+// Mesure d'audience GoatCounter (sans cookie) : https://marlenemenoire.goatcounter.com
+// Pour ne pas compter ses propres visites : ouvrir le site avec #toggle-goatcounter à la fin de l'adresse
+const GOATCOUNTER_CODE = 'marlenemenoire';
 
 const TEXTS = {
   fr: {
@@ -27,6 +30,7 @@ const TEXTS = {
     aboutName: 'Qui suis-je ?',
     aboutDesc: 'Mon parcours et mes projets IA',
     foot: 'Applis web installables, en français et en anglais',
+    privacy: "Mesure d'audience anonyme, sans cookie",
     toDark: 'Passer en mode sombre',
     toLight: 'Passer en mode clair',
     appName: 'Ma Collection',
@@ -89,6 +93,7 @@ const TEXTS = {
     aboutName: 'About me',
     aboutDesc: 'My background and AI projects',
     foot: 'Installable web apps, in English and French',
+    privacy: 'Anonymous visitor stats, no cookies',
     toDark: 'Switch to dark mode',
     toLight: 'Switch to light mode',
     appName: 'My Collection',
@@ -204,3 +209,27 @@ if (LINKEDIN_URL) {
 }
 
 applyLanguage(pickLanguage());
+
+// ----- Mesure d'audience -----
+// Une page = son chemin sans paramètres (?lang=, ?ref=…) pour ne pas éclater les chiffres ;
+// la source (?ref=linkedin, utm_source…) reste lue par GoatCounter comme provenance.
+window.goatcounter = {
+  path: () => location.pathname.replace(/\/index\.html$/, '/') || '/',
+};
+if (GOATCOUNTER_CODE) {
+  const gc = document.createElement('script');
+  gc.async = true;
+  gc.src = 'https://gc.zgo.at/count.js';
+  gc.dataset.goatcounter = `https://${GOATCOUNTER_CODE}.goatcounter.com/count`;
+  document.head.appendChild(gc);
+}
+// Clics vers Ma Collection, comptés comme événements (affichés dans l'onglet Site de la page admin)
+const CLICK_EVENTS = { signup: 'clic-creer-compte', login: 'clic-connexion', demo: 'clic-demo' };
+document.querySelectorAll('[data-app]').forEach(a => a.addEventListener('click', () => {
+  const name = CLICK_EVENTS[a.dataset.app];
+  if (name && window.goatcounter.count) window.goatcounter.count({ path: name, title: a.textContent.trim(), event: true });
+}));
+// Clics vers le profil LinkedIn (accueil et « Qui suis-je ? »)
+document.querySelectorAll('[data-linkedin]').forEach(a => a.addEventListener('click', () => {
+  if (window.goatcounter.count) window.goatcounter.count({ path: 'clic-linkedin', title: 'LinkedIn', event: true });
+}));
