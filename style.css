@@ -331,8 +331,9 @@ h1 em { font-style: italic; }
 .shots img.phone { flex: 1 1 0; width: 100%; max-width: 230px; border-radius: 22px; }
 
 .features h2, .detail-cta h2 { font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; font-size: clamp(32px, 5vw, 44px); line-height: 1.1; }
-.feature-grid { margin-top: 28px; display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
-.feature-grid article { padding: 22px; border: 1px solid var(--line); border-radius: 12px; display: flex; flex-direction: column; gap: 8px; }
+.feature-grid { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 16px; }
+/* Cartes souples : une dernière ligne incomplète s'étire au lieu de laisser un trou */
+.feature-grid article { flex: 1 1 210px; padding: 22px; border: 1px solid var(--line); border-radius: 12px; display: flex; flex-direction: column; gap: 8px; }
 .feature-grid .dot { width: 26px; height: 8px; border-radius: 3px; }
 .feature-grid h3 { font-size: 17px; }
 .feature-grid p { font-size: 15px; line-height: 1.55; color: var(--text); }
