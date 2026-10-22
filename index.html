@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=17">
+<link rel="stylesheet" href="style.css?v=18">
 </head>
 <body>
 <div class="page">
@@ -46,10 +46,13 @@
       <span class="kicker" data-i18n="kicker">Bonjour, je suis Marlène</span>
       <h1><span data-i18n="title1">Des applis du quotidien,</span> <em data-i18n="title2">faites avec soin.</em></h1>
       <p class="bio" data-i18n="bio">Je conçois de petites applis web pour se simplifier la vie au quotidien, sur ces petites choses qui comptent : la lecture ou les jeux vidéo, le sport, les voyages. Simples, bilingues, installables sur téléphone.</p>
-      <a class="linkedin" data-linkedin href="#" hidden>
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.06c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.1V21h-4v-5.1c0-1.22-.02-2.79-1.7-2.79-1.7 0-1.96 1.33-1.96 2.7V21h-4z"/></svg>
-        <span data-i18n="linkedin">Me retrouver sur LinkedIn</span>
-      </a>
+      <div class="hero-links">
+        <a class="about-link" href="about.html"><img src="photo.jpg" alt="" width="28" height="28"><span data-i18n="aboutName">Qui suis-je ?</span></a>
+        <a class="linkedin" data-linkedin href="#" hidden>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.06c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.1V21h-4v-5.1c0-1.22-.02-2.79-1.7-2.79-1.7 0-1.96 1.33-1.96 2.7V21h-4z"/></svg>
+          <span data-i18n="linkedin">Me retrouver sur LinkedIn</span>
+        </a>
+      </div>
     </div>
 
     <section class="pile" aria-label="Mes applis" data-i18n-label="appsLabel">
@@ -97,22 +100,6 @@
         <span class="badge" data-i18n="soon">Bientôt</span>
       </div>
 
-      <article class="book about app-card">
-        <div class="book-head">
-          <img class="about-avatar" src="photo.jpg" alt="" width="44" height="44">
-          <div>
-            <h2><a class="title-link" href="about.html" data-i18n="aboutName">Qui suis-je ?</a></h2>
-            <span class="book-sub" data-i18n="aboutDesc">Mon métier et mes projets IA</span>
-          </div>
-        </div>
-        <div class="book-more"><div class="book-more-in">
-            <p data-i18n="aboutTagline">Leader produit hands-on, curieuse de ce que l'IA change dans notre façon de créer des produits.</p>
-            <div class="actions">
-              <a class="btn white" href="about.html" data-i18n="aboutCardMore">En savoir plus</a>
-              <a class="btn dark" data-linkedin href="#" hidden data-i18n="aboutCardLinkedin">Mon LinkedIn</a>
-            </div>
-        </div></div>
-      </article>
 
       <div class="shelf" aria-hidden="true"></div>
     </section>
@@ -124,6 +111,6 @@
     <span class="privacy" data-i18n="privacy">Mesure d'audience anonyme, sans cookie</span>
   </footer>
 </div>
-<script src="site.js?v=15"></script>
+<script src="site.js?v=16"></script>
 </body>
 </html>

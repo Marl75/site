@@ -134,6 +134,11 @@ h1 em { font-style: italic; }
   transition: background 0.15s, color 0.15s;
 }
 .linkedin:hover { background: var(--ink); color: var(--on-ink); }
+/* « Qui suis-je ? » dans la présentation (l'étagère ne porte que les applis), à côté de LinkedIn */
+.hero-links { display: flex; flex-wrap: wrap; gap: 10px; }
+.about-link { display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 20px 0 8px; border-radius: 999px; background: var(--red); color: #fff; font-weight: 700; text-decoration: none; transition: filter 0.15s; }
+.about-link img { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; border: 2px solid #fff; }
+.about-link:hover { filter: brightness(1.1); }
 [hidden] { display: none !important; }
 
 /* La pile d'applis */
@@ -214,16 +219,6 @@ h1 em { font-style: italic; }
 .detail-link:hover { text-decoration-thickness: 2px; }
 .routine.app-card .btn.white { background: #fff; color: #8a3c00; }
 .routine.app-card .btn.dark { background: rgba(0, 0, 0, 0.22); color: #fff; }
-.about { margin: 0 14px 0 4px; border-radius: 4px 4px 10px 10px; background: var(--red); color: #fff; }
-.about .book-sub { color: #fde3e6; }
-/* Carte « Qui suis-je ? » : s'ouvre comme les applis, avec la photo à la place d'une icône */
-.about.app-card { flex-direction: column; align-items: stretch; gap: 0; padding: 12px 26px; cursor: pointer; transition: padding 0.35s ease; }
-.about.app-card.open { padding: 22px 26px; cursor: auto; }
-.about.app-card p { font-size: 15px; line-height: 1.6; color: #fdf0f2; }
-.about.app-card .btn.white { color: #7d1d37; }
-.about.app-card .btn.dark { background: rgba(0, 0, 0, 0.22); color: #fff; }
-.about-avatar { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; border: 2px solid #fff; flex-shrink: 0; transition: width 0.35s ease, height 0.35s ease; }
-.app-card.open .about-avatar { width: 44px; height: 44px; }
 .shelf { height: 14px; margin-top: 4px; border-radius: 4px; background: var(--shelf); }
 
 /* Accueil : cartes d'appli en accordéon, une seule ouverte (Ma Collection au départ).
@@ -240,7 +235,7 @@ h1 em { font-style: italic; }
 .book-more-in { min-height: 0; overflow: hidden; display: flex; flex-direction: column; gap: 14px; }
 .book-more-in > :first-child { margin-top: 14px; }
 @media (prefers-reduced-motion: reduce) {
-  .app-card, .app-card h2, .app-card .book-head svg, .app-card .book-more, .about-avatar { transition: none; }
+  .app-card, .app-card h2, .app-card .book-head svg, .app-card .book-more { transition: none; }
 }
 
 /* Pied de page */
@@ -337,7 +332,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--focus); outline
 @media (max-width: 600px) {
   .page { padding: 24px 16px 40px; gap: 40px; }
   .hero { gap: 40px; }
-  .collection, .voyages, .routine, .about { margin-left: 0; margin-right: 0; }
+  .collection, .voyages, .routine { margin-left: 0; margin-right: 0; }
   .book { padding: 12px 18px; }
   .collection { padding: 20px 18px; }
   .book-title { font-size: 22px; }
