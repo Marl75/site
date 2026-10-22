@@ -5,8 +5,6 @@ const LINKEDIN_URL = 'https://www.linkedin.com/in/marlene-menoire/';
 const COLLECTION_URL = 'https://marl75.github.io/mes-livres/';
 // Adresse de chaque appli (data-app-id sur les liens ; Ma Collection par défaut)
 const APP_URLS = { collection: COLLECTION_URL, routine: 'https://marl75.github.io/fitness-coach/' };
-// Captures de l'appli, dans la langue de la page
-const SHOTS = COLLECTION_URL + 'screenshots/';
 // Mesure d'audience GoatCounter (sans cookie) : https://marlenemenoire.goatcounter.com
 // Pour ne pas compter ses propres visites : ouvrir le site avec #toggle-goatcounter à la fin de l'adresse
 const GOATCOUNTER_CODE = 'marlenemenoire';
@@ -44,8 +42,8 @@ const TEXTS = {
     story2: "En en parlant à des amis, je me suis rendu compte que l'intérêt était partagé. J'ai commencé à la leur faire essayer, et aujourd'hui ils l'utilisent au quotidien. Alors j'ai eu envie de l'ouvrir à tout le monde.",
     altDesktop: 'Ma Collection sur ordinateur',
     altMobile: 'Ma Collection sur téléphone',
-    shotDesktop: SHOTS + 'collection-desktop-fr.png',
-    shotMobile: SHOTS + 'collection-mobile-fr.png',
+    shotDesktop: '/img/collection-desktop-fr.jpg',
+    shotMobile: '/img/collection-mobile-fr.jpg',
     featuresTitle: "Ce qu'elle sait faire",
     f1t: "Qui te l'a conseillé", f1d: "Note le nom de la personne qui t'a recommandé un titre, pour ne plus jamais l'oublier.",
     f2t: 'Quatre types au même endroit', f2d: 'Livres, films, séries et jeux vidéo, rangés en terminés, en cours, à découvrir, abandonnés ou en wishlist.',
@@ -68,9 +66,9 @@ const TEXTS = {
     routineAlt1: "Une séance en cours dans Routine",
     routineAlt2: "L'onglet Suivi : séances, cardio, régularité et muscles de la semaine",
     routineAlt3: "La progression d'un exercice, avec sa courbe",
-    routineShot1: "img/routine-seance-fr.jpg",
-    routineShot2: "img/routine-suivi-fr.jpg",
-    routineShot3: "img/routine-progression-fr.jpg",
+    routineShot1: "/img/routine-seance-fr.jpg",
+    routineShot2: "/img/routine-suivi-fr.jpg",
+    routineShot3: "/img/routine-progression-fr.jpg",
     routineCtaText: "C'est gratuit. La démo s'ouvre sur un compte d'exemple, avec douze semaines de séances : rien à créer.",
     r1t: "Tout est déjà rempli",
     r1d: "Poids, répétitions, réglages de la machine, vitesse et pente : la séance reprend ce que tu as fait la dernière fois.",
@@ -102,6 +100,31 @@ const TEXTS = {
     a4t: 'Apprendre en faisant', a4d: "Une façon concrète de comprendre ce que l'IA change pour les équipes produit : en la pratiquant moi-même.",
     aboutCtaTitle: "Envie d'en parler ?",
     aboutCtaText: "Mon parcours complet est sur LinkedIn. N'hésite pas à m'y écrire.",
+    legalLink: "Mentions et confidentialité",
+    mentionsPageTitle: "Mentions et confidentialité · Marlène Ménoire",
+    legalTitle: "Mentions et confidentialité",
+    legalIntro: "Qui édite ce site, qui l’héberge, et ce que deviennent tes données.",
+    legalEditorT: "Éditrice",
+    legalEditor: "Ce site est édité à titre personnel par Marlène Ménoire, qui réside à Singapour. Pour toute question, écris-moi sur LinkedIn.",
+    legalHostT: "Hébergement",
+    legalHost: "GitHub Pages, un service de GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis.",
+    legalStatsT: "Mesure d’audience",
+    legalStats: "Le site compte ses visites avec GoatCounter, sans cookie ni identifiant personnel : seuls des chiffres globaux sont conservés (pages vues, pays, navigateur, site d’origine). Aucune de ces données ne permet de t’identifier.",
+    legalAppsT: "Tes données dans les applis",
+    legalApps: "Le site lui-même ne recueille aucune donnée personnelle. Si tu crées un compte dans une appli, ton e-mail et ce que tu y enregistres sont conservés chez Google Firebase, réservés à ton compte. Chaque appli détaille tout dans sa page de confidentialité :",
+    legalAppCol: "Confidentialité de Ma Collection",
+    legalAppRoutine: "Confidentialité de Routine",
+    legalRightsT: "Tes droits",
+    legalRights: "Tu peux à tout moment demander l’accès à tes données, leur correction ou leur suppression, en m’écrivant sur LinkedIn.",
+    legalOwnT: "Contenus",
+    legalOwn: "Textes, images et applis : © 2026 Marlène Ménoire.",
+    legalUpdated: "Dernière mise à jour : 22 octobre 2026.",
+    nfPageTitle: "Page introuvable · Marlène Ménoire",
+    nfTitle: "Cette page n’existe pas",
+    nfText: "Le lien est peut-être ancien, ou il y a une faute de frappe dans l’adresse.",
+    nfBack: "Revenir à l’accueil",
+    langFrAria: "Version française",
+    langEnAria: "English version",
   },
   en: {
     pageTitle: 'Marlène Ménoire · Everyday apps',
@@ -135,8 +158,8 @@ const TEXTS = {
     story2: 'Talking about it with friends, I realised they had the same need. I started letting them try it, and today they use it every day. So I wanted to open it to everyone.',
     altDesktop: 'My Collection on a computer',
     altMobile: 'My Collection on a phone',
-    shotDesktop: SHOTS + 'collection-desktop.png',
-    shotMobile: SHOTS + 'collection-mobile.png',
+    shotDesktop: '/img/collection-desktop.jpg',
+    shotMobile: '/img/collection-mobile.jpg',
     featuresTitle: 'What it does',
     f1t: 'Who recommended it', f1d: 'Write down who recommended a title, so you never forget.',
     f2t: 'Four types in one place', f2d: 'Books, films, shows and video games, sorted into finished, in progress, up next, dropped or wishlist.',
@@ -159,9 +182,9 @@ const TEXTS = {
     routineAlt1: "A workout in progress in Routine",
     routineAlt2: "The Progress tab: workouts, cardio, streak and muscles this week",
     routineAlt3: "An exercise's progress, with its curve",
-    routineShot1: "img/routine-seance-en.jpg",
-    routineShot2: "img/routine-suivi-en.jpg",
-    routineShot3: "img/routine-progression-en.jpg",
+    routineShot1: "/img/routine-seance-en.jpg",
+    routineShot2: "/img/routine-suivi-en.jpg",
+    routineShot3: "/img/routine-progression-en.jpg",
     routineCtaText: "It is free. The demo opens on a sample account with twelve weeks of workouts: nothing to create.",
     r1t: "Everything is already filled in",
     r1d: "Weights, reps, machine setup, speed and incline: each workout picks up what you did last time.",
@@ -193,18 +216,52 @@ const TEXTS = {
     a4t: 'Learning by doing', a4d: 'A hands-on way to understand what AI changes for product teams: by using it myself.',
     aboutCtaTitle: 'Want to talk?',
     aboutCtaText: 'My full background is on LinkedIn. Feel free to message me there.',
+    legalLink: "Legal notice and privacy",
+    mentionsPageTitle: "Legal notice and privacy · Marlène Ménoire",
+    legalTitle: "Legal notice and privacy",
+    legalIntro: "Who publishes this site, who hosts it, and what happens to your data.",
+    legalEditorT: "Publisher",
+    legalEditor: "This site is published personally by Marlène Ménoire, who lives in Singapore. For any question, message me on LinkedIn.",
+    legalHostT: "Hosting",
+    legalHost: "GitHub Pages, a service of GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, United States.",
+    legalStatsT: "Visitor statistics",
+    legalStats: "The site counts visits with GoatCounter, with no cookies and no personal identifier: only overall figures are kept (pages viewed, country, browser, referring site). None of this data can identify you.",
+    legalAppsT: "Your data in the apps",
+    legalApps: "The site itself collects no personal data. If you create an account in an app, your email and what you save there are stored with Google Firebase, private to your account. Each app explains everything in its privacy page:",
+    legalAppCol: "My Collection privacy",
+    legalAppRoutine: "Routine privacy",
+    legalRightsT: "Your rights",
+    legalRights: "You can ask at any time to access, correct or delete your data by messaging me on LinkedIn.",
+    legalOwnT: "Content",
+    legalOwn: "Texts, images and apps: © 2026 Marlène Ménoire.",
+    legalUpdated: "Last updated: 22 October 2026.",
+    nfPageTitle: "Page not found · Marlène Ménoire",
+    nfTitle: "This page doesn’t exist",
+    nfText: "The link may be old, or there may be a typo in the address.",
+    nfBack: "Back to the home page",
+    langFrAria: "Version française",
+    langEnAria: "English version",
   },
 };
 
-function pickLanguage() {
-  const fromUrl = new URLSearchParams(location.search).get('lang');
-  if (fromUrl === 'fr' || fromUrl === 'en') return fromUrl;
-  try {
-    const saved = localStorage.getItem('site-lang');
-    if (saved === 'fr' || saved === 'en') return saved;
-  } catch (e) {}
-  return (navigator.language || 'fr').toLowerCase().startsWith('fr') ? 'fr' : 'en';
+// Langue : donnée par l'adresse. Anglais à la racine (langue par défaut), français sous /fr/.
+// Les pages des deux langues sont générées par tools/build.mjs à partir de src/.
+const PAGE_LANG = location.pathname.startsWith('/fr/') || location.pathname === '/fr' ? 'fr' : 'en';
+// La même page dans l'autre langue : /routine.html <-> /fr/routine.html
+function pathIn(lang) {
+  const page = location.pathname.replace(/^\/fr(\/|$)/, '/');
+  return (lang === 'fr' ? '/fr' + page : page) + location.hash;
 }
+// Anciens liens en ?lang=… et choix mémorisé : on rejoint la bonne version
+(function routeLanguage() {
+  const wanted = new URLSearchParams(location.search).get('lang');
+  let saved = null;
+  // Clé neuve : l'ancien site enregistrait la langue à chaque visite, même sans choix du visiteur
+  try { saved = localStorage.getItem('site-lang-choice'); } catch (e) {}
+  const target = wanted === 'fr' || wanted === 'en' ? wanted : saved === 'fr' ? 'fr' : null;
+  if (target && target !== PAGE_LANG) location.replace(pathIn(target));
+})();
+function pickLanguage() { return PAGE_LANG; }
 
 // Liens vers une appli, dans la langue de la page
 function appLink(kind, lang, app = 'collection') {
@@ -224,13 +281,16 @@ function applyLanguage(lang) {
   document.querySelectorAll('[data-i18n-alt]').forEach(el => { el.alt = t[el.dataset.i18nAlt]; });
   document.querySelectorAll('[data-i18n-label]').forEach(el => el.setAttribute('aria-label', t[el.dataset.i18nLabel]));
   document.querySelectorAll('[data-app]').forEach(a => { a.href = appLink(a.dataset.app, lang, a.dataset.appId); });
-  document.querySelectorAll('[data-lang]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
-  try { localStorage.setItem('site-lang', lang); } catch (e) {}
+  document.querySelectorAll('[data-lang]').forEach(a => { if (a.dataset.lang === lang) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current'); });
   currentLang = lang;
   if (document.getElementById('theme-btn')) updateThemeButton();
 }
 
-document.querySelectorAll('[data-lang]').forEach(b => b.addEventListener('click', () => applyLanguage(b.dataset.lang)));
+// FR · EN : des liens vers l'autre version ; le choix est retenu pour les visites suivantes
+document.querySelectorAll('[data-lang]').forEach(a => {
+  a.href = pathIn(a.dataset.lang);
+  a.addEventListener('click', () => { try { localStorage.setItem('site-lang-choice', a.dataset.lang); } catch (e) {} });
+});
 
 // Mode sombre : le choix fait avec le bouton prime sur le réglage du système
 const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
@@ -249,7 +309,8 @@ function updateThemeButton() {
   document.querySelector('meta[name="theme-color"]').content = isDark() ? '#0f0e13' : '#ffffff';
 }
 
-document.getElementById('theme-btn').addEventListener('click', () => {
+// (la page d'erreur n'a pas de bouton de thème)
+document.getElementById('theme-btn')?.addEventListener('click', () => {
   const next = isDark() ? 'light' : 'dark';
   document.documentElement.dataset.theme = next;
   try { localStorage.setItem('site-theme', next); } catch (e) {}
@@ -285,7 +346,13 @@ function openCard(card) {
 }
 appCards.forEach(c => {
   c.querySelector('.book-more').inert = !c.classList.contains('open');
-  c.addEventListener('mouseenter', () => { if (canHover.matches && Date.now() > cardLock) openCard(c); });
+  // Survol : on attend un court instant, pour qu'un simple passage de la souris ne fasse pas bouger l'étagère
+  let hoverTimer = null;
+  c.addEventListener('mouseenter', () => {
+    if (!canHover.matches) return;
+    hoverTimer = setTimeout(() => { if (Date.now() > cardLock) openCard(c); }, 180);
+  });
+  c.addEventListener('mouseleave', () => clearTimeout(hoverTimer));
   c.addEventListener('focusin', () => openCard(c));
   c.addEventListener('click', e => { if (!c.classList.contains('open')) { e.preventDefault(); openCard(c); } });
 });

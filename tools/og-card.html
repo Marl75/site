@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!-- Modèle des images de partage (1200 × 630), photographié par tools/og.sh :
+     og-card.html?lang=en|fr&page=home|about -->
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body { background: #0f0e13; color: #f4f2ed; font-family: 'DM Sans', sans-serif; display: flex; align-items: center; gap: 64px; padding: 0 80px; }
+  .text { flex: 1; display: flex; flex-direction: column; gap: 22px; }
+  .kicker { font-size: 22px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #5fd3a8; }
+  h1 { font-family: 'DM Serif Display', serif; font-weight: 400; font-size: 82px; line-height: 1.02; letter-spacing: -0.01em; }
+  h1 em { font-style: italic; }
+  .sub { font-size: 26px; line-height: 1.45; color: #c6c2d0; max-width: 560px; }
+  .url { font-size: 22px; font-weight: 600; color: #a09bb0; }
+  .pile { width: 390px; display: flex; flex-direction: column; gap: 6px; }
+  .book { border-radius: 6px; padding: 20px 26px; color: #fff; font-family: 'DM Serif Display', serif; font-size: 34px; box-shadow: inset -16px 0 0 rgba(255, 255, 255, 0.18); }
+  .shelf { height: 14px; border-radius: 5px; background: #e3cf9f; margin-top: 4px; }
+  .photo { width: 330px; height: 330px; border-radius: 50%; object-fit: cover; border: 8px solid #a8284a; flex-shrink: 0; }
+</style>
+</head>
+<body>
+<div class="text">
+  <span class="kicker" id="kicker"></span>
+  <h1 id="title"></h1>
+  <p class="sub" id="sub"></p>
+  <span class="url">marlenemenoire.com</span>
+</div>
+<div id="visual"></div>
+<script>
+  const q = new URLSearchParams(location.search), lang = q.get('lang') || 'en', page = q.get('page') || 'home';
+  const T = {
+    en: { kicker: 'Hi, I’m Marlène', home: 'Everyday apps, <em>made with care.</em>', homeSub: 'Simple, bilingual web apps you can install on your phone.',
+      about: 'About me', aboutSub: 'A hands-on product leader, curious about how AI is changing the way we build products.', apps: ['My Collection', 'Routine', 'My Trips'] },
+    fr: { kicker: 'Bonjour, je suis Marlène', home: 'Des applis du quotidien, <em>faites avec soin.</em>', homeSub: 'Des applis web simples, bilingues, installables sur téléphone.',
+      about: 'Qui suis-je ?', aboutSub: 'Leader produit hands-on, curieuse de ce que l’IA change dans notre façon de créer des produits.', apps: ['Ma Collection', 'Routine', 'Mes Voyages'] },
+  }[lang];
+  document.getElementById('kicker').textContent = T.kicker;
+  document.getElementById('title').innerHTML = page === 'about' ? T.about : T.home;
+  document.getElementById('sub').textContent = page === 'about' ? T.aboutSub : T.homeSub;
+  const v = document.getElementById('visual');
+  if (page === 'about') v.innerHTML = '<img class="photo" src="../photo.jpg" alt="">';
+  else v.innerHTML = '<div class="pile">' + T.apps.map((a, i) => `<div class="book" style="background:${['#0d7a57', '#c2570b', '#2a4fa0'][i]};margin-left:${[12, 26, 0][i]}px">${a}</div>`).join('') + '<div class="shelf"></div></div>';
+</script>
+</body>
+</html>
