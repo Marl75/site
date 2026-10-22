@@ -272,6 +272,28 @@ if (LINKEDIN_URL) {
 
 applyLanguage(pickLanguage());
 
+// ----- Accueil : cartes d'appli en accordéon -----
+// Une seule carte ouverte à la fois. Ordinateur : au survol (ou au clavier) ; téléphone : un premier
+// toucher ouvre la carte, ses boutons et liens marchent ensuite. Les parties repliées sont « inert ».
+const appCards = [...document.querySelectorAll('.pile .app-card')];
+const canHover = window.matchMedia('(hover: hover) and (pointer: fine)');
+let cardLock = 0; // le temps de l'animation, pour que le changement de taille ne rouvre pas l'autre carte
+function openCard(card) {
+  if (card.classList.contains('open')) return;
+  cardLock = Date.now() + 400;
+  appCards.forEach(c => {
+    const on = c === card;
+    c.classList.toggle('open', on);
+    c.querySelector('.book-more').inert = !on;
+  });
+}
+appCards.forEach(c => {
+  c.querySelector('.book-more').inert = !c.classList.contains('open');
+  c.addEventListener('mouseenter', () => { if (canHover.matches && Date.now() > cardLock) openCard(c); });
+  c.addEventListener('focusin', () => openCard(c));
+  c.addEventListener('click', e => { if (!c.classList.contains('open')) { e.preventDefault(); openCard(c); } });
+});
+
 // ----- Mesure d'audience -----
 // Une page = son chemin sans paramètres (?lang=, ?ref=…) pour ne pas éclater les chiffres ;
 // la source (?ref=linkedin, utm_source…) reste lue par GoatCounter comme provenance.
