@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="fr">
+<!-- Page générée par tools/build.mjs depuis src/index.html : modifier src/ ou site.js, puis relancer « node tools/build.mjs » -->
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Marlène Ménoire · Des applis du quotidien</title>
-<meta name="description" content="Des applis du quotidien, faites avec soin : Ma Collection pour suivre ses livres, films, séries et jeux, Routine pour ses séances de sport, et bientôt Mes Voyages.">
+<title>Marlène Ménoire · Everyday apps</title>
+<meta name="description" content="Everyday apps, made with care: My Collection to track the books, films, shows and games people recommend, Routine for your workouts, and soon My Trips.">
 <meta name="theme-color" content="#0f0e13">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <script>
   // Thème choisi auparavant, appliqué avant l'affichage pour éviter un flash de couleur
   // Sombre par défaut ; clair seulement si le visiteur l'a choisi avec le bouton
@@ -15,14 +17,20 @@
   document.documentElement.dataset.theme = th;
 </script>
 <meta property="og:type" content="website">
-<meta property="og:title" content="Marlène Ménoire · Des applis du quotidien">
-<meta property="og:description" content="Des applis web simples, bilingues et installables sur téléphone. À découvrir : Ma Collection, pour ses livres, films, séries et jeux, et Routine, pour ses séances de sport.">
-<meta property="og:image" content="https://marl75.github.io/mes-livres/og-image.png">
+<meta property="og:url" content="https://marlenemenoire.com/">
+<meta property="og:locale" content="en_US">
+<link rel="canonical" href="https://marlenemenoire.com/">
+<link rel="alternate" hreflang="en" href="https://marlenemenoire.com/">
+<link rel="alternate" hreflang="fr" href="https://marlenemenoire.com/fr/">
+<link rel="alternate" hreflang="x-default" href="https://marlenemenoire.com/">
+<meta property="og:title" content="Marlène Ménoire · Everyday apps">
+<meta property="og:description" content="Simple, bilingual web apps you can install on your phone: My Collection for books, films, shows and games, and Routine for your workouts.">
+<meta property="og:image" content="https://marlenemenoire.com/img/og-en.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=18">
+<link rel="stylesheet" href="style.css?v=19">
 </head>
 <body>
 <div class="page">
@@ -31,8 +39,8 @@
     <span class="name">Marlène Ménoire</span>
     <div class="prefs">
       <span class="lang">
-        <button type="button" data-lang="fr" aria-pressed="true">FR</button> ·
-        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        <a data-lang="fr" lang="fr" href="/fr/" data-i18n-label="langFrAria" aria-label="Version française">FR</a> ·
+        <a aria-current="true" data-lang="en" lang="en" href="/" data-i18n-label="langEnAria" aria-label="English version">EN</a>
       </span>
       <button type="button" class="theme-btn" id="theme-btn" aria-label="Mode sombre">
         <svg class="sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
@@ -43,34 +51,34 @@
 
   <main class="hero">
     <div class="intro">
-      <span class="kicker" data-i18n="kicker">Bonjour, je suis Marlène</span>
-      <h1><span data-i18n="title1">Des applis du quotidien,</span> <em data-i18n="title2">faites avec soin.</em></h1>
-      <p class="bio" data-i18n="bio">Je conçois de petites applis web pour se simplifier la vie au quotidien, sur ces petites choses qui comptent : la lecture ou les jeux vidéo, le sport, les voyages. Simples, bilingues, installables sur téléphone.</p>
+      <span class="kicker" data-i18n="kicker">Hi, I'm Marlène</span>
+      <h1><span data-i18n="title1">Everyday apps,</span> <em data-i18n="title2">made with care.</em></h1>
+      <p class="bio" data-i18n="bio">I design small web apps that make everyday life easier, for the little things that matter: reading or gaming, sport, travel. Simple, bilingual and installable on your phone.</p>
       <div class="hero-links">
-        <a class="about-link" href="about.html"><img src="photo.jpg" alt="" width="28" height="28"><span data-i18n="aboutName">Qui suis-je ?</span></a>
+        <a class="about-link" href="about.html"><img src="photo.jpg" alt="" width="28" height="28"><span data-i18n="aboutName">About me</span></a>
         <a class="linkedin" data-linkedin href="#" hidden>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.06c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.1V21h-4v-5.1c0-1.22-.02-2.79-1.7-2.79-1.7 0-1.96 1.33-1.96 2.7V21h-4z"/></svg>
-          <span data-i18n="linkedin">Me retrouver sur LinkedIn</span>
+          <span data-i18n="linkedin">Find me on LinkedIn</span>
         </a>
       </div>
     </div>
 
-    <section class="pile" aria-label="Mes applis" data-i18n-label="appsLabel">
+    <section class="pile" aria-label="My apps" data-i18n-label="appsLabel">
       <article class="book collection app-card open">
         <div class="book-head">
           <svg width="44" height="44" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="22" fill="#fff"/><rect x="14" y="26" width="16" height="52" rx="2" fill="#0f9b6e"/><rect x="32" y="16" width="16" height="62" rx="2" fill="#1f5fd1"/><rect x="50" y="30" width="16" height="48" rx="2" fill="#f07a1a"/><rect x="68" y="20" width="16" height="58" rx="2" fill="#d91e36"/><rect x="10" y="78" width="80" height="8" rx="3" fill="#111"/></svg>
           <div>
-            <h2><a class="title-link" href="collection.html" data-i18n="appName">Ma Collection</a></h2>
-            <span class="book-sub" data-i18n="colSub">Livres, films, séries et jeux</span>
+            <h2><a class="title-link" href="collection.html" data-i18n="appName">My Collection</a></h2>
+            <span class="book-sub" data-i18n="colSub">Books, films, shows and games</span>
           </div>
         </div>
         <div class="book-more"><div class="book-more-in">
-            <p data-i18n="colDesc">Garde au même endroit tous les livres, films, séries et jeux qu'on te conseille. Simple et agréable à utiliser au quotidien, avec en prime des recommandations de Claude choisies selon tes goûts.</p>
-            <a class="detail-link" href="collection.html" data-i18n="discoverApp">Découvrir l'appli →</a>
+            <p data-i18n="colDesc">Keep every book, film, show and game people recommend to you in one place. Simple and pleasant to use every day, with recommendations from Claude picked for your taste.</p>
+            <a class="detail-link" href="collection.html" data-i18n="discoverApp">Discover the app →</a>
             <div class="actions">
-              <a class="btn white" data-app="signup" href="https://marl75.github.io/mes-livres/?signup" data-i18n="signup">Créer un compte</a>
-              <a class="btn dark" data-app="login" href="https://marl75.github.io/mes-livres/" data-i18n="login">Se connecter</a>
-              <a class="btn dark" data-app="demo" href="https://marl75.github.io/mes-livres/?demo" data-i18n="demoShort">Voir la démo</a>
+              <a class="btn white" data-app="signup" href="https://marl75.github.io/mes-livres/?signup&amp;lang=en" data-i18n="signup">Create an account</a>
+              <a class="btn dark" data-app="login" href="https://marl75.github.io/mes-livres/?lang=en" data-i18n="login">Log in</a>
+              <a class="btn dark" data-app="demo" href="https://marl75.github.io/mes-livres/?demo&amp;lang=en" data-i18n="demoShort">See the demo</a>
             </div>
         </div></div>
       </article>
@@ -81,23 +89,23 @@
           <svg width="44" height="44" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="5.3" fill="#fff"/><g fill="#c2570b" transform="translate(2.4 2.4) scale(0.8)"><rect x="1.5" y="9" width="3" height="6" rx="1"/><rect x="4.5" y="6" width="3.5" height="12" rx="1.2"/><rect x="8" y="10.75" width="8" height="2.5"/><rect x="16" y="6" width="3.5" height="12" rx="1.2"/><rect x="19.5" y="9" width="3" height="6" rx="1"/></g></svg>
           <div>
             <h2><a class="title-link" href="routine.html">Routine</a></h2>
-            <span class="book-sub" data-i18n="routineDesc">Séances de sport et régularité</span>
+            <span class="book-sub" data-i18n="routineDesc">Workouts and consistency</span>
           </div>
         </div>
         <div class="book-more"><div class="book-more-in">
-            <p data-i18n="routineCardDesc">Note tes séances en un geste : tout est repris de la dernière fois. Chaque semaine, vois les muscles travaillés, tes minutes de cardio et ta progression.</p>
-            <a class="detail-link" href="routine.html" data-i18n="discoverApp">Découvrir l'appli →</a>
+            <p data-i18n="routineCardDesc">Log your workouts in one tap: everything is picked up from last time. Each week, see the muscles you worked, your cardio minutes and your progress.</p>
+            <a class="detail-link" href="routine.html" data-i18n="discoverApp">Discover the app →</a>
             <div class="actions">
-              <a class="btn white" data-app="signup" data-app-id="routine" href="https://marl75.github.io/fitness-coach/?signup" data-i18n="signup">Créer un compte</a>
-              <a class="btn dark" data-app="login" data-app-id="routine" href="https://marl75.github.io/fitness-coach/" data-i18n="login">Se connecter</a>
-              <a class="btn dark" data-app="demo" data-app-id="routine" href="https://marl75.github.io/fitness-coach/?demo" data-i18n="demoShort">Voir la démo</a>
+              <a class="btn white" data-app="signup" data-app-id="routine" href="https://marl75.github.io/fitness-coach/?signup&amp;lang=en" data-i18n="signup">Create an account</a>
+              <a class="btn dark" data-app="login" data-app-id="routine" href="https://marl75.github.io/fitness-coach/?lang=en" data-i18n="login">Log in</a>
+              <a class="btn dark" data-app="demo" data-app-id="routine" href="https://marl75.github.io/fitness-coach/?demo&amp;lang=en" data-i18n="demoShort">See the demo</a>
             </div>
         </div></div>
       </article>
 
       <div class="book voyages">
-        <div><span class="book-title" data-i18n="tripsName">Mes Voyages</span><span class="book-sub" data-i18n="tripsDesc">Carte, planning et statistiques de voyage</span></div>
-        <span class="badge" data-i18n="soon">Bientôt</span>
+        <div><span class="book-title" data-i18n="tripsName">My Trips</span><span class="book-sub" data-i18n="tripsDesc">Map, timeline and travel stats</span></div>
+        <span class="badge" data-i18n="soon">Coming soon</span>
       </div>
 
 
@@ -107,10 +115,10 @@
 
   <footer class="foot">
     <span>© 2026 Marlène Ménoire</span>
-    <span data-i18n="foot">Applis web installables, en français et en anglais</span>
-    <span class="privacy" data-i18n="privacy">Mesure d'audience anonyme, sans cookie</span>
+    <span data-i18n="foot">Installable web apps, in English and French</span>
+    <a class="privacy" href="mentions.html" data-i18n="legalLink">Legal notice and privacy</a>
   </footer>
 </div>
-<script src="site.js?v=17"></script>
+<script src="site.js?v=18"></script>
 </body>
 </html>

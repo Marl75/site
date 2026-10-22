@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://marlenemenoire.com/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marlenemenoire.com/about.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://marlenemenoire.com/fr/about.html"/>
+  </url>
+  <url>
+    <loc>https://marlenemenoire.com/fr/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marlenemenoire.com/about.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://marlenemenoire.com/fr/about.html"/>
+  </url>
+  <url>
+    <loc>https://marlenemenoire.com/collection.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marlenemenoire.com/collection.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://marlenemenoire.com/fr/collection.html"/>
+  </url>
+  <url>
+    <loc>https://marlenemenoire.com/fr/collection.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marlenemenoire.com/collection.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://marlenemenoire.com/fr/collection.html"/>
+  </url>
+  <url>
+    <loc>https://marlenemenoire.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marlenemenoire.com/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://marlenemenoire.com/fr/"/>
+  </url>
+  <url>
+    <loc>https://marlenemenoire.com/fr/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marlenemenoire.com/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://marlenemenoire.com/fr/"/>
+  </url>
+  <url>
+    <loc>https://marlenemenoire.com/mentions.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marlenemenoire.com/mentions.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://marlenemenoire.com/fr/mentions.html"/>
+  </url>
+  <url>
+    <loc>https://marlenemenoire.com/fr/mentions.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marlenemenoire.com/mentions.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://marlenemenoire.com/fr/mentions.html"/>
+  </url>
+  <url>
+    <loc>https://marlenemenoire.com/routine.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marlenemenoire.com/routine.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://marlenemenoire.com/fr/routine.html"/>
+  </url>
+  <url>
+    <loc>https://marlenemenoire.com/fr/routine.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marlenemenoire.com/routine.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://marlenemenoire.com/fr/routine.html"/>
+  </url>
+</urlset>
