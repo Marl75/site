@@ -187,6 +187,20 @@ h1 em { font-style: italic; }
 .routine { margin-left: 22px; background: var(--orange); color: #111; box-shadow: inset -14px 0 0 rgba(255, 255, 255, 0.25); }
 .routine .book-sub { color: #3a1d05; }
 .routine .badge { background: rgba(255, 255, 255, 0.35); }
+/* Carte Routine : même gabarit que Ma Collection, en orange avec du texte foncé */
+.routine.app-card { padding: 22px 26px; flex-direction: column; align-items: stretch; gap: 14px; }
+.app-card .book-head { display: flex; flex-direction: row; align-items: center; gap: 14px; flex-wrap: wrap; }
+.app-card .book-head > div { flex: 1; min-width: 160px; display: flex; flex-direction: column; }
+.app-card h2 { font-family: 'DM Serif Display', Georgia, serif; font-size: 34px; font-weight: 400; line-height: 1.1; }
+.routine.app-card .book-sub { font-size: 14px; }
+.routine.app-card p { font-size: 15px; line-height: 1.6; color: #1d0e02; }
+.app-card .actions { display: flex; flex-direction: row; gap: 8px; flex-wrap: wrap; }
+.app-card .actions .btn { flex: 1 1 auto; justify-content: center; padding: 0 14px; }
+.routine.app-card .btn.white { background: #111; color: #fff; }
+.routine.app-card .btn.dark { background: rgba(0, 0, 0, 0.12); color: #111; }
+.app-card .links { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; gap: 6px 18px; }
+.app-card .links a { font-size: 14px; font-weight: 700; color: inherit; text-decoration: none; padding: 4px 0; }
+.app-card .links a:hover { text-decoration: underline; text-underline-offset: 4px; }
 .about { margin: 0 14px 0 4px; border-radius: 4px 4px 10px 10px; background: var(--red); color: #fff; }
 .about .book-sub { color: #fde3e6; }
 .about:hover { filter: brightness(1.05); }
@@ -234,6 +248,17 @@ h1 em { font-style: italic; }
 .btn.outline { border: 2px solid currentColor; }
 .btn.plain { padding: 0 10px; font-weight: 600; }
 .btn svg { margin-right: 8px; flex-shrink: 0; }
+
+/* Page Routine : même gabarit, en orange comme sa carte sur l'accueil */
+.routine-hero { background: var(--orange); color: #111; box-shadow: inset -18px 0 0 rgba(255, 255, 255, 0.25); }
+.routine-hero .detail-tagline { color: #1d0e02; }
+.btn.ink { background: #111; color: #fff; }
+.routine-story .story-block { border-left-color: var(--orange); }
+.routine-story .story-block + .story-block { border-left-color: var(--blue); }
+.detail-cta.routine-cta .btn.green { background: var(--orange); color: #111; }
+/* Trois captures de téléphone côte à côte */
+.shots.phones { justify-content: center; }
+.shots.phones img.phone { flex: 1 1 0; max-width: 260px; }
 
 /* Page Qui suis-je ? : même gabarit, en rouge comme sa carte sur l'accueil */
 .about-hero { background: var(--red); position: relative; padding-right: 300px; }
