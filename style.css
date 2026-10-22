@@ -207,7 +207,14 @@ h1 em { font-style: italic; }
 .app-card .links a:hover { text-decoration: underline; text-underline-offset: 4px; }
 .about { margin: 0 14px 0 4px; border-radius: 4px 4px 10px 10px; background: var(--red); color: #fff; }
 .about .book-sub { color: #fde3e6; }
-.about:hover { filter: brightness(1.05); }
+/* Carte « Qui suis-je ? » : s'ouvre comme les applis, avec la photo à la place d'une icône */
+.about.app-card { flex-direction: column; align-items: stretch; gap: 0; padding: 12px 26px; cursor: pointer; transition: padding 0.35s ease; }
+.about.app-card.open { padding: 22px 26px; cursor: auto; }
+.about.app-card p { font-size: 15px; line-height: 1.6; color: #fdf0f2; }
+.about.app-card .btn.white { color: #7d1d37; }
+.about.app-card .btn.dark { background: rgba(0, 0, 0, 0.22); color: #fff; }
+.about-avatar { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; border: 2px solid #fff; flex-shrink: 0; transition: width 0.35s ease, height 0.35s ease; }
+.app-card.open .about-avatar { width: 44px; height: 44px; }
 .shelf { height: 14px; margin-top: 4px; border-radius: 4px; background: var(--shelf); }
 
 /* Accueil : cartes d'appli en accordéon, une seule ouverte (Ma Collection au départ).
@@ -224,7 +231,7 @@ h1 em { font-style: italic; }
 .book-more-in { min-height: 0; overflow: hidden; display: flex; flex-direction: column; gap: 14px; }
 .book-more-in > :first-child { margin-top: 14px; }
 @media (prefers-reduced-motion: reduce) {
-  .app-card, .app-card h2, .app-card .book-head svg, .app-card .book-more { transition: none; }
+  .app-card, .app-card h2, .app-card .book-head svg, .app-card .book-more, .about-avatar { transition: none; }
 }
 
 /* Pied de page */
