@@ -11,11 +11,13 @@
   --shelf: #111;
   --on-ink: #fff;
   color-scheme: light;
-  --green: #0f9b6e;
-  --blue: #1f5fd1;
-  --orange: #f07a1a;
-  --routine: #c2570b; /* orange foncé : texte blanc lisible (contraste 4,5:1), comme sur les autres applis */
-  --red: #d91e36;
+  /* Palette « Profonde » : couleurs franches mais foncées, texte blanc lisible partout (4,5:1 et plus) */
+  --green: #0d7a57;   /* émeraude : Ma Collection */
+  --blue: #2a4fa0;    /* bleu nuit : Mes Voyages */
+  --orange: #c2570b;  /* orange brûlé : Routine */
+  --routine: var(--orange);
+  --red: #a8284a;     /* framboise : Qui suis-je ? */
+  --focus: #1f5fd1;   /* contour du clavier, distinct du bleu nuit pour rester visible */
 }
 
 /* Mode sombre : choisi avec le bouton, ou celui du système si rien n'a été choisi */
@@ -29,6 +31,7 @@
   --kicker: #5fd3a8;
   --shelf: #e3cf9f;
   --on-ink: #0f0e13;
+  --focus: #8fb0ff;
   color-scheme: dark;
 }
 @media (prefers-color-scheme: dark) {
@@ -42,6 +45,7 @@
     --kicker: #5fd3a8;
     --shelf: #e3cf9f;
     --on-ink: #0f0e13;
+    --focus: #8fb0ff;
     color-scheme: dark;
   }
 }
@@ -176,7 +180,7 @@ h1 em { font-style: italic; }
   font-weight: 700;
   text-decoration: none;
 }
-.btn.white { background: #fff; color: #0b6b4b; }
+.btn.white { background: #fff; color: #0a5c41; }
 .btn.dark { background: rgba(0, 0, 0, 0.22); color: #fff; }
 .btn.link { padding: 0 10px; color: #fff; font-weight: 600; }
 .btn:hover { filter: brightness(0.95); }
@@ -261,7 +265,7 @@ h1 em { font-style: italic; }
 .detail-hero h1 { font-size: clamp(48px, 8vw, 84px); }
 .detail-tagline { font-size: 20px; line-height: 1.5; max-width: 620px; color: #f0faf6; }
 .detail-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
-.btn.green { background: #fff; color: #0b6b4b; }
+.btn.green { background: #fff; color: #0a5c41; }
 .btn.outline { border: 2px solid currentColor; }
 .btn.plain { padding: 0 10px; font-weight: 600; }
 .btn svg { margin-right: 8px; flex-shrink: 0; }
@@ -315,7 +319,7 @@ h1 em { font-style: italic; }
 .detail-cta .btn.green { background: var(--green); color: #fff; }
 .detail-cta .btn.outline { color: var(--ink); }
 
-a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
 
 @media (max-width: 600px) {
   .page { padding: 24px 16px 40px; gap: 40px; }
