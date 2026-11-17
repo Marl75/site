@@ -29,7 +29,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=23">
+<link rel="stylesheet" href="style.css?v=24">
 </head>
 <body>
 <div class="page detail">
@@ -70,9 +70,14 @@
     </div>
   </section>
 
-  <section class="shots" aria-label="Captures">
-    <img src="/img/collection-desktop.jpg" width="1280" height="860" data-i18n-src="shotDesktop" alt="My Collection on a computer" data-i18n-alt="altDesktop" loading="lazy">
-    <img class="phone" src="/img/collection-mobile.jpg" width="500" height="1000" data-i18n-src="shotMobile" alt="My Collection on a phone" data-i18n-alt="altMobile" loading="lazy">
+  <!-- L'appli en mouvement : le téléphone rejoue l'appli (demos.js), les étapes s'allument au fil de l'animation -->
+  <section class="motion" style="--motion-c: var(--c-col)" aria-label="The app in motion" data-i18n-label="motionLabel">
+    <div class="motion-phone" data-demo="collection" aria-hidden="true"></div>
+    <ol class="motion-steps">
+      <li data-step="1"><span class="n">1</span><h3 data-i18n="colStep1t">Add a title</h3><p data-i18n="colStep1d">Type a few letters or scan the book, and the entry fills itself in.</p></li>
+      <li data-step="2"><span class="n">2</span><h3 data-i18n="colStep2t">Rate it in one tap</h3><p data-i18n="colStep2d">Five stars to find your favourites again, and the name of who recommended it.</p></li>
+      <li data-step="3"><span class="n">3</span><h3 data-i18n="colStep3t">Let Claude recommend</h3><p data-i18n="colStep3d">Suggestions picked for your taste, each with the reason why.</p></li>
+    </ol>
   </section>
 
   <section class="features">
@@ -104,6 +109,7 @@
     <a class="privacy" href="mentions.html" data-i18n="legalLink">Legal notice and privacy</a>
   </footer>
 </div>
-<script src="site.js?v=21"></script>
+<script src="site.js?v=22"></script>
+<script src="demos.js?v=2"></script>
 </body>
 </html>

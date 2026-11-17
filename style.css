@@ -344,9 +344,6 @@ h1 em { font-style: italic; }
 .routine-story .story-block { border-left-color: var(--routine); }
 .routine-story .story-block + .story-block { border-left-color: var(--blue); }
 .detail-cta.routine-cta .btn.green { background: var(--routine); color: #fff; }
-/* Trois captures de téléphone côte à côte */
-.shots.phones { justify-content: center; }
-.shots.phones img.phone { flex: 1 1 0; max-width: 260px; }
 
 /* Page Qui suis-je ? : même gabarit, en rouge comme sa carte sur l'accueil */
 .about-hero { background: var(--red); position: relative; padding-right: 300px; }
@@ -369,10 +366,6 @@ h1 em { font-style: italic; }
 .story-block + .story-block { border-left-color: var(--blue); }
 .story-text { font-family: 'DM Serif Display', Georgia, serif; font-size: 23px; line-height: 1.45; color: var(--ink); }
 
-.shots { display: flex; gap: 20px; align-items: flex-end; }
-.shots img { display: block; min-width: 0; height: auto; border-radius: 12px; border: 1px solid var(--line); }
-.shots img:first-child { flex: 3 1 0; width: 100%; }
-.shots img.phone { flex: 1 1 0; width: 100%; max-width: 230px; border-radius: 22px; }
 
 .features h2, .detail-cta h2 { font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; font-size: clamp(32px, 5vw, 44px); line-height: 1.1; }
 .feature-grid { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 16px; }
@@ -402,8 +395,6 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--focus); outline
   .about-hero, .about-hero:not(:has(.about-photo)) { padding-right: 22px; }
   .about-photo { position: static; transform: none; width: 112px; height: 112px; border-width: 4px; }
   .story-text { font-size: 20px; }
-  .shots { gap: 10px; }
-  .shots img.phone { border-radius: 14px; }
 }
 
 /* ----- Téléphones animés dans les cartes ouvertes de l'accueil (construits par demos.js) ----- */
@@ -575,3 +566,33 @@ h1.long { font-size: clamp(40px, 5.6vw, 68px); }
 .edu-sub { font-size: 14px; font-weight: 600; color: var(--muted); }
 .edu-card p:not(.edu-sub) { font-size: 15px; line-height: 1.55; color: var(--text); }
 @media (max-width: 600px) { .tl-item { grid-template-columns: 1fr; gap: 10px; padding: 24px 0; } }
+
+/* ----- Pages des applis : un grand téléphone qui rejoue l'appli, et trois étapes qui s'allument au fil de l'animation ----- */
+.motion { --k: 1.55; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 56px; align-items: center; }
+.motion-phone { --c: var(--motion-c); width: calc(160px * var(--k)); height: calc(316px * var(--k)); flex: none; }
+.motion-phone .phone { transform: scale(var(--k)); transform-origin: top left; }
+.motion-steps { list-style: none; display: flex; flex-direction: column; gap: 6px; counter-reset: step; }
+.motion-steps li { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 4px 16px; padding: 18px 20px; border-radius: 14px; opacity: .45; transition: opacity .4s, background .4s; }
+.motion-steps li.on { opacity: 1; background: var(--hover); }
+.motion-steps .n { grid-row: span 2; width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--motion-c); color: var(--motion-c); display: grid; place-items: center; font-weight: 700; transition: background .4s, color .4s; }
+.motion-steps li.on .n { background: var(--motion-c); color: var(--on-ink); }
+.motion-steps h3 { font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; font-size: 26px; line-height: 1.15; }
+.motion-steps p { font-size: 16px; line-height: 1.55; color: var(--text); }
+/* sans animation (réglage du visiteur) : tout reste lisible */
+.motion.still .motion-steps li { opacity: 1; }
+@media (max-width: 760px) {
+  .motion { --k: 1.3; grid-template-columns: 1fr; gap: 28px; justify-items: center; }
+  .motion-steps li { padding: 14px 16px; }
+  .motion-steps h3 { font-size: 22px; }
+}
+@media (prefers-reduced-motion: reduce) { .motion-steps li { opacity: 1; transition: none; } }
+
+/* Routine : la scène progression (courbe d'un exercice) */
+.p-chart { position: relative; height: 74px; background: #1f1e27; border-radius: 9px; padding: 6px 8px 6px 30px; }
+.p-chart svg { width: 100%; height: 100%; display: block; }
+.p-chart polyline { fill: none; stroke: #f08c4e; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; vector-effect: non-scaling-stroke; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.2s ease; }
+.p-chart polyline.drawn { stroke-dashoffset: 0; }
+.p-chart span { position: absolute; left: 6px; font-size: 6px; color: #9c98a8; }
+.p-max { top: 8px; } .p-min { bottom: 8px; }
+.p-tip { background: rgba(240, 140, 78, 0.18); color: #ffc49e; border-radius: 7px; padding: 6px 7px; font-weight: 700; font-size: 7px; opacity: 0; transform: translateY(6px); transition: all .35s; }
+.p-tip.on { opacity: 1; transform: none; }

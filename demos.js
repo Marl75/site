@@ -21,6 +21,7 @@
       toast: '✓ Séance enregistrée · 4 exercices', tabs: ['Séance', 'Suivi', 'Réglages'],
       week: 'Semaine du 16 nov.', progress: 'Suivi', days: 'LMMJVSD', sessions: 'séances', cardio: 'min de cardio',
       muscles: ['Dos', 'Épaules', 'Biceps', 'Jambes', 'Abdos', 'Pectoraux'],
+      progSub: '8 dernières semaines', gain: 'en 8 semaines', current: 'charge actuelle', tip: 'Objectif atteint, essaie 42,5 kg',
     },
     en: {
       search: 'Search…', chips: ['Finished 9', 'In progress 3', 'To discover 5'], book: 'Book',
@@ -33,6 +34,7 @@
       toast: '✓ Workout saved · 4 exercises', tabs: ['Workout', 'Progress', 'Settings'],
       week: 'Week of 16 Nov', progress: 'Progress', days: 'MTWTFSS', sessions: 'workouts', cardio: 'cardio min',
       muscles: ['Back', 'Shoulders', 'Biceps', 'Legs', 'Abs', 'Chest'],
+      progSub: 'Last 8 weeks', gain: 'in 8 weeks', current: 'current weight', tip: 'Target reached, try 42.5 kg',
     },
   }[lang];
 
@@ -91,6 +93,13 @@
         <div class="s-kpis"><div><b data-k="kpi1">0</b><span>${T.sessions}</span></div><div><b data-k="kpi2">0</b><span>${T.cardio}</span></div></div>
         <div class="s-mus" data-k="mus">${T.muscles.map((m, i) => `<span${[0, 1, 3].includes(i) ? ' class="hot"' : ''}>${m}</span>`).join('')}</div>
       </div>
+      <div class="screen off-r" data-k="s3">
+        <span class="r-top" style="color:#ffc49e">${T.progSub}</span>
+        <span class="r-title serif">${T.ex}</span>
+        <div class="p-chart"><svg viewBox="0 0 140 70" preserveAspectRatio="none" aria-hidden="true"><polyline data-k="curve" pathLength="1" points="2,62 21,58 40,52 59,49 78,41 97,35 116,27 138,16"/></svg><span class="p-max">40 kg</span><span class="p-min">30 kg</span></div>
+        <div class="s-kpis"><div><b data-k="gain">+0 kg</b><span>${T.gain}</span></div><div><b>40 kg</b><span>${T.current}</span></div></div>
+        <div class="p-tip" data-k="tip">↑ ${T.tip}</div>
+      </div>
       <div class="toast" data-k="toast">${T.toast}</div>
       <div class="tabbar">${T.tabs.map((t, i) => `<span data-k="tab${i + 1}"${i ? '' : ' class="on"'}>${t}</span>`).join('')}</div>`,
   };
@@ -104,11 +113,14 @@
     function api(id) {
       const wait = ms => new Promise((res, rej) => setTimeout(() => (id === run ? res() : rej('stop')), ms));
       const moveTo = (el, dx = 0.5, dy = 0.5) => {
-        const r = root.getBoundingClientRect(), e = el.getBoundingClientRect();
-        finger.style.left = `${e.left - r.left + e.width * dx}px`;
-        finger.style.top = `${e.top - r.top + e.height * dy}px`;
+        // k : agrandissement du téléphone (pages des applis), pour placer le doigt au bon endroit
+        const r = root.getBoundingClientRect(), e = el.getBoundingClientRect(), k = r.width / root.offsetWidth || 1;
+        finger.style.left = `${(e.left - r.left + e.width * dx) / k}px`;
+        finger.style.top = `${(e.top - r.top + e.height * dy) / k}px`;
         return wait(600);
       };
+      // Étape de l'histoire en cours (pages des applis : la liste d'étapes à côté du téléphone s'allume)
+      const mark = n => { if (id === run) root.dispatchEvent(new CustomEvent('demo-step', { detail: n, bubbles: true })); };
       const tap = async (el, cls) => {
         await moveTo(el);
         finger.classList.add('down'); if (cls) el.classList.add(cls);
@@ -118,7 +130,7 @@
       };
       const away = () => { finger.style.left = '78%'; finger.style.top = '112%'; return wait(400); };
       const each = async (list, ms, fn) => { for (const x of list) { fn(x); await wait(ms); } };
-      return { $, wait, moveTo, tap, away, each };
+      return { $, wait, moveTo, tap, away, each, mark };
     }
     return {
       start() {
@@ -139,6 +151,7 @@
   // Ma Collection : on ajoute « La Maison vide », on le note, puis on ouvre les recos de Claude
   const collection = root => makePlayer(root, async a => {
     const typed = a.$('typed');
+    a.mark(1);
     await a.wait(700);
     await a.tap(a.$('fab'), 'hit');
     a.$('sheet').classList.add('on'); await a.wait(500);
@@ -149,9 +162,11 @@
     a.$('sheet').classList.remove('on'); a.away(); await a.wait(400);
     a.$('newitem').classList.remove('new'); await a.wait(600);
     const st = [...a.$('newitem').querySelectorAll('.stars i')];
+    a.mark(2);
     await a.moveTo(st[4]);
     await a.each(st, 110, s => s.classList.add('on'));
     await a.wait(700);
+    a.mark(3);
     await a.tap(a.$('spark'), 'hit');
     a.$('reco').classList.add('on'); a.away(); await a.wait(450);
     await a.each(['r1', 'r2', 'r3'], 350, k => a.$(k).classList.add('on'));
@@ -175,6 +190,7 @@
       if (rows[i + 1]) { rows[i + 1].classList.remove('dim'); rows[i + 1].classList.add('active'); }
       await a.wait(300);
     };
+    a.mark(1);
     await a.wait(700);
     await check(0);
     const reps = a.$('reps2');
@@ -185,6 +201,7 @@
     await a.tap(a.$('finish'), 'hit');
     a.$('count').textContent = '1'; a.$('toast').classList.add('on'); a.away(); await a.wait(1300);
     a.$('toast').classList.remove('on');
+    a.mark(2);
     await a.tap(a.$('tab2'));
     a.$('tab1').classList.remove('on'); a.$('tab2').classList.add('on');
     a.$('s1').classList.add('off-l'); a.$('s2').classList.remove('off-r'); a.away(); await a.wait(450);
@@ -193,6 +210,13 @@
       a.$('kpi1').textContent = Math.round(4 * n / 20); a.$('kpi2').textContent = Math.round(95 * n / 20);
     });
     await a.each([...a.$('mus').children], 120, s => s.classList.add('on'));
+    await a.wait(900);
+    a.mark(3);
+    await a.tap(a.$('mus').children[0]);
+    a.$('s2').classList.add('off-l'); a.$('s3').classList.remove('off-r'); a.away(); await a.wait(500);
+    a.$('curve').classList.add('drawn');
+    await a.each(Array.from({ length: 10 }, (_, i) => i + 1), 100, n => { a.$('gain').textContent = `+${n} kg`; });
+    a.$('tip').classList.add('on');
     await a.wait(2800);
   }, a => {
     ['row1', 'row2', 'row3'].forEach((k, i) => { const r = a.$(k); r.classList.remove('done', 'active'); r.classList.toggle('dim', i > 0); });
@@ -202,6 +226,8 @@
     a.$('bars').querySelectorAll('i').forEach(b => { b.style.height = '0'; });
     a.$('kpi1').textContent = '0'; a.$('kpi2').textContent = '0';
     [...a.$('mus').children].forEach(s => s.classList.remove('on'));
+    a.$('s2').classList.remove('off-l'); a.$('s3').classList.add('off-r');
+    a.$('curve').classList.remove('drawn'); a.$('gain').textContent = '+0 kg'; a.$('tip').classList.remove('on');
   }, a => {
     ['row1', 'row2', 'row3'].forEach(k => { a.$(k).classList.add('done'); a.$(k).classList.remove('dim', 'active'); });
   });
@@ -212,13 +238,13 @@
   document.querySelectorAll('[data-demo]').forEach(slot => {
     const app = slot.dataset.demo;
     slot.innerHTML = `<div class="phone"><div class="scr">${SCREENS[app]}</div></div>`;
-    const card = slot.closest('.app-card');
+    const card = slot.closest('.app-card') || slot;
     const p = { card, player: MAKERS[app](slot.querySelector('.scr')), playing: false, visible: false };
     players.push(p);
   });
   function sync() {
     players.forEach(p => {
-      const should = p.card.classList.contains('open') && p.visible && !document.hidden;
+      const should = (!p.card.classList.contains('app-card') || p.card.classList.contains('open')) && p.visible && !document.hidden;
       if (should && !p.playing) { p.playing = true; p.player.start(); }
       if (!should && p.playing) { p.playing = false; p.player.stop(); }
     });

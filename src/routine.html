@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=23">
+<link rel="stylesheet" href="style.css?v=24">
 </head>
 <body>
 <div class="page detail">
@@ -63,10 +63,14 @@
     </div>
   </section>
 
-  <section class="shots phones" aria-label="Captures">
-    <img class="phone" src="img/routine-seance-fr.jpg" data-i18n-src="routineShot1" alt="Une séance en cours dans Routine" data-i18n-alt="routineAlt1" width="750" height="1624" loading="lazy">
-    <img class="phone" src="img/routine-suivi-fr.jpg" data-i18n-src="routineShot2" alt="L'onglet Suivi : séances, cardio, régularité et muscles de la semaine" data-i18n-alt="routineAlt2" width="750" height="1624" loading="lazy">
-    <img class="phone" src="img/routine-progression-fr.jpg" data-i18n-src="routineShot3" alt="La progression d'un exercice, avec sa courbe" data-i18n-alt="routineAlt3" width="750" height="1624" loading="lazy">
+  <!-- L'appli en mouvement : le téléphone rejoue l'appli (demos.js), les étapes s'allument au fil de l'animation -->
+  <section class="motion" style="--motion-c: var(--c-rou)" aria-label="L'appli en mouvement" data-i18n-label="motionLabel">
+    <div class="motion-phone" data-demo="routine" aria-hidden="true"></div>
+    <ol class="motion-steps">
+      <li data-step="1"><span class="n">1</span><h3 data-i18n="rouStep1t"></h3><p data-i18n="rouStep1d"></p></li>
+      <li data-step="2"><span class="n">2</span><h3 data-i18n="rouStep2t"></h3><p data-i18n="rouStep2d"></p></li>
+      <li data-step="3"><span class="n">3</span><h3 data-i18n="rouStep3t"></h3><p data-i18n="rouStep3d"></p></li>
+    </ol>
   </section>
 
   <section class="features">
@@ -97,6 +101,7 @@
     <a class="privacy" href="mentions.html" data-i18n="legalLink">Mentions et confidentialité</a>
   </footer>
 </div>
-<script src="site.js?v=21"></script>
+<script src="site.js?v=22"></script>
+<script src="demos.js?v=2"></script>
 </body>
 </html>

@@ -5,14 +5,14 @@
 A small personal site: who I am as a product leader (home page and `about.html`, “My path”), and the apps I build, in English (default, at the root) and French (under `/fr/`):
 
 - **[My Collection](https://marl75.github.io/mes-livres/)**: books, films, shows and games in one place, with personalised recommendations by Claude
-- **[Routine](https://marl75.github.io/fitness-coach/)**: log workouts in one tap and see whether you keep it up (page `routine.html`, phone screenshots in `img/`)
+- **[Routine](https://marl75.github.io/fitness-coach/)**: log workouts in one tap and see whether you keep it up (page `routine.html`)
 - **My Trips**: coming soon
 
 ## Stack
 
 - Plain HTML, CSS and JavaScript, no build step
 - Pages are written once, in French, in `src/`; `node tools/build.mjs` generates the English pages at the root and the French pages under `/fr/`, with their own titles, share previews, `hreflang` links and `sitemap.xml` (a GitHub Action checks they are up to date)
-- Home page: when an app card is open, a small phone replays the app (`demos.js`, French and English texts inside, book covers from Open Library); a still frame is shown to visitors who reduce motion
+- Home page: when an app card is open, a small phone replays the app (`demos.js`, French and English texts inside, book covers from Open Library); a still frame is shown to visitors who reduce motion. The My Collection and Routine pages use the same phones, larger, with three steps beside them that light up as the animation plays (`demo-step` events)
 - Texts in `site.js` (French and English): edit them there, then rebuild. The FR · EN switch links to the same page in the other language and remembers the choice; old `?lang=fr` links still work
 - Share images: `img/og-*.jpg`, made from `tools/og-card.html` with `sh tools/og.sh`
 - Legal notice and privacy: `mentions.html`
