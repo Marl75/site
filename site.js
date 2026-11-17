@@ -58,10 +58,13 @@ const TEXTS = {
     story1: "Dès qu'on me conseillait un livre ou un film, je le notais dans un bloc-notes. Mais la liste s'allongeait et il devenait difficile de s'y retrouver. J'ai donc eu l'idée de me créer une appli facile à utiliser, une appli que j'aurais vraiment envie d'ouvrir.",
     storyKicker2: 'Pourquoi je la partage',
     story2: "En en parlant à des amis, je me suis rendu compte que l'intérêt était partagé. J'ai commencé à la leur faire essayer, et aujourd'hui ils l'utilisent au quotidien. Alors j'ai eu envie de l'ouvrir à tout le monde.",
-    altDesktop: 'Ma Collection sur ordinateur',
-    altMobile: 'Ma Collection sur téléphone',
-    shotDesktop: '/img/collection-desktop-fr.jpg',
-    shotMobile: '/img/collection-mobile-fr.jpg',
+    motionLabel: "L'appli en mouvement",
+    colStep1t: 'Ajoute un titre', colStep1d: "Tape quelques lettres ou scanne le livre, la fiche se remplit toute seule.",
+    colStep2t: 'Note-le en un geste', colStep2d: 'Cinq étoiles pour retrouver tes coups de cœur, et le nom de qui te l\'a conseillé.',
+    colStep3t: 'Laisse Claude te conseiller', colStep3d: 'Des suggestions choisies selon tes goûts, avec le pourquoi de chacune.',
+    rouStep1t: 'Note tes séries', rouStep1d: 'Tout est repris de la dernière fois. Une coche par série, et la séance est enregistrée.',
+    rouStep2t: 'Vois ta semaine', rouStep2d: 'Tes séances, tes minutes de cardio et les muscles travaillés, en un coup d\'œil.',
+    rouStep3t: 'Suis ta progression', rouStep3d: 'Une courbe par exercice, et une suggestion de charge quand tu atteins ton objectif.',
     featuresTitle: "Ce qu'elle sait faire",
     f1t: "Qui te l'a conseillé", f1d: "Note le nom de la personne qui t'a recommandé un titre, pour ne plus jamais l'oublier.",
     f2t: "Quatre types au même endroit", f2d: "Livres, films, séries et jeux vidéo, rangés selon où tu en es.",
@@ -81,12 +84,6 @@ const TEXTS = {
     routineStory1: "Je voulais une appli simple et efficace pour noter les exercices de mes séances de sport et suivre ma progression. Je ne trouvais pas mon bonheur dans les applis existantes, au point de résilier celle que je payais : j'ai décidé de construire la mienne. Je l'utilise aujourd'hui tous les jours, et comme elle a plu à mes amis, j'ai eu envie de la partager.",
     routineKicker2: "Comment elle a évolué",
     routineStory2: "Je l'ai fait tester autour de moi, et chaque retour a permis de faire évoluer l'application : une prise en main plus simple, des séries plus rapides à noter, un suivi plus clair.",
-    routineAlt1: "Une séance en cours dans Routine",
-    routineAlt2: "L'onglet Suivi : séances, cardio, régularité et muscles de la semaine",
-    routineAlt3: "La progression d'un exercice, avec sa courbe",
-    routineShot1: "/img/routine-seance-fr.jpg",
-    routineShot2: "/img/routine-suivi-fr.jpg",
-    routineShot3: "/img/routine-progression-fr.jpg",
     routineCtaText: "C'est gratuit. La démo s'ouvre sur un compte d'exemple, avec douze semaines de séances : rien à créer.",
     r2t: "Tes séances types, toutes prêtes",
     r2d: "Enregistre une séance habituelle, par exemple « Haut du corps » : la fois suivante, tous ses exercices sont prêts, avec tes chiffres.",
@@ -204,10 +201,13 @@ const TEXTS = {
     story1: 'Whenever someone recommended a book or a film, I wrote it down in a notes app. But the list kept growing and it became hard to find anything. So I decided to build myself an easy app, one I would actually enjoy opening.',
     storyKicker2: "Why I'm sharing it",
     story2: 'Talking about it with friends, I realised they had the same need. I started letting them try it, and today they use it every day. So I wanted to open it to everyone.',
-    altDesktop: 'My Collection on a computer',
-    altMobile: 'My Collection on a phone',
-    shotDesktop: '/img/collection-desktop.jpg',
-    shotMobile: '/img/collection-mobile.jpg',
+    motionLabel: 'The app in motion',
+    colStep1t: 'Add a title', colStep1d: 'Type a few letters or scan the book, and the entry fills itself in.',
+    colStep2t: 'Rate it in one tap', colStep2d: 'Five stars to find your favourites again, and the name of who recommended it.',
+    colStep3t: 'Let Claude recommend', colStep3d: 'Suggestions picked for your taste, each with the reason why.',
+    rouStep1t: 'Log your sets', rouStep1d: 'Everything carries over from last time. One tick per set, and the workout is saved.',
+    rouStep2t: 'See your week', rouStep2d: 'Your workouts, cardio minutes and the muscles you worked, at a glance.',
+    rouStep3t: 'Track your progress', rouStep3d: 'A curve for each exercise, and a weight suggestion when you hit your target.',
     featuresTitle: 'What it does',
     f1t: 'Who recommended it', f1d: 'Write down who recommended a title, so you never forget.',
     f2t: "Four types in one place", f2d: "Books, films, shows and video games, sorted by where you're at.",
@@ -227,12 +227,6 @@ const TEXTS = {
     routineStory1: "I wanted a simple, effective app to log the exercises from my workouts and track my progress. None of the existing apps really suited me, to the point that I cancelled the one I was paying for: I decided to build my own. I now use it every day, and since my friends liked it too, I wanted to share it.",
     routineKicker2: "How it evolved",
     routineStory2: "I had people around me test it, and every piece of feedback helped the app evolve: an easier start, faster sets to log, a clearer progress view.",
-    routineAlt1: "A workout in progress in Routine",
-    routineAlt2: "The Progress tab: workouts, cardio, streak and muscles this week",
-    routineAlt3: "An exercise's progress, with its curve",
-    routineShot1: "/img/routine-seance-en.jpg",
-    routineShot2: "/img/routine-suivi-en.jpg",
-    routineShot3: "/img/routine-progression-en.jpg",
     routineCtaText: "It is free. The demo opens on a sample account with twelve weeks of workouts: nothing to create.",
     r2t: "Your usual workouts, ready made",
     r2d: "Save a usual workout, like “Upper body”: next time, all its exercises are ready, with your numbers.",
@@ -432,6 +426,22 @@ filItems.forEach(it => {
   it.addEventListener('mouseenter', () => { if (canHover.matches) hoverTimer = setTimeout(() => openFil(it), 150); });
   it.addEventListener('mouseleave', () => clearTimeout(hoverTimer));
   it.querySelector('.fil-head').addEventListener('click', () => openFil(it));
+});
+
+// ----- Pages des applis : les étapes à côté du téléphone suivent l'animation (événements « demo-step » de demos.js) -----
+document.querySelectorAll('.motion').forEach(m => {
+  const steps = [...m.querySelectorAll('[data-step]')];
+  const light = n => steps.forEach(s => s.classList.toggle('on', Number(s.dataset.step) === n));
+  light(1);
+  m.addEventListener('demo-step', e => light(e.detail));
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) m.classList.add('still');
+});
+// Ordinateur + téléphone (Ma Collection) : la composition suit la largeur de sa colonne
+document.querySelectorAll('.motion-devices').forEach(w => {
+  const g = w.querySelector('.devices');
+  const fit = () => g.style.setProperty('--g', Math.min(1, w.clientWidth / 620));
+  fit();
+  new ResizeObserver(fit).observe(w);
 });
 
 // ----- Mesure d'audience -----

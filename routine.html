@@ -29,7 +29,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=23">
+<link rel="stylesheet" href="style.css?v=25">
 </head>
 <body>
 <div class="page detail">
@@ -70,10 +70,14 @@
     </div>
   </section>
 
-  <section class="shots phones" aria-label="Captures">
-    <img class="phone" src="/img/routine-seance-en.jpg" data-i18n-src="routineShot1" alt="A workout in progress in Routine" data-i18n-alt="routineAlt1" width="750" height="1624" loading="lazy">
-    <img class="phone" src="/img/routine-suivi-en.jpg" data-i18n-src="routineShot2" alt="The Progress tab: workouts, cardio, streak and muscles this week" data-i18n-alt="routineAlt2" width="750" height="1624" loading="lazy">
-    <img class="phone" src="/img/routine-progression-en.jpg" data-i18n-src="routineShot3" alt="An exercise's progress, with its curve" data-i18n-alt="routineAlt3" width="750" height="1624" loading="lazy">
+  <!-- L'appli en mouvement : le téléphone rejoue l'appli (demos.js), les étapes s'allument au fil de l'animation -->
+  <section class="motion" style="--motion-c: var(--c-rou)" aria-label="The app in motion" data-i18n-label="motionLabel">
+    <div class="motion-phone" data-demo="routine" aria-hidden="true"></div>
+    <ol class="motion-steps">
+      <li data-step="1"><span class="n">1</span><h3 data-i18n="rouStep1t">Log your sets</h3><p data-i18n="rouStep1d">Everything carries over from last time. One tick per set, and the workout is saved.</p></li>
+      <li data-step="2"><span class="n">2</span><h3 data-i18n="rouStep2t">See your week</h3><p data-i18n="rouStep2d">Your workouts, cardio minutes and the muscles you worked, at a glance.</p></li>
+      <li data-step="3"><span class="n">3</span><h3 data-i18n="rouStep3t">Track your progress</h3><p data-i18n="rouStep3d">A curve for each exercise, and a weight suggestion when you hit your target.</p></li>
+    </ol>
   </section>
 
   <section class="features">
@@ -104,6 +108,7 @@
     <a class="privacy" href="mentions.html" data-i18n="legalLink">Legal notice and privacy</a>
   </footer>
 </div>
-<script src="site.js?v=21"></script>
+<script src="site.js?v=23"></script>
+<script src="demos.js?v=3"></script>
 </body>
 </html>
