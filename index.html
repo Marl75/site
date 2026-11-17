@@ -30,7 +30,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=22">
+<link rel="stylesheet" href="style.css?v=23">
 </head>
 <body>
 <div class="page">
@@ -51,7 +51,6 @@
 
   <main class="hero-b">
     <div class="intro">
-      <span class="kicker" data-i18n="homeKicker">Marlène Ménoire · Product leader</span>
       <h1 class="long"><span data-i18n="title1">AI made code fast.</span> <em data-i18n="title2">My job: deciding what to build.</em></h1>
       <p class="bio" data-i18n="bio">A product leader for 8 years on data products for cities (mobility, retail, buildings), I set up the AI systems that give product teams time for the decisions that matter.</p>
       <p class="bio" data-i18n="bio2">Based in Singapore, happy to grab a coffee if you're in the area.</p>
@@ -65,33 +64,52 @@
       </div>
     </div>
 
-    <!-- Parcours, du plus récent au plus ancien : une couleur par entreprise -->
-    <section class="city" aria-label="My path" data-i18n-label="pathLabel">
-      <article class="city-step stonal">
-        <div class="city-head"><h2>Stonal</h2><span class="years" data-i18n="stonalYears">2023 – now</span></div>
-        <span class="role" data-i18n="stonalRole">PM, Head of Product, then CPO on assignment via Freelance.com</span>
-        <ul>
-          <li><b>200M+ m²</b> <span data-i18n="stonal1">of buildings managed in the app</span></li>
-          <li><b data-i18n="mau">2,600+</b> <span data-i18n="stonal2">monthly active users, ×2 in a year</span></li>
-        </ul>
-      </article>
-      <article class="city-step mytraffic">
-        <div class="city-head"><h2>Mytraffic</h2><span class="years">2021 – 2023</span></div>
-        <span class="role">Product Manager</span>
-        <ul>
-          <li data-i18n="mytraffic1">Helping retailers choose where to open</li>
-          <li><b>1/3</b> <span data-i18n="mytraffic2">of company revenue</span></li>
-        </ul>
-      </article>
-      <article class="city-step explain">
-        <div class="city-head"><h2>Explain</h2><span class="years">2018 – 2021</span></div>
-        <span class="role" data-i18n="explainRole">Transport modelling</span>
-        <ul>
-          <li><b>Grand Paris Express</b> <span data-i18n="explain1">and its 200 km of metro</span></li>
-          <li data-i18n="explain2">National traffic forecasts</li>
-        </ul>
-      </article>
-    </section>
+    <!-- Parcours en fil, du plus récent au plus ancien : un trait qui se dessine, un point par expérience -->
+    <ol class="fil" aria-label="My path" data-i18n-label="pathLabel">
+      <li class="fil-item open now" style="--c: var(--c-col); --i: 0">
+        <span class="fil-dot" aria-hidden="true"></span>
+        <button class="fil-head" type="button" aria-expanded="true">
+          <span class="fil-years" data-i18n="stonalYears">2023 – now</span>
+          <span class="fil-co">Stonal</span>
+          <span class="fil-role" data-i18n="stonalRole">PM, Head of Product, then CPO on assignment via Freelance.com</span>
+        </button>
+        <div class="fil-more"><div>
+          <ul class="fil-pts">
+            <li><b>200M+ m²</b> <span data-i18n="stonal1">of buildings managed in the app</span></li>
+            <li><b data-i18n="mau">2,600+</b> <span data-i18n="stonal2">monthly active users, ×2 in a year</span></li>
+          </ul>
+        </div></div>
+      </li>
+      <li class="fil-item" style="--c: var(--c-rou); --i: 1">
+        <span class="fil-dot" aria-hidden="true"></span>
+        <button class="fil-head" type="button" aria-expanded="false">
+          <span class="fil-years">2021 – 2023</span>
+          <span class="fil-co">Mytraffic</span>
+          <span class="fil-role">Product Manager</span>
+        </button>
+        <div class="fil-more"><div>
+          <ul class="fil-pts">
+            <li data-i18n="mytraffic1">Helping retailers choose where to open</li>
+            <li><b>1/3</b> <span data-i18n="mytraffic2">of company revenue</span></li>
+          </ul>
+        </div></div>
+      </li>
+      <li class="fil-item" style="--c: var(--c-trip); --i: 2">
+        <span class="fil-dot" aria-hidden="true"></span>
+        <button class="fil-head" type="button" aria-expanded="false">
+          <span class="fil-years">2018 – 2021</span>
+          <span class="fil-co">Explain</span>
+          <span class="fil-role" data-i18n="explainRole">Transport modelling</span>
+        </button>
+        <div class="fil-more"><div>
+          <ul class="fil-pts">
+            <li><b>Grand Paris Express</b> <span data-i18n="explain1">and its 200 km of metro</span></li>
+            <li data-i18n="explain2">National traffic forecasts</li>
+          </ul>
+        </div></div>
+      </li>
+      <li class="fil-start" style="--i: 3"><span class="fil-dot" aria-hidden="true"></span><b>ENTPE</b><span data-i18n="filStart">, engineering school · 2015 – 2018</span></li>
+    </ol>
   </main>
 
   <!-- Les applis, sous le parcours -->
@@ -168,7 +186,7 @@
     <a class="privacy" href="mentions.html" data-i18n="legalLink">Legal notice and privacy</a>
   </footer>
 </div>
-<script src="site.js?v=20"></script>
+<script src="site.js?v=21"></script>
 <script src="demos.js?v=1"></script>
 </body>
 </html>
