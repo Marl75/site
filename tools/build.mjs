@@ -45,10 +45,10 @@ const META = {
   },
   about: {
     type: 'profile',
-    fr: { desc: 'Le parcours de Marlène Ménoire : ingénieure transport (ENTPE), puis product leader chez Mytraffic et Stonal. Huit ans de produits data pour la ville.',
-      ogTitle: 'Mon parcours · Marlène Ménoire', ogDesc: 'Ingénieure transport devenue product leader : huit ans à transformer des données sur la ville en produits qui aident à décider.' },
-    en: { desc: 'The path of Marlène Ménoire: transport engineer (ENTPE), then product leader at Mytraffic and Stonal. Eight years of data products for cities.',
-      ogTitle: 'My path · Marlène Ménoire', ogDesc: 'A transport engineer turned product leader: eight years turning data about cities into products that help people decide.' },
+    fr: { desc: 'Le parcours de Marlène Ménoire, ingénieure transport (ENTPE) devenue product leader chez Mytraffic et Stonal. Huit ans de produits data pour la ville.',
+      ogTitle: 'Mon parcours · Marlène Ménoire', ogDesc: 'Ingénieure transport devenue product leader, avec huit ans passés à transformer des données sur la ville en produits qui aident à décider.' },
+    en: { desc: 'The path of Marlène Ménoire, a transport engineer (ENTPE) turned product leader at Mytraffic and Stonal. Eight years of data products for cities.',
+      ogTitle: 'My path · Marlène Ménoire', ogDesc: 'A transport engineer turned product leader, with eight years spent turning data about cities into products that help people decide.' },
     image: lang => `${SITE}/img/og-about-${lang}.jpg`,
   },
   mentions: {

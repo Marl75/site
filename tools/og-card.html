@@ -33,9 +33,9 @@
   const q = new URLSearchParams(location.search), lang = q.get('lang') || 'en', page = q.get('page') || 'home';
   const T = {
     en: { kicker: 'Marlène Ménoire · Product leader', home: 'AI made code fast. <em>My job: deciding what to build.</em>', homeSub: 'Eight years of data products for cities · Based in\u00a0Singapore',
-      about: 'My path', aboutSub: 'A transport engineer turned product leader: eight years turning data about cities into products.', path: ['Stonal', 'Mytraffic', 'Explain'] },
+      about: 'My path', aboutSub: 'A transport engineer turned product leader, with eight years turning data about cities into products.', path: ['Stonal', 'Mytraffic', 'Explain'] },
     fr: { kicker: 'Marlène Ménoire · Product leader', home: 'L’IA accélère le code. <em>Mon métier&nbsp;: choisir quoi construire.</em>', homeSub: 'Huit ans de produits data pour la ville · À\u00a0Singapour',
-      about: 'Mon parcours', aboutSub: 'Ingénieure transport devenue product leader : huit ans à transformer des données sur la ville en produits.', path: ['Stonal', 'Mytraffic', 'Explain'] },
+      about: 'Mon parcours', aboutSub: 'Ingénieure transport devenue product leader, avec huit ans à transformer des données sur la ville en produits.', path: ['Stonal', 'Mytraffic', 'Explain'] },
   }[lang];
   document.getElementById('kicker').textContent = T.kicker;
   document.getElementById('title').innerHTML = page === 'about' ? T.about : T.home;
