@@ -507,27 +507,39 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--focus); outline
 /* ----- Accueil : présentation et parcours en haut, applis dessous ----- */
 .hero-b { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 56px; align-items: center; }
 h1.long { font-size: clamp(40px, 5.6vw, 68px); }
-/* Parcours : trois encarts empilés comme des livres, du plus récent au plus ancien */
-.city { display: flex; flex-direction: column; gap: 6px; }
-.city-step {
-  --c: var(--c-col);
-  display: flex; flex-direction: column; gap: 10px;
-  padding: 18px 24px 18px 22px; border-radius: 12px 12px 5px 5px;
-  border: 1.5px solid var(--c);
-  background: color-mix(in srgb, var(--c) var(--tint), var(--bg));
-  box-shadow: inset -10px 0 0 color-mix(in srgb, var(--c) 18%, transparent);
+/* Parcours en fil : un trait vertical qui se dessine au chargement, un point par expérience,
+   le plus récent en haut (halo qui pulse). Une seule étape ouverte à la fois (site.js). */
+.fil { list-style: none; position: relative; display: flex; flex-direction: column; gap: 4px; padding-left: 36px; }
+.fil::before, .fil::after { content: ""; position: absolute; left: 11px; top: 18px; bottom: 18px; width: 2px; border-radius: 2px; }
+.fil::before { background: var(--line); }
+.fil::after { background: linear-gradient(var(--c-col), var(--c-col) 30%, var(--c-rou) 45%, var(--c-rou) 60%, var(--c-trip) 72%, var(--c-trip) 85%, var(--muted)); transform-origin: top; animation: fil-draw 1.5s cubic-bezier(.6, 0, .2, 1) both; }
+@keyframes fil-draw { from { transform: scaleY(0); } }
+@keyframes fil-pop { from { transform: scale(0); } }
+@keyframes fil-pulse { 0% { transform: scale(.7); opacity: .9; } 100% { transform: scale(1.9); opacity: 0; } }
+.fil-item { position: relative; }
+.fil-head { all: unset; box-sizing: border-box; cursor: pointer; display: grid; gap: 2px; width: 100%; padding: 12px 16px; border-radius: 12px; transition: background .2s; }
+.fil-head:hover, .fil-item.open .fil-head { background: var(--hover); }
+.fil-head:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.fil-dot { position: absolute; left: -31px; top: 20px; width: 14px; height: 14px; box-sizing: border-box; border-radius: 50%; background: var(--bg); border: 3px solid var(--c); z-index: 1; animation: fil-pop .35s calc(.25s + var(--i) * .3s) both; transition: background .2s, transform .2s; }
+.fil-item.open .fil-dot { background: var(--c); transform: scale(1.15); }
+.fil-item.now .fil-dot::after { content: ""; position: absolute; inset: -6px; border-radius: 50%; border: 2px solid var(--c); animation: fil-pulse 2.2s 1.8s ease-out infinite; }
+.fil-years { font-size: 13px; font-weight: 700; color: var(--muted); font-variant-numeric: tabular-nums; }
+.fil-co { font-family: 'DM Serif Display', Georgia, serif; font-size: 28px; line-height: 1.1; }
+.fil-role { font-size: 14px; font-weight: 700; color: var(--c); }
+.fil-more { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .35s ease; }
+.fil-item.open .fil-more { grid-template-rows: 1fr; }
+.fil-more > div { min-height: 0; overflow: hidden; }
+.fil-pts { list-style: none; display: flex; flex-direction: column; gap: 5px; padding: 0 16px 14px; }
+.fil-pts li { position: relative; padding-left: 16px; font-size: 15px; line-height: 1.45; color: var(--text); }
+.fil-pts li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 6px; height: 6px; border-radius: 50%; background: var(--c); }
+.fil-pts b { color: var(--ink); font-weight: 700; }
+.fil-start { position: relative; padding: 6px 16px; font-size: 14px; color: var(--muted); }
+.fil-start .fil-dot { --c: var(--muted); width: 10px; height: 10px; left: -29px; top: 11px; border-width: 2px; }
+.fil-start b { color: var(--text); }
+@media (prefers-reduced-motion: reduce) {
+  .fil::after, .fil-dot, .fil-item.now .fil-dot::after { animation: none; }
+  .fil-head, .fil-dot, .fil-more { transition: none; }
 }
-.city-step.stonal { margin-right: 34px; }
-.city-step.mytraffic { --c: var(--c-rou); margin-left: 14px; margin-right: 14px; }
-.city-step.explain { --c: var(--c-trip); margin-left: 30px; }
-.city-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
-.city-head h2 { font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; font-size: 26px; line-height: 1.1; }
-.city-head .years { font-size: 13px; font-weight: 700; color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
-.city-step .role { font-size: 14px; font-weight: 700; color: var(--c); margin-top: -6px; }
-.city-step ul { list-style: none; display: flex; flex-direction: column; gap: 4px; }
-.city-step li { position: relative; padding-left: 16px; font-size: 15px; line-height: 1.45; color: var(--text); }
-.city-step li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 6px; height: 6px; border-radius: 50%; background: var(--c); }
-.city-step li b { color: var(--ink); font-weight: 700; }
 /* Les applis, sous le parcours */
 .side { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 56px; align-items: center; padding-top: 48px; border-top: 1px solid var(--line); }
 .side h2 { font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; font-size: clamp(32px, 4.5vw, 46px); line-height: 1.08; }
@@ -537,9 +549,6 @@ h1.long { font-size: clamp(40px, 5.6vw, 68px); }
 @media (max-width: 900px) {
   .hero-b { grid-template-columns: 1fr; gap: 40px; }
   .side { grid-template-columns: 1fr; gap: 28px; }
-}
-@media (max-width: 600px) {
-  .city-step.stonal, .city-step.mytraffic, .city-step.explain { margin: 0; padding: 16px 18px; }
 }
 
 /* ----- Page Mon parcours : expériences, rôles datés, formation et recherche ----- */

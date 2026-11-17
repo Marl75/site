@@ -13,7 +13,6 @@ const TEXTS = {
   fr: {
     pageTitle: 'Marlène Ménoire · Product leader',
     kicker: 'Bonjour, je suis Marlène',
-    homeKicker: 'Marlène Ménoire · Product leader',
     title1: "L'IA accélère le code.",
     title2: 'Mon métier\u00a0: choisir quoi construire.',
     bio: "Product leader depuis 8 ans sur des produits data pour la ville (mobilité, commerce, bâtiment), je mets en place les systèmes d'IA qui laissent aux équipes produit le temps des vraies décisions.",
@@ -30,6 +29,7 @@ const TEXTS = {
     explainRole: 'Modélisation des transports',
     explain1: 'et ses 200 km de métro',
     explain2: 'Prévisions nationales de trafic',
+    filStart: ", école d'ingénieurs · 2015 – 2018",
     sideKicker: 'Sur mon temps libre',
     sideT1: "L'IA dans les mains,",
     sideT2: "de l'idée à l'appli.",
@@ -159,7 +159,6 @@ const TEXTS = {
   en: {
     pageTitle: 'Marlène Ménoire · Product leader',
     kicker: "Hi, I'm Marlène",
-    homeKicker: 'Marlène Ménoire · Product leader',
     title1: 'AI made code fast.',
     title2: 'My job: deciding what to build.',
     bio: 'A product leader for 8 years on data products for cities (mobility, retail, buildings), I set up the AI systems that give product teams time for the decisions that matter.',
@@ -176,6 +175,7 @@ const TEXTS = {
     explainRole: 'Transport modelling',
     explain1: 'and its 200 km of metro',
     explain2: 'National traffic forecasts',
+    filStart: ', engineering school · 2015 – 2018',
     sideKicker: 'In my own time',
     sideT1: 'Hands-on with AI,',
     sideT2: 'from idea to live app.',
@@ -415,6 +415,23 @@ appCards.forEach(c => {
   c.addEventListener('mouseleave', () => clearTimeout(hoverTimer));
   c.addEventListener('focusin', () => openCard(c));
   c.addEventListener('click', e => { if (!c.classList.contains('open')) { e.preventDefault(); openCard(c); } });
+});
+
+// ----- Accueil : le parcours en fil -----
+// Une seule étape ouverte à la fois (Stonal au départ). Ordinateur : au survol ; téléphone et clavier : au toucher ou à la touche Entrée.
+const filItems = [...document.querySelectorAll('.fil-item')];
+function openFil(item) {
+  filItems.forEach(it => {
+    const on = it === item;
+    it.classList.toggle('open', on);
+    it.querySelector('.fil-head').setAttribute('aria-expanded', on);
+  });
+}
+filItems.forEach(it => {
+  let hoverTimer = null;
+  it.addEventListener('mouseenter', () => { if (canHover.matches) hoverTimer = setTimeout(() => openFil(it), 150); });
+  it.addEventListener('mouseleave', () => clearTimeout(hoverTimer));
+  it.querySelector('.fil-head').addEventListener('click', () => openFil(it));
 });
 
 // ----- Mesure d'audience -----
