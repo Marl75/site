@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Qui suis-je ? · Marlène Ménoire</title>
+<title>Mon parcours · Marlène Ménoire</title>
 <meta name="description" content="Leader produit hands-on, j'ai creusé l'usage de l'IA sur mon temps personnel jusqu'à créer mes propres applis, gratuites.">
 <meta name="theme-color" content="#0f0e13">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -22,13 +22,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=21">
+<link rel="stylesheet" href="style.css?v=22">
 </head>
 <body>
 <div class="page detail">
 
   <nav class="top">
-    <a class="back" href="./" data-i18n="back">← Toutes mes applis</a>
+    <a class="back" href="./" data-i18n="backHome">← Accueil</a>
     <div class="prefs">
       <span class="lang">
         <a data-lang="fr" lang="fr" href="/fr/" data-i18n-label="langFrAria" aria-label="Version française">FR</a> ·
@@ -44,50 +44,99 @@
   <header class="detail-hero about-hero">
     <img class="about-photo" src="photo.jpg" alt="Marlène Ménoire" width="220" height="220" onerror="this.remove()">
     <span class="kicker" data-i18n="kicker">Bonjour, je suis Marlène</span>
-    <h1 data-i18n="aboutName">Qui suis-je ?</h1>
-    <p class="detail-tagline" data-i18n="aboutTagline">Leader produit hands-on, curieuse de ce que l'IA change dans notre façon de créer des produits.</p>
+    <h1 data-i18n="aboutName">Mon parcours</h1>
+    <p class="detail-tagline" data-i18n="aboutTagline"></p>
     <div class="detail-actions">
       <a class="btn green" data-linkedin href="#" hidden><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.06c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.1V21h-4v-5.1c0-1.22-.02-2.79-1.7-2.79-1.7 0-1.96 1.33-1.96 2.7V21h-4z"/></svg><span data-i18n="linkedin">Me retrouver sur LinkedIn</span></a>
-      <a class="btn outline" href="./" data-i18n="seeApps">Voir mes applis</a>
+      <a class="btn outline" href="./#applis" data-i18n="seeApps">Voir mes applis</a>
     </div>
   </header>
 
-  <section class="story">
-    <div class="story-block">
-      <span class="kicker" data-i18n="aboutKicker1">Mon métier</span>
-      <p class="story-text" data-i18n="about1">Je suis leader produit, et j'aime rester proche du terrain : écouter les utilisateurs pour bien comprendre leurs besoins, faire des choix, et mettre les mains dans le produit plutôt que de le regarder de loin.</p>
-    </div>
-    <div class="story-block">
-      <span class="kicker" data-i18n="aboutKicker2">Mon terrain de jeu</span>
-      <p class="story-text" data-i18n="about2">Sur mon temps personnel, j'ai eu envie de creuser l'usage de l'IA en pratique. De l'idée à la mise en ligne, j'ai fini par créer de toutes pièces mes propres applis.</p>
+  <!-- Expériences, du plus récent au plus ancien -->
+  <section class="timeline" aria-label="Expériences" data-i18n-label="xpLabel">
+    <article class="tl-item">
+      <div class="tl-when"><span class="years" data-i18n="stonalYears">2023 – auj.</span><span class="verb" data-i18n="xpBuildings">Bâtiment</span></div>
+      <div class="tl-body">
+        <h2>Stonal</h2>
+        <ul class="roles">
+          <li><b>Chief Product Officer</b><span class="when" data-i18n="cpoWhen">depuis juin 2026</span><span class="note" data-i18n="cpoNote">En mission pour Stonal, salariée de Freelance.com</span></li>
+          <li><b>Head of Product</b><span class="when" data-i18n="hopWhen">juil. 2024 – fév. 2026</span></li>
+          <li><b>Product Manager</b><span class="when" data-i18n="pmWhen">juil. 2023 – juil. 2024</span></li>
+        </ul>
+        <p data-i18n="stonalText"></p>
+        <div class="figs">
+          <span><b>200M+ m²</b> <span data-i18n="fig1">gérés dans l'application</span></span>
+          <span><b>NPS −11 → +23</b> <span data-i18n="fig2">en 3 trimestres</span></span>
+          <span><b data-i18n="mau">2 600+</b> <span data-i18n="fig3">utilisateurs actifs par mois, ×2 en un an</span></span>
+          <span><span data-i18n="fig4">Management de</span> <b>6</b> <span data-i18n="fig4b">personnes</span></span>
+        </div>
+      </div>
+    </article>
+    <article class="tl-item">
+      <div class="tl-when"><span class="years">2021 – 2023</span><span class="verb" data-i18n="xpRetail">Commerce</span></div>
+      <div class="tl-body">
+        <h2>Mytraffic</h2>
+        <ul class="roles"><li><b>Product Manager</b></li></ul>
+        <p data-i18n="mytrafficText"></p>
+        <div class="figs">
+          <span><b>1/3</b> <span data-i18n="fig5">du chiffre d'affaires</span></span>
+          <span><b data-i18n="fig6b">Mensuel → hebdo</b> <span data-i18n="fig6">fréquence d'usage</span></span>
+        </div>
+      </div>
+    </article>
+    <article class="tl-item">
+      <div class="tl-when"><span class="years">2018 – 2021</span><span class="verb" data-i18n="xpMobility">Mobilité</span></div>
+      <div class="tl-body">
+        <h2>Explain</h2>
+        <ul class="roles"><li><b data-i18n="explainJob">Consultante, modélisation des transports</b></li></ul>
+        <p data-i18n="explainText"></p>
+      </div>
+    </article>
+  </section>
+
+  <section class="features">
+    <h2 data-i18n="aiWorkTitle">L'IA, au travail</h2>
+    <div class="feature-grid">
+      <article><span class="dot" style="background: var(--green)"></span><h3 data-i18n="ai1t"></h3><p data-i18n="ai1d"></p></article>
+      <article><span class="dot" style="background: var(--orange)"></span><h3 data-i18n="ai2t"></h3><p data-i18n="ai2d"></p></article>
+      <article><span class="dot" style="background: var(--blue)"></span><h3 data-i18n="ai3t"></h3><p data-i18n="ai3d"></p></article>
     </div>
   </section>
 
   <section class="features">
-    <h2 data-i18n="aboutResultsTitle">Ce que ça a donné</h2>
-    <div class="feature-grid">
-      <article><span class="dot" style="background: var(--green)"></span><h3 data-i18n="a1t">Créées de toutes pièces</h3><p data-i18n="a1d">Idée, design, code et mise en ligne : chaque appli est pensée et construite de bout en bout, avec l'IA comme binôme.</p></article>
-      <article><span class="dot" style="background: var(--blue)"></span><h3 data-i18n="a2t">Gratuites</h3><p data-i18n="a2d">Ma Collection et Routine sont gratuites et ouvertes à tous. Mes Voyages arrive bientôt.</p></article>
-      <article><span class="dot" style="background: var(--orange)"></span><h3 data-i18n="a3t">Fini les petits abonnements</h3><p data-i18n="a3d">Elles remplacent aujourd'hui de petites applis que je payais, et font exactement ce dont j'ai besoin.</p></article>
-      <article><span class="dot" style="background: var(--red)"></span><h3 data-i18n="a4t">Apprendre en faisant</h3><p data-i18n="a4d">Une façon concrète de comprendre ce que l'IA change pour les équipes produit : en la pratiquant moi-même.</p></article>
+    <h2 data-i18n="eduTitle">Formation et recherche</h2>
+    <div class="edu">
+      <article class="edu-card school">
+        <span class="edu-tag" data-i18n="tagSchool">Formation</span>
+        <h3>ENTPE</h3>
+        <p class="edu-sub" data-i18n="schoolSub"></p>
+        <p data-i18n="schoolText"></p>
+      </article>
+      <article class="edu-card research">
+        <span class="edu-tag" data-i18n="tagResearch">Recherche</span>
+        <h3 data-i18n="paperTitle"></h3>
+        <p class="edu-sub" data-i18n="paperSub"></p>
+        <p data-i18n="paperText"></p>
+      </article>
     </div>
   </section>
 
   <section class="detail-cta about-cta">
     <h2 data-i18n="aboutCtaTitle">Envie d'en parler ?</h2>
-    <p data-i18n="aboutCtaText">Mon parcours complet est sur LinkedIn. N'hésite pas à m'y écrire.</p>
+    <p data-i18n="aboutCtaText"></p>
+    <p data-i18n="aboutCtaText2"></p>
     <div class="detail-actions">
       <a class="btn green" data-linkedin href="#" hidden><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.06c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.1V21h-4v-5.1c0-1.22-.02-2.79-1.7-2.79-1.7 0-1.96 1.33-1.96 2.7V21h-4z"/></svg><span data-i18n="linkedin">Me retrouver sur LinkedIn</span></a>
-      <a class="btn outline" href="./" data-i18n="seeApps">Voir mes applis</a>
+      <a class="btn outline" href="./#applis" data-i18n="seeApps">Voir mes applis</a>
     </div>
   </section>
 
   <footer class="foot">
     <span>© 2026 Marlène Ménoire</span>
-    <a href="./" data-i18n="back">← Toutes mes applis</a>
+    <a href="./" data-i18n="backHome">← Accueil</a>
     <a class="privacy" href="mentions.html" data-i18n="legalLink">Mentions et confidentialité</a>
   </footer>
 </div>
-<script src="site.js?v=19"></script>
+<script src="site.js?v=20"></script>
 </body>
 </html>

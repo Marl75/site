@@ -2,7 +2,7 @@
 
 **Live: [marlenemenoire.com](https://marlenemenoire.com/)** · French and English
 
-A small personal site presenting my apps, in English (default, at the root) and French (under `/fr/`):
+A small personal site: who I am as a product leader (home page and `about.html`, “My path”), and the apps I build, in English (default, at the root) and French (under `/fr/`):
 
 - **[My Collection](https://marl75.github.io/mes-livres/)**: books, films, shows and games in one place, with personalised recommendations by Claude
 - **[Routine](https://marl75.github.io/fitness-coach/)**: log workouts in one tap and see whether you keep it up (page `routine.html`, phone screenshots in `img/`)
