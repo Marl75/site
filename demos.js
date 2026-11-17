@@ -13,8 +13,9 @@
     fr: {
       search: 'Rechercher…', chips: ['Terminés 9', 'En cours 3', 'À découvrir 5'], book: 'Livre',
       addTitle: 'Ajouter un élément', typed: 'La Maison', add: 'Ajouter à ma collection',
-      recoTitle: 'Recos de Claude', why: 'Parce que tu as aimé La Maison vide et Atmosphere',
-      r1: 'Une saga familiale lumineuse, entre Rwanda et France.', r2: 'Une descente aux enfers savante et sombre.', r3: 'Un retour haletant à Panem.',
+      recoTitle: 'Recos de Claude', why: 'Parce que tu as aimé La Maison vide et Jacaranda',
+      r1: 'Un roman puissant sur la mémoire de la guerre civile en Algérie.', r2: 'Une saga familiale foisonnante, du Venezuela à la France.', r3: 'Le pouvoir russe vu de l’intérieur, par un conseiller de l’ombre.',
+      synced: 'Synchronisé depuis ton téléphone', side: ['Livres 9', 'Films 6', 'Séries 4', 'Jeux 2'], picks: '✦ 3 recos',
       upper: 'Haut du corps', today: 'Séance du jour', ex: 'Tirage vertical', last: 'dernière fois 3 × 10 · 40 kg',
       weight: 'POIDS', reps: 'RÉP.', addSet: '+ Série', finish: 'Terminer',
       next1: 'Rowing assis', next2: 'Développé militaire', planned: '3 séries prévues',
@@ -26,8 +27,9 @@
     en: {
       search: 'Search…', chips: ['Finished 9', 'In progress 3', 'To discover 5'], book: 'Book',
       addTitle: 'Add an item', typed: 'La Maison', add: 'Add to my collection',
-      recoTitle: 'Picks from Claude', why: 'Because you liked La Maison vide and Atmosphere',
-      r1: 'A luminous family saga between Rwanda and France.', r2: 'A dark, scholarly descent into hell.', r3: 'A gripping return to Panem.',
+      recoTitle: 'Picks from Claude', why: 'Because you liked La Maison vide and Jacaranda',
+      r1: 'A powerful novel about the memory of Algeria’s civil war.', r2: 'A sweeping family saga, from Venezuela to France.', r3: 'Russian power seen from inside, through a shadow adviser.',
+      synced: 'Synced from your phone', side: ['Books 9', 'Films 6', 'Shows 4', 'Games 2'], picks: '✦ 3 picks',
       upper: 'Upper body', today: "Today's workout", ex: 'Lat pulldown', last: 'last time 3 × 10 · 40 kg',
       weight: 'WEIGHT', reps: 'REPS', addSet: '+ Set', finish: 'Finish',
       next1: 'Seated cable row', next2: 'Shoulder press', planned: '3 sets planned',
@@ -39,15 +41,19 @@
   }[lang];
 
   // Livres sortis en 2024-2025, de styles différents (identifiants de couverture Open Library)
+  // Romans français et étrangers récents, couvertures vérifiées sur Open Library ; les recos suivent les livres aimés
   const B = {
     maison: { t: 'La Maison vide', a: 'Laurent Mauvignier', c: 15153530 },
-    onyx: { t: 'Onyx Storm', a: 'Rebecca Yarros', c: 14826089 },
-    careless: { t: 'Careless People', a: 'Sarah Wynn-Williams', c: 14852090 },
-    atmo: { t: 'Atmosphere', a: 'Taylor Jenkins Reid', c: 15098710 },
-    abund: { t: 'Abundance', a: 'Ezra Klein, Derek Thompson', c: 15123873 },
     jaca: { t: 'Jacaranda', a: 'Gaël Faye', c: 15174817 },
-    kata: { t: 'Katabasis', a: 'R. F. Kuang', c: 15117021 },
-    sunrise: { t: 'Sunrise on the Reaping', a: 'Suzanne Collins', c: 14847912 },
+    kolkhoze: { t: 'Kolkhoze', a: 'Emmanuel Carrère', c: 15200564 },
+    tigre: { t: 'Triste tigre', a: 'Neige Sinno', c: 14641340 },
+    inter: { t: 'Intermezzo', a: 'Sally Rooney', c: 15248784 },
+    anomalie: { t: 'L’Anomalie', a: 'Hervé Le Tellier', c: 10660381 },
+    adapter: { t: 'S’adapter', a: 'Clara Dupont-Monod', c: 12384869 },
+    perdre: { t: 'Se perdre', a: 'Annie Ernaux', c: 968944 },
+    houris: { t: 'Houris', a: 'Kamel Daoud', c: 15115330 },
+    jaguar: { t: 'Le Rêve du jaguar', a: 'Miguel Bonnefoy', c: 14831361 },
+    mage: { t: 'Le Mage du Kremlin', a: 'Giuliano da Empoli', c: 14658436 },
   };
   const item = (b, n, k) => `<div class="c-item${k ? ' new' : ''}"${k ? ` data-k="${k}"` : ''}>${img(b.c)}<div><b>${b.t}</b><em>${b.a} · ${T.book}</em>${stars(n)}</div></div>`;
   const reco = (b, txt, k) => `<div class="c-item" data-k="${k}">${img(b.c)}<div><b>${b.t}</b><em>${b.a}</em><span>${txt}</span></div></div>`;
@@ -58,7 +64,7 @@
         <div class="c-top"><span class="serif">${lang === 'fr' ? 'Ma Collection' : 'My Collection'}</span><span class="c-icons"><span data-k="spark">✦</span><span>▥</span></span></div>
         <div class="c-search">${T.search}</div>
         <div class="c-chips">${T.chips.map(c => `<span>${c}</span>`).join('')}</div>
-        <div class="c-list">${item(B.maison, 0, 'newitem')}${item(B.onyx, 4)}${item(B.careless, 5)}${item(B.atmo, 4)}${item(B.abund, 4)}</div>
+        <div class="c-list">${item(B.maison, 0, 'newitem')}${item(B.jaca, 5)}${item(B.kolkhoze, 4)}${item(B.tigre, 5)}${item(B.inter, 4)}</div>
       </div>
       <span class="fab" data-k="fab">+</span>
       <div class="sheet" data-k="sheet">
@@ -70,7 +76,7 @@
       <div class="reco" data-k="reco">
         <span class="serif">${T.recoTitle}</span>
         <span class="why">${T.why}</span>
-        ${reco(B.jaca, T.r1, 'r1')}${reco(B.kata, T.r2, 'r2')}${reco(B.sunrise, T.r3, 'r3')}
+        ${reco(B.houris, T.r1, 'r1')}${reco(B.jaguar, T.r2, 'r2')}${reco(B.mage, T.r3, 'r3')}
       </div>`,
     routine: `
       <div class="screen" data-k="s1">
@@ -230,6 +236,42 @@
     a.$('curve').classList.remove('drawn'); a.$('gain').textContent = '+0 kg'; a.$('tip').classList.remove('on');
   }, a => {
     ['row1', 'row2', 'row3'].forEach(k => { a.$(k).classList.add('done'); a.$(k).classList.remove('dim', 'active'); });
+  });
+
+  // ----- Ma Collection sur ordinateur : la même bibliothèque, qui se met à jour quand le téléphone ajoute et note un livre -----
+  // Écran passif : il suit les étapes du téléphone voisin (événements « demo-step » de la section .motion)
+  const card = (b, n, k) => `<div class="lp-card${k ? ' new' : ''}"${k ? ` data-k="${k}"` : ''}><img class="lp-cov" src="${cover(b.c)}" alt="" loading="lazy"><b>${b.t}</b><em>${b.a}</em>${stars(n)}</div>`;
+  const DESKTOP = `
+    <div class="lp-screen"><div class="scr lp-scr">
+      <div class="lp-bar"><i></i><i></i><i></i><span>marl75.github.io/mes-livres</span></div>
+      <div class="lp-app">
+        <div class="lp-side"><span class="serif">${lang === 'fr' ? 'Ma Collection' : 'My Collection'}</span>${T.side.map((s, i) => `<span${i ? '' : ' class="on"'}>${s}</span>`).join('')}</div>
+        <div class="lp-main">
+          <div class="lp-top"><div class="c-search">${T.search}</div><span class="lp-badge" data-k="badge">${T.picks}</span></div>
+          <div class="lp-grid">${card(B.maison, 0, 'dnew')}${card(B.jaca, 5)}${card(B.kolkhoze, 4)}${card(B.tigre, 5)}${card(B.inter, 4)}${card(B.anomalie, 4)}${card(B.adapter, 5)}${card(B.perdre, 4)}</div>
+        </div>
+      </div>
+      <div class="toast lp-toast" data-k="dtoast">✓ ${T.synced}</div>
+    </div></div>
+    <div class="lp-base"></div>`;
+  document.querySelectorAll('[data-demo-desktop]').forEach(d => {
+    d.innerHTML = DESKTOP;
+    const $ = k => d.querySelector(`[data-k="${k}"]`);
+    const stars = () => [...$('dnew').querySelectorAll('.stars i')];
+    let timers = [];
+    const later = (ms, fn) => timers.push(setTimeout(fn, ms));
+    const reset = () => { timers.forEach(clearTimeout); timers = []; $('dnew').classList.add('new'); stars().forEach(s => s.classList.remove('on')); $('dtoast').classList.remove('on'); $('badge').classList.remove('on'); };
+    if (reduce) { $('dnew').classList.remove('new'); stars().forEach(s => s.classList.add('on')); $('badge').classList.add('on'); return; }
+    (d.closest('.motion') || document).addEventListener('demo-step', e => {
+      if (e.detail === 1) reset();
+      if (e.detail === 2) {
+        // le livre vient d'être ajouté sur le téléphone : il arrive sur l'ordinateur, puis ses étoiles
+        later(300, () => { $('dnew').classList.remove('new'); $('dtoast').classList.add('on'); });
+        later(1500, () => stars().forEach((s, i) => setTimeout(() => s.classList.add('on'), i * 110)));
+        later(2600, () => $('dtoast').classList.remove('on'));
+      }
+      if (e.detail === 3) later(900, () => $('badge').classList.add('on'));
+    });
   });
 
   // ----- Branchement : on joue la démo de la carte ouverte seulement, et seulement quand elle est visible -----

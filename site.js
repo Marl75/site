@@ -436,6 +436,13 @@ document.querySelectorAll('.motion').forEach(m => {
   m.addEventListener('demo-step', e => light(e.detail));
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) m.classList.add('still');
 });
+// Ordinateur + téléphone (Ma Collection) : la composition suit la largeur de sa colonne
+document.querySelectorAll('.motion-devices').forEach(w => {
+  const g = w.querySelector('.devices');
+  const fit = () => g.style.setProperty('--g', Math.min(1, w.clientWidth / 620));
+  fit();
+  new ResizeObserver(fit).observe(w);
+});
 
 // ----- Mesure d'audience -----
 // Une page = son chemin sans paramètres (?lang=, ?ref=…) pour ne pas éclater les chiffres ;

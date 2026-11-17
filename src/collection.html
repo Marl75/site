@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=24">
+<link rel="stylesheet" href="style.css?v=25">
 </head>
 <body>
 <div class="page detail">
@@ -64,8 +64,12 @@
   </section>
 
   <!-- L'appli en mouvement : le téléphone rejoue l'appli (demos.js), les étapes s'allument au fil de l'animation -->
-  <section class="motion" style="--motion-c: var(--c-col)" aria-label="L'appli en mouvement" data-i18n-label="motionLabel">
-    <div class="motion-phone" data-demo="collection" aria-hidden="true"></div>
+  <section class="motion with-desktop" style="--motion-c: var(--c-col)" aria-label="L'appli en mouvement" data-i18n-label="motionLabel">
+    <!-- Ordinateur et téléphone : composition de taille fixe, mise à l'échelle de la colonne (site.js) -->
+    <div class="motion-devices"><div class="devices">
+      <div class="laptop" data-demo-desktop aria-hidden="true"></div>
+      <div class="motion-phone" data-demo="collection" aria-hidden="true"></div>
+    </div></div>
     <ol class="motion-steps">
       <li data-step="1"><span class="n">1</span><h3 data-i18n="colStep1t"></h3><p data-i18n="colStep1d"></p></li>
       <li data-step="2"><span class="n">2</span><h3 data-i18n="colStep2t"></h3><p data-i18n="colStep2d"></p></li>
@@ -102,7 +106,7 @@
     <a class="privacy" href="mentions.html" data-i18n="legalLink">Mentions et confidentialité</a>
   </footer>
 </div>
-<script src="site.js?v=22"></script>
-<script src="demos.js?v=2"></script>
+<script src="site.js?v=23"></script>
+<script src="demos.js?v=3"></script>
 </body>
 </html>
