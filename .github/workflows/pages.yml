@@ -11,4 +11,6 @@ jobs:
         with:
           node-version: 22
       - run: node tools/build.mjs
-      - run: git diff --exit-code || { echo "Pages pas à jour : lancer node tools/build.mjs et committer."; exit 1; }
+      # Bloc « | » : le texte du message contient « : », qui casserait le YAML sur une seule ligne
+      - run: |
+          git diff --exit-code || { echo "Pages pas à jour : lancer node tools/build.mjs et committer."; exit 1; }
