@@ -12,6 +12,7 @@ A small personal site presenting my apps, in English (default, at the root) and 
 
 - Plain HTML, CSS and JavaScript, no build step
 - Pages are written once, in French, in `src/`; `node tools/build.mjs` generates the English pages at the root and the French pages under `/fr/`, with their own titles, share previews, `hreflang` links and `sitemap.xml` (a GitHub Action checks they are up to date)
+- Home page: when an app card is open, a small phone replays the app (`demos.js`, French and English texts inside, book covers from Open Library); a still frame is shown to visitors who reduce motion
 - Texts in `site.js` (French and English): edit them there, then rebuild. The FR · EN switch links to the same page in the other language and remembers the choice; old `?lang=fr` links still work
 - Share images: `img/og-*.jpg`, made from `tools/og-card.html` with `sh tools/og.sh`
 - Legal notice and privacy: `mentions.html`
