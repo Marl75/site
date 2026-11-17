@@ -32,17 +32,19 @@
 <script>
   const q = new URLSearchParams(location.search), lang = q.get('lang') || 'en', page = q.get('page') || 'home';
   const T = {
-    en: { kicker: 'Hi, I’m Marlène', home: 'Everyday apps, <em>made with care.</em>', homeSub: 'Simple, bilingual web apps you can install on your phone.',
-      about: 'About me', aboutSub: 'A hands-on product leader, curious about how AI is changing the way we build products.', apps: ['My Collection', 'Routine', 'My Trips'] },
-    fr: { kicker: 'Bonjour, je suis Marlène', home: 'Des applis du quotidien, <em>faites avec soin.</em>', homeSub: 'Des applis web simples, bilingues, installables sur téléphone.',
-      about: 'Qui suis-je ?', aboutSub: 'Leader produit hands-on, curieuse de ce que l’IA change dans notre façon de créer des produits.', apps: ['Ma Collection', 'Routine', 'Mes Voyages'] },
+    en: { kicker: 'Marlène Ménoire · Product leader', home: 'AI made code fast. <em>My job: deciding what to build.</em>', homeSub: 'Eight years of data products for cities · Based in\u00a0Singapore',
+      about: 'My path', aboutSub: 'A transport engineer turned product leader: eight years turning data about cities into products.', path: ['Stonal', 'Mytraffic', 'Explain'] },
+    fr: { kicker: 'Marlène Ménoire · Product leader', home: 'L’IA accélère le code. <em>Mon métier&nbsp;: choisir quoi construire.</em>', homeSub: 'Huit ans de produits data pour la ville · À\u00a0Singapour',
+      about: 'Mon parcours', aboutSub: 'Ingénieure transport devenue product leader : huit ans à transformer des données sur la ville en produits.', path: ['Stonal', 'Mytraffic', 'Explain'] },
   }[lang];
   document.getElementById('kicker').textContent = T.kicker;
   document.getElementById('title').innerHTML = page === 'about' ? T.about : T.home;
   document.getElementById('sub').textContent = page === 'about' ? T.aboutSub : T.homeSub;
+  // Accueil : titre plus long, donc un peu plus petit ; à droite, le parcours en trois livres
+  if (page !== 'about') document.getElementById('title').style.fontSize = '64px';
   const v = document.getElementById('visual');
   if (page === 'about') v.innerHTML = '<img class="photo" src="../photo.jpg" alt="">';
-  else v.innerHTML = '<div class="pile">' + T.apps.map((a, i) => `<div class="book" style="background:${['#0d7a57', '#c2570b', '#2a4fa0'][i]};margin-left:${[12, 26, 0][i]}px">${a}</div>`).join('') + '<div class="shelf"></div></div>';
+  else v.innerHTML = '<div class="pile">' + T.path.map((a, i) => `<div class="book" style="background:${['#0d7a57', '#c2570b', '#2a4fa0'][i]};margin-left:${[12, 26, 0][i]}px">${a}</div>`).join('') + '<div class="shelf"></div></div>';
 </script>
 </body>
 </html>

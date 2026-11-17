@@ -21,10 +21,10 @@ const APP_URLS = new Function(`${pre}\nreturn APP_URLS;`)();
 const META = {
   index: {
     type: 'website',
-    fr: { desc: 'Des applis du quotidien, faites avec soin : Ma Collection pour suivre ses livres, films, séries et jeux, Routine pour ses séances de sport, et bientôt Mes Voyages.',
-      ogTitle: 'Marlène Ménoire · Des applis du quotidien', ogDesc: 'Des applis web simples, bilingues et installables sur téléphone : Ma Collection, pour ses livres, films, séries et jeux, et Routine, pour ses séances de sport.' },
-    en: { desc: 'Everyday apps, made with care: My Collection to track the books, films, shows and games people recommend, Routine for your workouts, and soon My Trips.',
-      ogTitle: 'Marlène Ménoire · Everyday apps', ogDesc: 'Simple, bilingual web apps you can install on your phone: My Collection for books, films, shows and games, and Routine for your workouts.' },
+    fr: { desc: 'Marlène Ménoire, product leader depuis 8 ans sur des produits data pour la ville (mobilité, commerce, bâtiment), à Singapour. Et ses applis, conçues et codées seule avec Claude.',
+      ogTitle: 'Marlène Ménoire · Product leader', ogDesc: 'L’IA accélère le code. Mon métier : choisir quoi construire. Product leader depuis 8 ans sur des produits data pour la ville, à Singapour.' },
+    en: { desc: 'Marlène Ménoire, a product leader for 8 years on data products for cities (mobility, retail, buildings), based in Singapore. Plus her own apps, designed and coded with Claude.',
+      ogTitle: 'Marlène Ménoire · Product leader', ogDesc: 'AI made code fast. My job: deciding what to build. A product leader for 8 years on data products for cities, based in Singapore.' },
     image: lang => `${SITE}/img/og-${lang}.jpg`,
   },
   collection: {
@@ -45,10 +45,10 @@ const META = {
   },
   about: {
     type: 'profile',
-    fr: { desc: 'Leader produit hands-on, j’ai creusé l’usage de l’IA sur mon temps personnel jusqu’à créer mes propres applis, gratuites.',
-      ogTitle: 'Qui suis-je ? · Marlène Ménoire', ogDesc: 'Leader produit hands-on, curieuse de ce que l’IA change dans notre façon de créer des produits.' },
-    en: { desc: 'A hands-on product leader, I explored AI in practice in my own time, all the way to building my own free apps.',
-      ogTitle: 'About me · Marlène Ménoire', ogDesc: 'A hands-on product leader, curious about how AI is changing the way we build products.' },
+    fr: { desc: 'Le parcours de Marlène Ménoire : ingénieure transport (ENTPE), puis product leader chez Mytraffic et Stonal. Huit ans de produits data pour la ville.',
+      ogTitle: 'Mon parcours · Marlène Ménoire', ogDesc: 'Ingénieure transport devenue product leader : huit ans à transformer des données sur la ville en produits qui aident à décider.' },
+    en: { desc: 'The path of Marlène Ménoire: transport engineer (ENTPE), then product leader at Mytraffic and Stonal. Eight years of data products for cities.',
+      ogTitle: 'My path · Marlène Ménoire', ogDesc: 'A transport engineer turned product leader: eight years turning data about cities into products that help people decide.' },
     image: lang => `${SITE}/img/og-about-${lang}.jpg`,
   },
   mentions: {

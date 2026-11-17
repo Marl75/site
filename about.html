@@ -4,8 +4,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About me · Marlène Ménoire</title>
-<meta name="description" content="A hands-on product leader, I explored AI in practice in my own time, all the way to building my own free apps.">
+<title>My path · Marlène Ménoire</title>
+<meta name="description" content="The path of Marlène Ménoire: transport engineer (ENTPE), then product leader at Mytraffic and Stonal. Eight years of data products for cities.">
 <meta name="theme-color" content="#0f0e13">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -22,20 +22,20 @@
 <link rel="alternate" hreflang="en" href="https://marlenemenoire.com/about.html">
 <link rel="alternate" hreflang="fr" href="https://marlenemenoire.com/fr/about.html">
 <link rel="alternate" hreflang="x-default" href="https://marlenemenoire.com/about.html">
-<meta property="og:title" content="About me · Marlène Ménoire">
-<meta property="og:description" content="A hands-on product leader, curious about how AI is changing the way we build products.">
+<meta property="og:title" content="My path · Marlène Ménoire">
+<meta property="og:description" content="A transport engineer turned product leader: eight years turning data about cities into products that help people decide.">
 <meta property="og:image" content="https://marlenemenoire.com/img/og-about-en.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=21">
+<link rel="stylesheet" href="style.css?v=22">
 </head>
 <body>
 <div class="page detail">
 
   <nav class="top">
-    <a class="back" href="./" data-i18n="back">← All my apps</a>
+    <a class="back" href="./" data-i18n="backHome">← Home</a>
     <div class="prefs">
       <span class="lang">
         <a data-lang="fr" lang="fr" href="/fr/about.html" data-i18n-label="langFrAria" aria-label="Version française">FR</a> ·
@@ -51,50 +51,98 @@
   <header class="detail-hero about-hero">
     <img class="about-photo" src="photo.jpg" alt="Marlène Ménoire" width="220" height="220" onerror="this.remove()">
     <span class="kicker" data-i18n="kicker">Hi, I'm Marlène</span>
-    <h1 data-i18n="aboutName">About me</h1>
-    <p class="detail-tagline" data-i18n="aboutTagline">A hands-on product leader, curious about how AI is changing the way we build products.</p>
+    <h1 data-i18n="aboutName">My path</h1>
+    <p class="detail-tagline" data-i18n="aboutTagline">A transport engineer turned product leader: eight years turning data about cities into products that help people decide.</p>
     <div class="detail-actions">
       <a class="btn green" data-linkedin href="#" hidden><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.06c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.1V21h-4v-5.1c0-1.22-.02-2.79-1.7-2.79-1.7 0-1.96 1.33-1.96 2.7V21h-4z"/></svg><span data-i18n="linkedin">Find me on LinkedIn</span></a>
-      <a class="btn outline" href="./" data-i18n="seeApps">See my apps</a>
+      <a class="btn outline" href="./#applis" data-i18n="seeApps">See my apps</a>
     </div>
   </header>
 
-  <section class="story">
-    <div class="story-block">
-      <span class="kicker" data-i18n="aboutKicker1">What I do</span>
-      <p class="story-text" data-i18n="about1">I lead product, and I like staying close to the ground: listening to users to truly understand their needs, making the calls, and getting my hands into the product rather than watching it from afar.</p>
-    </div>
-    <div class="story-block">
-      <span class="kicker" data-i18n="aboutKicker2">My playground</span>
-      <p class="story-text" data-i18n="about2">In my own time, I wanted to dig into using AI. From idea to launch, I ended up building my own apps from scratch.</p>
+  <!-- Expériences, du plus récent au plus ancien -->
+  <section class="timeline" aria-label="Experience" data-i18n-label="xpLabel">
+    <article class="tl-item">
+      <div class="tl-when"><span class="years" data-i18n="stonalYears">2023 – now</span><span class="verb" data-i18n="xpBuildings">Buildings</span></div>
+      <div class="tl-body">
+        <h2>Stonal</h2>
+        <ul class="roles">
+          <li><b>Chief Product Officer</b><span class="when" data-i18n="cpoWhen">since June 2026</span><span class="note" data-i18n="cpoNote">On assignment for Stonal, employed by Freelance.com</span></li>
+          <li><b>Head of Product</b><span class="when" data-i18n="hopWhen">Jul 2024 – Feb 2026</span></li>
+          <li><b>Product Manager</b><span class="when" data-i18n="pmWhen">Jul 2023 – Jul 2024</span></li>
+        </ul>
+        <p data-i18n="stonalText">A building data platform, used mostly by social housing providers to track energy performance and plan renovations. I led the move from bespoke services to a single product, and built the product team.</p>
+        <div class="figs">
+          <span><b>200M+ m²</b> <span data-i18n="fig1">in Europe</span></span>
+          <span><b>NPS −11 → +23</b> <span data-i18n="fig2">in 3 quarters</span></span>
+          <span><b>×2</b> <span data-i18n="fig3">monthly active users in a year</span></span>
+          <span><b>6</b> <span data-i18n="fig4">people in the team</span></span>
+        </div>
+      </div>
+    </article>
+    <article class="tl-item">
+      <div class="tl-when"><span class="years">2021 – 2023</span><span class="verb" data-i18n="xpRetail">Retail</span></div>
+      <div class="tl-body">
+        <h2>Mytraffic</h2>
+        <ul class="roles"><li><b>Product Manager</b></li></ul>
+        <p data-i18n="mytrafficText">Footfall and traffic data to help retailers choose where to open. I redesigned the experience around what their expansion teams needed to get done.</p>
+        <div class="figs">
+          <span><b>1/3</b> <span data-i18n="fig5">of company revenue</span></span>
+          <span><b data-i18n="fig6b">Monthly → weekly</b> <span data-i18n="fig6">usage</span></span>
+        </div>
+      </div>
+    </article>
+    <article class="tl-item">
+      <div class="tl-when"><span class="years">2018 – 2021</span><span class="verb" data-i18n="xpMobility">Mobility</span></div>
+      <div class="tl-body">
+        <h2>Explain</h2>
+        <ul class="roles"><li><b data-i18n="explainJob">Consultant, transport modelling</b></li></ul>
+        <p data-i18n="explainText">Multimodal transport models for public authorities: the Grand Paris Express, national road traffic forecasts, a regional rail redesign.</p>
+      </div>
+    </article>
+  </section>
+
+  <section class="features">
+    <h2 data-i18n="aiWorkTitle">AI, at work</h2>
+    <div class="feature-grid">
+      <article><span class="dot" style="background: var(--green)"></span><h3 data-i18n="ai1t">A knowledge base generated from the code</h3><p data-i18n="ai1d">The shared reference for the company and its AI tools. It writes the user guide and release notes on its own.</p></article>
+      <article><span class="dot" style="background: var(--orange)"></span><h3 data-i18n="ai2t">Customer feedback, pre-analysed</h3><p data-i18n="ai2d">Consolidated for the teams, with simple cases handled automatically. In progress.</p></article>
+      <article><span class="dot" style="background: var(--blue)"></span><h3 data-i18n="ai3t">And my own apps</h3><p data-i18n="ai3d">My Collection and Routine, designed and coded on my own with Claude, in my own time.</p></article>
     </div>
   </section>
 
   <section class="features">
-    <h2 data-i18n="aboutResultsTitle">What came out of it</h2>
-    <div class="feature-grid">
-      <article><span class="dot" style="background: var(--green)"></span><h3 data-i18n="a1t">Built from scratch</h3><p data-i18n="a1d">Idea, design, code and launch: every app is thought through and built end to end, with AI as my sidekick.</p></article>
-      <article><span class="dot" style="background: var(--blue)"></span><h3 data-i18n="a2t">Free</h3><p data-i18n="a2d">My Collection and Routine are free and open to everyone. My Trips is coming soon.</p></article>
-      <article><span class="dot" style="background: var(--orange)"></span><h3 data-i18n="a3t">No more small subscriptions</h3><p data-i18n="a3d">They now replace small apps I used to pay for, and do exactly what I need.</p></article>
-      <article><span class="dot" style="background: var(--red)"></span><h3 data-i18n="a4t">Learning by doing</h3><p data-i18n="a4d">A hands-on way to understand what AI changes for product teams: by using it myself.</p></article>
+    <h2 data-i18n="eduTitle">Education and research</h2>
+    <div class="edu">
+      <article class="edu-card school">
+        <span class="edu-tag" data-i18n="tagSchool">Education</span>
+        <h3>ENTPE</h3>
+        <p class="edu-sub" data-i18n="schoolSub">Engineering school, Lyon · 2015 – 2018</p>
+        <p data-i18n="schoolText">MEng in transport and mobility engineering. Where I learned to model how people move.</p>
+      </article>
+      <article class="edu-card research">
+        <span class="edu-tag" data-i18n="tagResearch">Research</span>
+        <h3 data-i18n="paperTitle">Predicting carsharing demand in Montreal</h3>
+        <p class="edu-sub" data-i18n="paperSub">Peer-reviewed paper, lead author · Transportation Research Procedia, Elsevier, 2020</p>
+        <p data-i18n="paperText">Written during a research internship at Polytechnique Montréal, with data from Communauto. Beyond the number of cars, walkability, demographics and bus access all matter.</p>
+      </article>
     </div>
   </section>
 
   <section class="detail-cta about-cta">
     <h2 data-i18n="aboutCtaTitle">Want to talk?</h2>
-    <p data-i18n="aboutCtaText">My full background is on LinkedIn. Feel free to message me there.</p>
+    <p data-i18n="aboutCtaText">I live in Singapore: happy to grab a coffee, especially to talk product and AI. My full background is on LinkedIn.</p>
     <div class="detail-actions">
       <a class="btn green" data-linkedin href="#" hidden><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.06c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.1V21h-4v-5.1c0-1.22-.02-2.79-1.7-2.79-1.7 0-1.96 1.33-1.96 2.7V21h-4z"/></svg><span data-i18n="linkedin">Find me on LinkedIn</span></a>
-      <a class="btn outline" href="./" data-i18n="seeApps">See my apps</a>
+      <a class="btn outline" href="./#applis" data-i18n="seeApps">See my apps</a>
     </div>
   </section>
 
   <footer class="foot">
     <span>© 2026 Marlène Ménoire</span>
-    <a href="./" data-i18n="back">← All my apps</a>
+    <a href="./" data-i18n="backHome">← Home</a>
     <a class="privacy" href="mentions.html" data-i18n="legalLink">Legal notice and privacy</a>
   </footer>
 </div>
-<script src="site.js?v=19"></script>
+<script src="site.js?v=20"></script>
 </body>
 </html>
