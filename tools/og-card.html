@@ -44,7 +44,7 @@
   if (page !== 'about') document.getElementById('title').style.fontSize = '64px';
   const v = document.getElementById('visual');
   if (page === 'about') v.innerHTML = '<img class="photo" src="../photo.jpg" alt="">';
-  else v.innerHTML = '<div class="pile">' + T.path.map((a, i) => `<div class="book" style="background:${['#6d4bb0', '#8a6a00', '#0f7480'][i]};margin-left:${[12, 26, 0][i]}px">${a}</div>`).join('') + '<div class="shelf"></div></div>';
+  else v.innerHTML = '<div class="pile">' + T.path.map((a, i) => `<div class="book" style="background:${['#8f7228', '#7c6222', '#69521c'][i]};margin-left:${[12, 26, 0][i]}px">${a}</div>`).join('') + '<div class="shelf"></div></div>';
 </script>
 </body>
 </html>
