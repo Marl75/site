@@ -663,3 +663,17 @@ h1.long em { display: block; }
 .section-intro { margin-top: 10px; font-size: 17px; color: var(--text); max-width: 640px; }
 .ai-grid .dot { background: var(--gold); }
 .ai-grid article { flex-basis: 340px; }
+
+/* ----- Mon parcours : en-tête sobre, dans la teinte du parcours (le rouge était celui de l'ancien « Qui suis-je ? ») ----- */
+.about-hero { background: var(--hover); color: var(--ink); box-shadow: inset -18px 0 0 color-mix(in srgb, var(--gold) 22%, transparent); }
+.about-hero .kicker { color: var(--gold); }
+.about-hero .detail-tagline { color: var(--text); }
+.about-photo { border-color: var(--gold); box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18); }
+.about-hero .btn.green, .detail-cta.about-cta .btn.green { background: var(--ink); color: var(--on-ink); }
+.about-hero .btn.outline { color: var(--ink); }
+/* Liens en bas des cartes (guide, article) : seul le texte est souligné */
+.card-link { align-self: flex-start; display: inline-flex; gap: 8px; align-items: center; margin-top: 4px; min-height: 36px; font-weight: 700; font-size: 14px; color: var(--ink); text-decoration: none; }
+.card-link span:first-child { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+.card-link .arrow { display: inline-block; transition: transform .2s; }
+.card-link:hover .arrow { transform: translateX(3px); }
+.ai-grid article, .edu-card { display: flex; flex-direction: column; }
