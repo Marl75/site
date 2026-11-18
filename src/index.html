@@ -6,7 +6,7 @@
 <title>Marlène Ménoire · Des applis du quotidien</title>
 <meta name="description" content="Des applis du quotidien, faites avec soin : Ma Collection pour suivre ses livres, films, séries et jeux, Routine pour ses séances de sport, et bientôt Mes Voyages.">
 <meta name="theme-color" content="#0f0e13">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" href="/favicon.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <script>
   // Thème choisi auparavant, appliqué avant l'affichage pour éviter un flash de couleur
@@ -23,7 +23,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=25">
+<link rel="stylesheet" href="style.css?v=26">
 </head>
 <body>
 <div class="page">
@@ -44,12 +44,12 @@
 
   <main class="hero-b">
     <div class="intro">
-      <h1 class="long"><span data-i18n="title1">L'IA accélère le code.</span> <em data-i18n="title2">Mon métier : choisir quoi construire.</em></h1>
+      <h1 class="long"><span data-i18n="title1">L'IA accélère les développements.</span> <em data-i18n="title2">Mon métier : choisir quoi construire.</em></h1>
       <p class="bio" data-i18n="bio"></p>
       <p class="bio" data-i18n="bio2"></p>
       <p class="bio" data-i18n="bio3"></p>
       <div class="hero-links">
-        <a class="about-link" href="about.html"><img src="photo.jpg" alt="" width="28" height="28"><span data-i18n="aboutName">Mon parcours</span></a>
+        <a class="about-link" href="about.html"><span data-i18n="aboutName">Mon parcours</span><span class="arrow" aria-hidden="true">→</span></a>
         <a class="linkedin" data-linkedin href="#" hidden>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.06c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.1V21h-4v-5.1c0-1.22-.02-2.79-1.7-2.79-1.7 0-1.96 1.33-1.96 2.7V21h-4z"/></svg>
           <span data-i18n="linkedin">Me retrouver sur LinkedIn</span>
@@ -57,9 +57,11 @@
       </div>
     </div>
 
-    <!-- Parcours en fil, du plus récent au plus ancien : un trait qui se dessine, un point par expérience -->
+    <!-- Parcours : ma photo en haut, puis le fil du plus récent au plus ancien (le trait part de la photo) -->
+    <div class="path">
+    <img class="path-photo" src="photo.jpg" alt="Marlène Ménoire" width="104" height="104">
     <ol class="fil" aria-label="Mon parcours" data-i18n-label="pathLabel">
-      <li class="fil-item open now" style="--c: var(--c-col); --i: 0">
+      <li class="fil-item open now" style="--c: var(--x-stonal); --i: 0">
         <span class="fil-dot" aria-hidden="true"></span>
         <button class="fil-head" type="button" aria-expanded="true">
           <span class="fil-years" data-i18n="stonalYears">2023 – auj.</span>
@@ -73,7 +75,7 @@
           </ul>
         </div></div>
       </li>
-      <li class="fil-item" style="--c: var(--c-rou); --i: 1">
+      <li class="fil-item" style="--c: var(--x-mytraffic); --i: 1">
         <span class="fil-dot" aria-hidden="true"></span>
         <button class="fil-head" type="button" aria-expanded="false">
           <span class="fil-years">2021 – 2023</span>
@@ -87,7 +89,7 @@
           </ul>
         </div></div>
       </li>
-      <li class="fil-item" style="--c: var(--c-trip); --i: 2">
+      <li class="fil-item" style="--c: var(--x-explain); --i: 2">
         <span class="fil-dot" aria-hidden="true"></span>
         <button class="fil-head" type="button" aria-expanded="false">
           <span class="fil-years">2018 – 2021</span>
@@ -103,6 +105,7 @@
       </li>
       <li class="fil-start" style="--i: 3"><span class="fil-dot" aria-hidden="true"></span><b>ENTPE</b><span data-i18n="filStart">, école d'ingénieurs · 2015 – 2018</span></li>
     </ol>
+    </div>
   </main>
 
   <!-- Les applis, sous le parcours -->
@@ -111,6 +114,7 @@
       <span class="kicker" data-i18n="sideKicker">Sur mon temps libre</span>
       <h2><span data-i18n="sideT1">L'IA dans les mains,</span> <em data-i18n="sideT2">de l'idée à l'appli.</em></h2>
       <p data-i18n="sideText">Des applis nées de mes propres besoins, conçues et codées seule avec Claude. Gratuites, à essayer sans rien installer.</p>
+      <p data-i18n="sideCurious"></p>
     </div>
 
     <section class="pile" aria-label="Mes applis" data-i18n-label="appsLabel">
@@ -179,7 +183,7 @@
     <a class="privacy" href="mentions.html" data-i18n="legalLink">Mentions et confidentialité</a>
   </footer>
 </div>
-<script src="site.js?v=23"></script>
+<script src="site.js?v=24"></script>
 <script src="demos.js?v=3"></script>
 </body>
 </html>

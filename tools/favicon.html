@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<!-- Icône d'onglet et icône d'écran d'accueil, faites à partir de photo.jpg par tools/favicon.sh.
+     favicon.html?size=64&round=1 : photo ronde sur fond transparent ; ?size=180 : carré (iOS arrondit lui-même) -->
+<html><head><meta charset="UTF-8">
+<style>
+  html, body { margin: 0; background: transparent; overflow: hidden; }
+  img { display: block; object-fit: cover; object-position: 50% 30%; }
+</style></head>
+<body><img src="../photo.jpg" alt="">
+<script>
+  const q = new URLSearchParams(location.search), s = Number(q.get('size') || 64), round = q.get('round') === '1';
+  const img = document.querySelector('img');
+  // léger zoom sur le visage pour qu'il reste lisible en 16 px
+  img.style.width = img.style.height = s + 'px';
+  img.style.transform = 'scale(1.25)'; img.style.transformOrigin = '50% 32%';
+  document.body.style.width = document.body.style.height = s + 'px';
+  if (round) { document.body.style.borderRadius = '50%'; document.body.style.overflow = 'hidden'; }
+</script>
+</body></html>

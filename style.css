@@ -18,6 +18,10 @@
   --routine: var(--orange);
   --red: #a8284a;     /* framboise : Qui suis-je ? */
   --focus: #1f5fd1;   /* contour du clavier, distinct du bleu nuit pour rester visible */
+  /* Parcours (Stonal, Mytraffic, Explain) : une famille à part, pour ne pas se confondre avec les applis */
+  --x-stonal: #6d4bb0;     /* violet */
+  --x-mytraffic: #8a6a00;  /* ocre */
+  --x-explain: #0f7480;    /* pétrole */
 }
 
 /* Mode sombre : choisi avec le bouton, ou celui du système si rien n'a été choisi */
@@ -32,6 +36,9 @@
   --shelf: #e3cf9f;
   --on-ink: #0f0e13;
   --focus: #8fb0ff;
+  --x-stonal: #b9a0f0;
+  --x-mytraffic: #e2c15a;
+  --x-explain: #6ccdd6;
   color-scheme: dark;
 }
 @media (prefers-color-scheme: dark) {
@@ -46,6 +53,9 @@
     --shelf: #e3cf9f;
     --on-ink: #0f0e13;
     --focus: #8fb0ff;
+    --x-stonal: #b9a0f0;
+    --x-mytraffic: #e2c15a;
+    --x-explain: #6ccdd6;
     color-scheme: dark;
   }
 }
@@ -497,13 +507,16 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--focus); outline
 
 /* ----- Accueil : présentation et parcours en haut, applis dessous ----- */
 .hero-b { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 56px; align-items: center; }
-h1.long { font-size: clamp(40px, 5.6vw, 68px); }
+h1.long { font-size: clamp(38px, 5vw, 60px); }
 /* Parcours en fil : un trait vertical qui se dessine au chargement, un point par expérience,
    le plus récent en haut (halo qui pulse). Une seule étape ouverte à la fois (site.js). */
-.fil { list-style: none; position: relative; display: flex; flex-direction: column; gap: 4px; padding-left: 36px; }
-.fil::before, .fil::after { content: ""; position: absolute; left: 11px; top: 18px; bottom: 18px; width: 2px; border-radius: 2px; }
+/* La photo ouvre le fil : le trait part de son centre (52 px) */
+.path { display: flex; flex-direction: column; }
+.path-photo { width: 104px; height: 104px; border-radius: 50%; object-fit: cover; border: 3px solid var(--x-stonal); position: relative; z-index: 1; animation: fil-pop .45s both; }
+.fil { list-style: none; position: relative; display: flex; flex-direction: column; gap: 4px; padding-left: 76px; margin-top: 6px; }
+.fil::before, .fil::after { content: ""; position: absolute; left: 51px; top: -6px; bottom: 18px; width: 2px; border-radius: 2px; }
 .fil::before { background: var(--line); }
-.fil::after { background: linear-gradient(var(--c-col), var(--c-col) 30%, var(--c-rou) 45%, var(--c-rou) 60%, var(--c-trip) 72%, var(--c-trip) 85%, var(--muted)); transform-origin: top; animation: fil-draw 1.5s cubic-bezier(.6, 0, .2, 1) both; }
+.fil::after { background: linear-gradient(var(--x-stonal), var(--x-stonal) 30%, var(--x-mytraffic) 45%, var(--x-mytraffic) 60%, var(--x-explain) 72%, var(--x-explain) 85%, var(--muted)); transform-origin: top; animation: fil-draw 1.5s cubic-bezier(.6, 0, .2, 1) both; }
 @keyframes fil-draw { from { transform: scaleY(0); } }
 @keyframes fil-pop { from { transform: scale(0); } }
 @keyframes fil-pulse { 0% { transform: scale(.7); opacity: .9; } 100% { transform: scale(1.9); opacity: 0; } }
@@ -528,7 +541,7 @@ h1.long { font-size: clamp(40px, 5.6vw, 68px); }
 .fil-start .fil-dot { --c: var(--muted); width: 10px; height: 10px; left: -29px; top: 11px; border-width: 2px; }
 .fil-start b { color: var(--text); }
 @media (prefers-reduced-motion: reduce) {
-  .fil::after, .fil-dot, .fil-item.now .fil-dot::after { animation: none; }
+  .fil::after, .fil-dot, .fil-item.now .fil-dot::after, .path-photo { animation: none; }
   .fil-head, .fil-dot, .fil-more { transition: none; }
 }
 /* Les applis, sous le parcours */
@@ -559,8 +572,8 @@ h1.long { font-size: clamp(40px, 5.6vw, 68px); }
 .figs > span { font-size: 14px; padding: 6px 12px; border-radius: 8px; background: var(--hover); color: var(--text); }
 .figs b { color: var(--ink); font-variant-numeric: tabular-nums; }
 .edu { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-top: 28px; }
-.edu-card { --c: var(--c-trip); display: flex; flex-direction: column; gap: 8px; padding: 24px; border: 1.5px solid var(--c); border-radius: 12px; background: color-mix(in srgb, var(--c) var(--tint), var(--bg)); }
-.edu-card.research { --c: var(--c-col); }
+.edu-card { --c: var(--x-explain); display: flex; flex-direction: column; gap: 8px; padding: 24px; border: 1.5px solid var(--c); border-radius: 12px; background: color-mix(in srgb, var(--c) var(--tint), var(--bg)); }
+.edu-card.research { --c: var(--x-stonal); }
 .edu-tag { align-self: flex-start; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--c); }
 .edu-card h3 { font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; font-size: 28px; line-height: 1.15; }
 .edu-sub { font-size: 14px; font-weight: 600; color: var(--muted); }
@@ -630,3 +643,10 @@ h1.long { font-size: clamp(40px, 5.6vw, 68px); }
 .lp-toast { left: auto; right: 10px; bottom: 10px; width: auto; }
 @media (max-width: 900px) { .motion.with-desktop { grid-template-columns: 1fr; justify-items: stretch; } }
 @media (prefers-reduced-motion: reduce) { .lp-card { animation: none; } .lp-badge { transition: none; } }
+
+/* Accueil : « Mon parcours » sans photo (elle ouvre le fil), avec une flèche qui glisse au survol */
+.about-link .arrow { transition: transform .2s; }
+.about-link:hover .arrow { transform: translateX(3px); }
+.about-link:not(:has(img)) { padding-left: 20px; }
+/* Titre : « Mon métier : choisir quoi construire » sur sa propre ligne */
+h1.long em { display: block; }

@@ -32,9 +32,9 @@
 <script>
   const q = new URLSearchParams(location.search), lang = q.get('lang') || 'en', page = q.get('page') || 'home';
   const T = {
-    en: { kicker: 'Marlène Ménoire · Product leader', home: 'AI made code fast. <em>My job: deciding what to build.</em>', homeSub: 'Eight years of data products for cities · Based in\u00a0Singapore',
+    en: { kicker: 'Marlène Ménoire · Product leader', home: 'AI speeds up development. <em>My job: deciding what to build.</em>', homeSub: 'Eight years of data products for cities · Based in\u00a0Singapore',
       about: 'My path', aboutSub: 'A transport engineer turned product leader, with eight years turning data about cities into products.', path: ['Stonal', 'Mytraffic', 'Explain'] },
-    fr: { kicker: 'Marlène Ménoire · Product leader', home: 'L’IA accélère le code. <em>Mon métier&nbsp;: choisir quoi construire.</em>', homeSub: 'Huit ans de produits data pour la ville · À\u00a0Singapour',
+    fr: { kicker: 'Marlène Ménoire · Product leader', home: 'L’IA accélère les développements. <em>Mon métier&nbsp;: choisir quoi construire.</em>', homeSub: 'Huit ans de produits data pour la ville · À\u00a0Singapour',
       about: 'Mon parcours', aboutSub: 'Ingénieure transport devenue product leader, avec huit ans à transformer des données sur la ville en produits.', path: ['Stonal', 'Mytraffic', 'Explain'] },
   }[lang];
   document.getElementById('kicker').textContent = T.kicker;
@@ -44,7 +44,7 @@
   if (page !== 'about') document.getElementById('title').style.fontSize = '64px';
   const v = document.getElementById('visual');
   if (page === 'about') v.innerHTML = '<img class="photo" src="../photo.jpg" alt="">';
-  else v.innerHTML = '<div class="pile">' + T.path.map((a, i) => `<div class="book" style="background:${['#0d7a57', '#c2570b', '#2a4fa0'][i]};margin-left:${[12, 26, 0][i]}px">${a}</div>`).join('') + '<div class="shelf"></div></div>';
+  else v.innerHTML = '<div class="pile">' + T.path.map((a, i) => `<div class="book" style="background:${['#6d4bb0', '#8a6a00', '#0f7480'][i]};margin-left:${[12, 26, 0][i]}px">${a}</div>`).join('') + '<div class="shelf"></div></div>';
 </script>
 </body>
 </html>
