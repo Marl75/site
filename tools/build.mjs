@@ -22,9 +22,9 @@ const META = {
   index: {
     type: 'website',
     fr: { desc: 'Marlène Ménoire, product leader depuis 8 ans sur des produits data pour la ville (mobilité, commerce, bâtiment), à Singapour. Et ses applis, conçues et codées seule avec Claude.',
-      ogTitle: 'Marlène Ménoire · Product leader', ogDesc: 'L’IA accélère le code. Mon métier : choisir quoi construire. Product leader depuis 8 ans sur des produits data pour la ville, à Singapour.' },
+      ogTitle: 'Marlène Ménoire · Product leader', ogDesc: 'L’IA accélère les développements. Mon métier : choisir quoi construire. Product leader depuis 8 ans sur des produits data pour la ville, à Singapour.' },
     en: { desc: 'Marlène Ménoire, a product leader for 8 years on data products for cities (mobility, retail, buildings), based in Singapore. Plus her own apps, designed and coded with Claude.',
-      ogTitle: 'Marlène Ménoire · Product leader', ogDesc: 'AI made code fast. My job: deciding what to build. A product leader for 8 years on data products for cities, based in Singapore.' },
+      ogTitle: 'Marlène Ménoire · Product leader', ogDesc: 'AI speeds up development. My job: deciding what to build. A product leader for 8 years on data products for cities, based in Singapore.' },
     image: lang => `${SITE}/img/og-${lang}.jpg`,
   },
   collection: {
