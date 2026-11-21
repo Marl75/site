@@ -772,9 +772,6 @@ h1.long > span, .side h2 > span { color: var(--muted); }
 }
 .pile .app-card.open { padding: 24px 36px 24px 24px; box-shadow: inset -8px 0 0 var(--c); }
 .pile .app-card { transition: transform 0.2s cubic-bezier(.2, .8, .2, 1); }
-.collection { margin-left: 8px; }
-.routine { margin-left: 24px; }
-.voyages { margin-right: 32px; }
 /* Titre et icône à taille fixe : seule la hauteur du contenu s'ouvre, sans faire grossir le texte */
 .app-card h2, .app-card.open h2 { font-size: 30px; transition: none; }
 .app-card .book-head svg, .app-card.open .book-head svg { width: 40px; height: 40px; transition: none; }
@@ -804,3 +801,53 @@ h1.long > span, .side h2 > span { color: var(--muted); }
 /* Pied de page sur la grille de 4 px */
 .foot { padding-top: 24px; }
 .btn:focus-visible, .linkedin:focus-visible, a:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+
+/* Accueil : les trois livres alignés sur la même largeur */
+.pile .collection, .pile .routine, .pile .voyages { margin-left: 0; margin-right: 0; }
+
+/* ----- Pages Ma Collection et Routine : en-tête neutre comme Mon parcours, couleur de l'appli sur la tranche ----- */
+.app-page .detail-hero, .app-page .routine-hero {
+  background: var(--hover); color: var(--ink); border: 1px solid var(--line);
+  box-shadow: inset -16px 0 0 color-mix(in srgb, var(--c) 70%, var(--bg));
+  padding: 48px 56px 48px 40px;
+}
+.app-page .detail-tagline, .app-page .routine-hero .detail-tagline { color: var(--text); }
+.app-page .detail-actions { align-items: center; gap: 8px; margin-top: 8px; }
+.app-page .detail-actions .btn { min-height: 44px; padding: 0 20px; font-weight: 500; }
+.app-page .btn.green, .app-page .detail-cta .btn.green, .app-page .detail-cta.routine-cta .btn.green { background: var(--ink); color: var(--on-ink); }
+.app-page .btn.outline { border: 1px solid color-mix(in srgb, var(--ink) 24%, transparent); color: var(--ink); }
+.app-page .btn.outline:hover { background: var(--hover); filter: none; }
+.app-page .detail-cta .btn.outline:hover { background: var(--hover); }
+.app-page .btn.plain { padding: 0 8px; color: var(--text); text-decoration: underline; text-decoration-color: color-mix(in srgb, var(--text) 40%, transparent); text-underline-offset: 4px; }
+.app-page .btn.plain:hover { color: var(--ink); filter: none; }
+
+/* Pourquoi / comment : un filet fin dans la couleur de l'appli, le même pour les deux blocs */
+.app-page .story-block, .app-page .story-block + .story-block { border-left: 2px solid var(--c); padding-left: 24px; gap: 12px; }
+
+/* L'appli en mouvement : étapes sur la grille de 4 px */
+.app-page .motion-steps { gap: 8px; }
+.app-page .motion-steps li { padding: 20px; border-radius: 12px; }
+.app-page .motion-steps .n { border-width: 1.5px; font-weight: 500; font-variant-numeric: tabular-nums; }
+
+/* Fonctionnalités : cartes sans pastille de couleur, filet discret */
+.app-page .feature-grid { margin-top: 32px; }
+.app-page .feature-grid article { padding: 24px; gap: 8px; }
+.app-page .feature-grid h3 { font-weight: 500; }
+.app-page .detail-cta { gap: 12px; }
+
+@media (max-width: 600px) {
+  .app-page .detail-hero, .app-page .routine-hero { padding: 32px 36px 32px 24px; }
+}
+
+/* Pourquoi je l'ai créée / pourquoi je la partage : un texte de lecture, plus une citation en gros caractères */
+.app-page .story { gap: 48px; }
+.app-page .story-block { gap: 8px; max-width: 520px; }
+.app-page .story-text { font-family: 'DM Sans', -apple-system, sans-serif; font-size: 17px; line-height: 1.7; color: var(--text); }
+@media (max-width: 600px) { .app-page .story-text { font-size: 16px; } }
+
+/* En-tête des pages d'appli : un voile de la couleur de l'appli, assorti à la tranche (vert pour Ma Collection, orange pour Routine) */
+.app-page .detail-hero, .app-page .routine-hero { background: color-mix(in srgb, var(--c) 6%, var(--bg)); }
+:root[data-theme="dark"] .app-page .detail-hero, :root[data-theme="dark"] .app-page .routine-hero { background: color-mix(in srgb, var(--c) 7%, #161616); }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .app-page .detail-hero, :root:not([data-theme="light"]) .app-page .routine-hero { background: color-mix(in srgb, var(--c) 7%, #161616); }
+}

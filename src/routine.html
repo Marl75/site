@@ -25,7 +25,7 @@
 <link rel="stylesheet" href="style.css?v=31">
 </head>
 <body>
-<div class="page detail">
+<div class="page detail app-page" style="--c: var(--c-rou)">
 
   <nav class="top">
     <a class="back" href="./" data-i18n="back">← Toutes mes applis</a>
@@ -46,9 +46,9 @@
     <h1>Routine</h1>
     <p class="detail-tagline" data-i18n="routineTagline">Tes séances de sport notées en un geste, et la réponse à une question simple : est-ce que je tiens le rythme ?</p>
     <div class="detail-actions">
-      <a class="btn light" data-app="signup" data-app-id="routine" href="https://marl75.github.io/fitness-coach/?signup" data-i18n="signup">Créer un compte</a>
-      <a class="btn outline" data-app="login" data-app-id="routine" href="https://marl75.github.io/fitness-coach/" data-i18n="login">Se connecter</a>
-      <a class="btn outline" data-app="demo" data-app-id="routine" href="https://marl75.github.io/fitness-coach/?demo" data-i18n="demoShort">Voir la démo</a>
+      <a class="btn green" data-app="demo" data-app-id="routine" href="https://marl75.github.io/fitness-coach/?demo" data-i18n="demoShort">Voir la démo</a>
+      <a class="btn outline" data-app="signup" data-app-id="routine" href="https://marl75.github.io/fitness-coach/?signup" data-i18n="signup">Créer un compte</a>
+      <a class="btn plain" data-app="login" data-app-id="routine" href="https://marl75.github.io/fitness-coach/" data-i18n="login">Se connecter</a>
     </div>
   </header>
 
@@ -76,13 +76,13 @@
   <section class="features">
     <h2 data-i18n="featuresTitle">Ce qu'elle sait faire</h2>
     <div class="feature-grid">
-      <article><span class="dot" style="background: var(--blue)"></span><h3 data-i18n="r2t">Tes séances types en un geste</h3><p data-i18n="r2d">Enregistre une séance comme routine, puis relance-la d'un geste la fois suivante.</p></article>
-      <article><span class="dot" style="background: var(--orange)"></span><h3 data-i18n="r3t">Une série, un geste</h3><p data-i18n="r3d">Un tableau des séries avec une coche par série ; poids et répétitions se règlent avec deux compteurs identiques.</p></article>
-      <article><span class="dot" style="background: var(--red)"></span><h3 data-i18n="r4t">Tes muscles cibles</h3><p data-i18n="r4d">Choisis les muscles à développer ou à ménager : les bons exercices passent en premier, les autres sont signalés.</p></article>
-      <article><span class="dot" style="background: var(--blue)"></span><h3 data-i18n="r5t">Ta semaine en un coup d'œil</h3><p data-i18n="r5d">Les jours travaillés pour chaque muscle et tes minutes de cardio, face aux repères de l'ACSM et de l'OMS.</p></article>
-      <article><span class="dot" style="background: var(--orange)"></span><h3 data-i18n="r6t">Ta progression</h3><p data-i18n="r6d">Une courbe par exercice, et une suggestion de charge quand tu atteins ton objectif de répétitions.</p></article>
-      <article><span class="dot" style="background: var(--green)"></span><h3 data-i18n="r7t">Bien faire chaque exercice</h3><p data-i18n="r7d">Une figure qui montre le mouvement et les muscles travaillés, et des conseils tirés de sources fiables.</p></article>
-      <article><span class="dot" style="background: var(--red)"></span><h3 data-i18n="r8t">Partout, même hors ligne</h3><p data-i18n="r8d">S'installe sur ton téléphone, fonctionne sans connexion à la salle, en français et en anglais.</p></article>
+      <article><h3 data-i18n="r2t">Tes séances types en un geste</h3><p data-i18n="r2d">Enregistre une séance comme routine, puis relance-la d'un geste la fois suivante.</p></article>
+      <article><h3 data-i18n="r3t">Une série, un geste</h3><p data-i18n="r3d">Un tableau des séries avec une coche par série ; poids et répétitions se règlent avec deux compteurs identiques.</p></article>
+      <article><h3 data-i18n="r4t">Tes muscles cibles</h3><p data-i18n="r4d">Choisis les muscles à développer ou à ménager : les bons exercices passent en premier, les autres sont signalés.</p></article>
+      <article><h3 data-i18n="r5t">Ta semaine en un coup d'œil</h3><p data-i18n="r5d">Les jours travaillés pour chaque muscle et tes minutes de cardio, face aux repères de l'ACSM et de l'OMS.</p></article>
+      <article><h3 data-i18n="r6t">Ta progression</h3><p data-i18n="r6d">Une courbe par exercice, et une suggestion de charge quand tu atteins ton objectif de répétitions.</p></article>
+      <article><h3 data-i18n="r7t">Bien faire chaque exercice</h3><p data-i18n="r7d">Une figure qui montre le mouvement et les muscles travaillés, et des conseils tirés de sources fiables.</p></article>
+      <article><h3 data-i18n="r8t">Partout, même hors ligne</h3><p data-i18n="r8d">S'installe sur ton téléphone, fonctionne sans connexion à la salle, en français et en anglais.</p></article>
     </div>
   </section>
 
@@ -90,8 +90,8 @@
     <h2 data-i18n="ctaTitle">Envie d'essayer ?</h2>
     <p data-i18n="routineCtaText">C'est gratuit. La démo s'ouvre sur un compte d'exemple, avec douze semaines de séances : rien à créer.</p>
     <div class="detail-actions">
-      <a class="btn green" data-app="signup" data-app-id="routine" href="https://marl75.github.io/fitness-coach/?signup" data-i18n="signup">Créer un compte</a>
-      <a class="btn outline" data-app="demo" data-app-id="routine" href="https://marl75.github.io/fitness-coach/?demo" data-i18n="demoShort">Voir la démo</a>
+      <a class="btn green" data-app="demo" data-app-id="routine" href="https://marl75.github.io/fitness-coach/?demo" data-i18n="demoShort">Voir la démo</a>
+      <a class="btn outline" data-app="signup" data-app-id="routine" href="https://marl75.github.io/fitness-coach/?signup" data-i18n="signup">Créer un compte</a>
     </div>
   </section>
 
@@ -101,7 +101,7 @@
     <a class="privacy" href="mentions.html" data-i18n="legalLink">Mentions et confidentialité</a>
   </footer>
 </div>
-<script src="site.js?v=29"></script>
+<script src="site.js?v=30"></script>
 <script src="demos.js?v=4"></script>
 </body>
 </html>

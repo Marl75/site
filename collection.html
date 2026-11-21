@@ -32,7 +32,7 @@
 <link rel="stylesheet" href="style.css?v=31">
 </head>
 <body>
-<div class="page detail">
+<div class="page detail app-page" style="--c: var(--c-col)">
 
   <nav class="top">
     <a class="back" href="./" data-i18n="back">← All my apps</a>
@@ -51,11 +51,11 @@
   <header class="detail-hero">
     <svg width="72" height="72" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="22" fill="#fff"/><rect x="14" y="26" width="16" height="52" rx="2" fill="#0f9b6e"/><rect x="32" y="16" width="16" height="62" rx="2" fill="#1f5fd1"/><rect x="50" y="30" width="16" height="48" rx="2" fill="#f07a1a"/><rect x="68" y="20" width="16" height="58" rx="2" fill="#d91e36"/><rect x="10" y="78" width="80" height="8" rx="3" fill="#111"/></svg>
     <h1 data-i18n="appName">My Collection</h1>
-    <p class="detail-tagline" data-i18n="colTagline">The books, films, shows and games people recommend to you, finally in one place.</p>
+    <p class="detail-tagline" data-i18n="colTagline">The books, films, shows and games people recommend to you, finally in one place</p>
     <div class="detail-actions">
-      <a class="btn green" data-app="signup" href="https://marl75.github.io/mes-livres/?signup&amp;lang=en" data-i18n="signup">Create an account</a>
-      <a class="btn outline" data-app="login" href="https://marl75.github.io/mes-livres/?lang=en" data-i18n="login">Log in</a>
-      <a class="btn outline" data-app="demo" href="https://marl75.github.io/mes-livres/?demo&amp;lang=en" data-i18n="demoShort">See the demo</a>
+      <a class="btn green" data-app="demo" href="https://marl75.github.io/mes-livres/?demo&amp;lang=en" data-i18n="demoShort">See the demo</a>
+      <a class="btn outline" data-app="signup" href="https://marl75.github.io/mes-livres/?signup&amp;lang=en" data-i18n="signup">Create an account</a>
+      <a class="btn plain" data-app="login" href="https://marl75.github.io/mes-livres/?lang=en" data-i18n="login">Log in</a>
     </div>
   </header>
 
@@ -87,14 +87,14 @@
   <section class="features">
     <h2 data-i18n="featuresTitle">What it does</h2>
     <div class="feature-grid">
-      <article><span class="dot" style="background: var(--green)"></span><h3 data-i18n="f1t">Who recommended it</h3><p data-i18n="f1d">Write down who recommended a title, so you never forget.</p></article>
-      <article><span class="dot" style="background: var(--blue)"></span><h3 data-i18n="f2t">Four types in one place</h3><p data-i18n="f2d">Books, films, shows and video games, sorted by where you're at.</p></article>
-      <article><span class="dot" style="background: var(--orange)"></span><h3 data-i18n="f3t">Entries that fill themselves</h3><p data-i18n="f3d">Type a title or scan a book: the entry fills itself in.</p></article>
-      <article><span class="dot" style="background: var(--red)"></span><h3 data-i18n="f4t">Ideas by Claude</h3><p data-i18n="f4d">Suggestions picked for your taste, with the reason behind each one.</p></article>
-      <article><span class="dot" style="background: var(--blue)"></span><h3 data-i18n="f5t">Where to watch</h3><p data-i18n="f5d">For every film or show, where you can watch it.</p></article>
-      <article><span class="dot" style="background: var(--orange)"></span><h3 data-i18n="f6t">Your year in numbers</h3><p data-i18n="f6d">What you read, watched and played this year, and your favourites.</p></article>
-      <article><span class="dot" style="background: var(--green)"></span><h3 data-i18n="f7t">Made to share</h3><p data-i18n="f7d">A link to show your wishlist or favourites to friends and family, no account needed.</p></article>
-      <article><span class="dot" style="background: var(--red)"></span><h3 data-i18n="f8t">Everywhere, even offline</h3><p data-i18n="f8d">Installs on your phone, works without a connection, in English and French.</p></article>
+      <article><h3 data-i18n="f1t">Who recommended it</h3><p data-i18n="f1d">Write down who recommended a title, so you never forget.</p></article>
+      <article><h3 data-i18n="f2t">Four types in one place</h3><p data-i18n="f2d">Books, films, shows and video games, sorted by where you're at.</p></article>
+      <article><h3 data-i18n="f3t">Entries that fill themselves</h3><p data-i18n="f3d">Type a title or scan a book: the entry fills itself in.</p></article>
+      <article><h3 data-i18n="f4t">Ideas by Claude</h3><p data-i18n="f4d">Suggestions picked for your taste, with the reason behind each one.</p></article>
+      <article><h3 data-i18n="f5t">Where to watch</h3><p data-i18n="f5d">For every film or show, where you can watch it.</p></article>
+      <article><h3 data-i18n="f6t">Your year in numbers</h3><p data-i18n="f6d">What you read, watched and played this year, and your favourites.</p></article>
+      <article><h3 data-i18n="f7t">Made to share</h3><p data-i18n="f7d">A link to show your wishlist or favourites to friends and family, no account needed.</p></article>
+      <article><h3 data-i18n="f8t">Everywhere, even offline</h3><p data-i18n="f8d">Installs on your phone, works without a connection, in English and French.</p></article>
     </div>
   </section>
 
@@ -102,8 +102,8 @@
     <h2 data-i18n="ctaTitle">Want to try it?</h2>
     <p data-i18n="ctaText">It's free. You can also take a look at the demo, no account needed.</p>
     <div class="detail-actions">
-      <a class="btn green" data-app="signup" href="https://marl75.github.io/mes-livres/?signup&amp;lang=en" data-i18n="signup">Create an account</a>
-      <a class="btn outline" data-app="demo" href="https://marl75.github.io/mes-livres/?demo&amp;lang=en" data-i18n="demoShort">See the demo</a>
+      <a class="btn green" data-app="demo" href="https://marl75.github.io/mes-livres/?demo&amp;lang=en" data-i18n="demoShort">See the demo</a>
+      <a class="btn outline" data-app="signup" href="https://marl75.github.io/mes-livres/?signup&amp;lang=en" data-i18n="signup">Create an account</a>
     </div>
   </section>
 
@@ -113,7 +113,7 @@
     <a class="privacy" href="mentions.html" data-i18n="legalLink">Legal notice and privacy</a>
   </footer>
 </div>
-<script src="site.js?v=29"></script>
+<script src="site.js?v=30"></script>
 <script src="demos.js?v=4"></script>
 </body>
 </html>
